@@ -1,5 +1,5 @@
 import { HomeCard, HomeCardCart, HomeCardCost, HomeCardDescription, HomeCardTitle, HomeCardWeight, HomeInnerBtnBox, HomeInnerCard } from "./DefaultCard.component";
-import  HomeCardImg  from '../../Images/HomeCardImg.png';
+import  HomeCardImg  from '../../Assets/Images/HomeCardImg.png';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link } from "react-router-dom";
 

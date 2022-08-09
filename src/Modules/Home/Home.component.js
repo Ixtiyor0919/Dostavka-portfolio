@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import HomeImg from '../../Images/HomeImg.png'
-import HomeKafe from '../../Images/HomeKafe.png'
+import HomeImg from '../../Assets/Images/HomeImg.png'
+import HomeKafe from '../../Assets/Images/HomeKafe.png'
 
 export const HomeMain = styled.div`
     width: 100%;

@@ -12,24 +12,10 @@ export const NavbarContainer = styled.nav`
     left: 0;
     right: 0;
     z-index: 80;
-    // gap: 15px;
+    gap: 15px;
     justify-content: center;
     // filter: grayscale(1);
     backdrop-filter: blur(1px);
-`
-export const NavbarLinks = styled.p`
-    padding: 28px 20px;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: #FFFFFF;
-    border-bottom: 3px solid transparent;
-    :hover{
-       box-shadow: 0px 5px 12px rgba(114, 164, 121, 0.3);
-       border-bottom:  3px solid #618967
-    }
 `
 export const NavbarContainerLine = styled.hr`
     position: sticky;

@@ -1,4 +1,4 @@
-import Logo from '../../Images/Logo.svg'
+import Logo from '../../Assets/Images/Logo.svg'
 import { AddresInput, AddresInputBox, ContactBox, ContactBoxInner, ContactNumber, ContactTitle, HeaderBtn, HeaderBtnCount, HeaderBtnLine, HeaderBtnLink, HeaderContainer, NavbarLogo } from "./Header.component";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
@@ -41,7 +41,7 @@ export function Header() {
                     </ContactBoxInner>
                 </ContactBox>
                 <HeaderBtn>
-                    <Link to='/' className='link'>
+                    <Link to='/MainCart' className='link'>
                         <HeaderBtnLink>Корзина</HeaderBtnLink>
                     </Link>
                     <HeaderBtnLine></HeaderBtnLine>

@@ -4,7 +4,7 @@ import { Footer } from "../../Components/Footer/Footer";
 import { Header } from "../../Components/Header/Header";
 import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards";
 import { SinglePagesLink, SinglePagesLinkBox, SingleProducctData, SingleProduct, SingleProductCartBox, SingleProductCartBtn, SingleProductCartBtnBox, SingleProductCartLine, SingleProductContentNames, SingleProductContentValues, SingleProductCount, SingleProductDescription, SingleProductImg, SingleProductInnerLine, SingleProductInnerNamesBox, SingleProductInnerNamesBoxInner, SingleProductInnerTop, SingleProductTitle, SingleProductWeightMain } from "./Single.component";
-import SingleImg from "../../Images/SingleImg.png";
+import SingleImg from "../../Assets/Images/SingleImg.png";
 import { NavLinkList } from "../../Components/Navbar/NavLinkList";
 
 export function Single() { 

@@ -6,7 +6,7 @@ export const MainCartContainer = styled.div`
     margin: 0 auto;
 `
 export const MainCartContainerTop = styled.div`
-
+    margin-bottom: 75px;
 `
 export const MainCartPagesLinkBox = styled.div`
     display: flex;
@@ -52,4 +52,8 @@ export const MainCartContainerInnerTopText = styled.h2`
     line-height: 18px;
     text-transform: lowercase;
     color: #72A479;
+`
+export const CartCardWrapper = styled.div`
+    border-radius: 10px;
+    overflow: hidden;
 `

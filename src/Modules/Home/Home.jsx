@@ -1,6 +1,6 @@
 import { Header } from '../../Components/Header/Header';
-import MenuCardImgNewProducts from '../../Images/MenuCardImgNewProducts.svg';
-import MenuCardBestCHefs from '../../Images/MenuCardBestCHefs.svg';
+import MenuCardImgNewProducts from '../../Assets/Images/MenuCardImgNewProducts.svg';
+import MenuCardBestCHefs from '../../Assets/Images/MenuCardBestCHefs.svg';
 import { HomeMain, HomeTitle, MenuCardsBox, MenuCardsBoxCard, MenuCardsBoxCardTitle, MenuDescriptionBox, MenuDescriptionBoxBtn, MenuDescriptionBoxText, MenuDescriptionBoxTitle, MenuWrapper } from "./Home.component";
 import { HomeCards } from '../../Components/HomeCardsWrapper/HomeCards';
 import { Contact } from '../../Components/Contact/Contact';
