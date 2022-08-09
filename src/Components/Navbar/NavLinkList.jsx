@@ -1,5 +1,5 @@
 import { NavLinkShablon } from "../NavLinkShablon";
-import { NavbarContainer, NavbarContainerLine, NavbarLinks } from "./NavLink.component";
+import { NavbarContainer, NavbarContainerLine } from "./NavLink.component";
 
 export function NavLinkList() {
 
