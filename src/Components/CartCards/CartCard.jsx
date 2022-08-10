@@ -1,11 +1,16 @@
 import { CartCarCostBox, CartCardDescriptionBox, CartCardDescriptionBoxText, CartCardDescriptionBoxTitle, CartCardValue, CartCardValueBox, CartCardWrapperInner, CartCardWrapperInnerImg } from "./CartCard.component";
 import HomeCardImg from '../../Assets/Images/HomeCardImg.png';
+import { useState } from "react";
 
 export function CartCard(props) {
+
+    let [count, setCount] = useState(0)
+    localStorage.setItem('count', count)
+
     return (
         <>
            <CartCardWrapperInner>
-           <CartCardWrapperInnerImg src={HomeCardImg} width={120} height={90} />
+                <CartCardWrapperInnerImg src={HomeCardImg} width={120} height={90} />
                     <CartCardDescriptionBox>
                         <CartCardDescriptionBoxTitle>
                            {props.title}
@@ -24,10 +29,11 @@ export function CartCard(props) {
                             justifyContent: 'center',
                             fontSize: '33px',
                             color: '#72A479',
-                            background: '#fff'}}>
+                            background: '#fff'}}
+                            onClick={() => setCount(count -= 1)}>
                         </i>
                         <CartCardValue>
-                            {props.id}
+                            {count}
                         </CartCardValue>
                         <i class='bx bxs-plus-circle' style={{
                             width: '26px',
@@ -38,7 +44,8 @@ export function CartCard(props) {
                             justifyContent: 'center',
                             fontSize: '33px',
                             color: '#72A479',
-                            background: '#fff'}}>      
+                            background: '#fff'}}
+                            onClick={() => setCount(count += 1)}>      
                         </i>
                     </CartCardValueBox>
                     <CartCarCostBox>
@@ -55,7 +62,9 @@ export function CartCard(props) {
                             fontSize: '33px',
                             color: '#72A479',
                             background: '#fff',
-                            marginLeft: '72px'}}></i>
+                            marginLeft: '72px'}}>
+
+                            </i>
                     </CartCarCostBox>
             </CartCardWrapperInner> 
         </>

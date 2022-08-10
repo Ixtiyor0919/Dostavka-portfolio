@@ -10,4 +10,5 @@ export const NavbarLinks = styled.p`
     color: #FFFFFF;
     border-bottom: 3px solid transparent;
     user-select: none;
+    margin-bottom: -3px;
 `

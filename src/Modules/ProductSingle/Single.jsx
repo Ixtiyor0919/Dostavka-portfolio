@@ -8,6 +8,7 @@ import SingleImg from "../../Assets/Images/SingleImg.png";
 import { NavLinkList } from "../../Components/Navbar/NavLinkList";
 
 export function Single() { 
+
     return (
         <>
             <Header />

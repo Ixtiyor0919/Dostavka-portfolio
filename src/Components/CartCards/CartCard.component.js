@@ -6,6 +6,7 @@ export const CartCardWrapperInner = styled.div`
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     align-items: center;
     justify-content: space-between;   
+    user-select: none;
 `
 export const CartCardWrapperInnerImg = styled.img`
     border-radius: 5px;

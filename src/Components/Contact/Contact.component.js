@@ -1,15 +1,9 @@
 import styled from "styled-components";
-// import HomeMap from '../../Assets/Images/HomeMap.png'
-
 
 export const ContactWrapper = styled.div`
     height: 75vh;
     display: flex;
     align-items: bottom;
-    background-image: url();
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
 `
 export const ContactBox = styled.div`
