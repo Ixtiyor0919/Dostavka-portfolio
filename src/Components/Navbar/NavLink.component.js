@@ -17,10 +17,21 @@ export const NavbarContainer = styled.nav`
     // filter: grayscale(1);
     backdrop-filter: blur(1px);
 `
-export const NavbarContainerLine = styled.hr`
+export const NavbarContainerLineFirst = styled.hr`
     position: sticky;
-    top: 182px;
+    top: 104px;
+    height: 0;
     left: 0;
     right: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 99;
+`
+export const NavbarContainerLine = styled.hr`
+    position: sticky;
+    top: 183px;
+    height: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
     border: 1px solid rgba(255, 255, 255, 0.1);
 `

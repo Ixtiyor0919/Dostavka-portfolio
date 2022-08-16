@@ -6,12 +6,14 @@ import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards";
 import { SinglePagesLink, SinglePagesLinkBox, SingleProducctData, SingleProduct, SingleProductCartBox, SingleProductCartBtn, SingleProductCartBtnBox, SingleProductCartLine, SingleProductContentNames, SingleProductContentValues, SingleProductCount, SingleProductDescription, SingleProductImg, SingleProductInnerLine, SingleProductInnerNamesBox, SingleProductInnerNamesBoxInner, SingleProductInnerTop, SingleProductTitle, SingleProductWeightMain } from "./Single.component";
 import SingleImg from "../../Assets/Images/SingleImg.png";
 import { NavLinkList } from "../../Components/Navbar/NavLinkList";
+import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
 
 export function Single() { 
 
     return (
         <>
             <Header />
+            <NavbarContainerLineFirst />
             <NavLinkList />
             <SingleProduct>
                 <Link to='/' className='link'>

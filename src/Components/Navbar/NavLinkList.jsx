@@ -1,10 +1,11 @@
-import { NavLinkShablon } from "../NavLinkShablon";
-import { NavbarContainer, NavbarContainerLine } from "./NavLink.component";
+import { NavLinkShablon } from "../NavLinkComponent/NavLinkShablon";
+import { NavbarContainer, NavbarContainerLine, NavbarContainerLineFirst } from "./NavLink.component";
 
 export function NavLinkList() {
 
     return (
         <>
+        {/* <NavbarContainerLineFirst /> */}
         <NavbarContainer>
             <NavLinkShablon title={'Холодные закуски'} />
             <NavLinkShablon  title={'Горячие закуски'} />

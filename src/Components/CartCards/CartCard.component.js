@@ -49,3 +49,9 @@ export const CartCarCostBox = styled.div`
     align-items: center;
     justify-content: space-between;
 `
+export const CartCardWrapperInnerLine = styled.hr`
+    width: 100%;
+    height: 2px;
+    border: none;
+    background-color: #44403F;
+`

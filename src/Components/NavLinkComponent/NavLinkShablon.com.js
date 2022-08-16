@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NavbarLinks = styled.p`
     padding: 28px 20px;
+    margin-bottom: -1px;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 500;
@@ -10,5 +11,4 @@ export const NavbarLinks = styled.p`
     color: #FFFFFF;
     border-bottom: 3px solid transparent;
     user-select: none;
-    margin-bottom: -3px;
 `

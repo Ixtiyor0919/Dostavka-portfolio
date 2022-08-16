@@ -1,12 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { CartAdd } from "../../Components/CartAddComponent/CartAdd";
 import { CartCard } from "../../Components/CartCards/CartCard";
 import { Footer } from "../../Components/Footer/Footer";
 import { Header } from "../../Components/Header/Header";
+import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
 import { NavLinkList } from "../../Components/Navbar/NavLinkList";
-import { CartCardWrapper, MainCartContainer, MainCartContainerInnerTop, MainCartContainerInnerTopLine, MainCartContainerInnerTopText, MainCartContainerInnerTopTitle, MainCartContainerTop, MainCartPagesLink, MainCartPagesLinkBox } from "./MainCart.component";
+import { CartAddWrapper, CartAddWrapperInner, CartAddWrapperInnerLine, CartAddWrapperLine, CartAddWrapperTitle, CartCardWrapper, MainCartBottom, MainCartBottomBtn, MainCartBottomLeft, MainCartBottomLeftInner, MainCartBottomLeftInnerText, MainCartBottomLeftInnerTotalText, MainCartBottomLeftInnerTotalValue, MainCartBottomLeftInnerValue, MainCartContainer, MainCartContainerInnerTop, MainCartContainerInnerTopLine, MainCartContainerInnerTopText, MainCartContainerInnerTopTitle, MainCartContainerTop, MainCartPagesLink, MainCartPagesLinkBox } from "./MainCart.component";
 
 export function MainCart() {
     const navigate = useNavigate();
+
     const CartData = [
         {
             "id": 1,
@@ -23,11 +26,59 @@ export function MainCart() {
             "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
             "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
         },
+        // {
+        //     "id": 4,
+        //     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        //     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+        // },
+        // {
+        //     "id": 5,
+        //     "title": "qui est esse",
+        //     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+        // },
+        // {
+        //     "id": 6,
+        //     "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+        //     "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+        // },
+        // {
+        //     "id": 7,
+        //     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        //     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+        // },
+        // {
+        //     "id": 8,
+        //     "title": "qui est esse",
+        //     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+        // },
+        // {
+        //     "id": 9,
+        //     "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+        //     "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+        // },
+        // {
+        //     "id": 10,
+        //     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        //     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+        // },
+        // {
+        //     "id": 11,
+        //     "title": "qui est esse",
+        //     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+        // },
+        // {
+        //     "id": 12,
+        //     "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+        //     "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+        // },
     ]
+
+    localStorage.setItem('CartLength', CartData.length)
 
     return (
         <>
             <Header />
+            <NavbarContainerLineFirst />
             <NavLinkList />
             <MainCartContainer>
                 <MainCartContainerTop>
@@ -36,7 +87,7 @@ export function MainCart() {
                             width: '26px',
                             height: '26px',
                             color: '#fff',
-                            fontSize: '25px',
+                            fontSize: '30px',
                             marginLeft: '5px'}}>
                         </i>
                         <MainCartPagesLink>
@@ -60,6 +111,54 @@ export function MainCart() {
                             )
                     }
                 </CartCardWrapper>
+                <CartAddWrapper>
+                    <CartAddWrapperTitle>
+                        ДОБАВИТЬ К ЗАКАЗУ
+                    </CartAddWrapperTitle>
+                    <CartAddWrapperInner>
+                        <CartAdd title={'КВАС АНАНАСОВЫЙ'} />
+                        <CartAddWrapperInnerLine />
+                        <CartAdd title={'ГРИСССИНИ'} />
+                        <CartAddWrapperInnerLine />
+                        <CartAdd title={'ПИЦЦА ПЕППЕРОНИ'} />
+                        <CartAddWrapperInnerLine />
+                        <CartAdd title={'КВАС АНАНАСОВЫЙ'} />
+                    </CartAddWrapperInner>
+                    <CartAddWrapperLine />
+                </CartAddWrapper>
+                <MainCartBottom>
+                    <MainCartBottomLeft>
+                        <MainCartBottomLeftInner>
+                            <MainCartBottomLeftInnerTotalText>
+                                Итого:
+                            </MainCartBottomLeftInnerTotalText>
+                            <MainCartBottomLeftInnerTotalValue>
+                                500 ₽ 
+                            </MainCartBottomLeftInnerTotalValue>
+                        </MainCartBottomLeftInner>
+                        <MainCartBottomLeftInner style={{margin: '5px 0 10px 0'}}>
+                            <MainCartBottomLeftInnerText>
+                                До бесплатной доставки не хватет: 
+                            </MainCartBottomLeftInnerText>
+                            <MainCartBottomLeftInnerValue>
+                                100 ₽
+                            </MainCartBottomLeftInnerValue>
+                        </MainCartBottomLeftInner>
+                        <MainCartBottomLeftInner>
+                            <MainCartBottomLeftInnerText>
+                                Минимальная сума заказа:
+                            </MainCartBottomLeftInnerText>
+                            <MainCartBottomLeftInnerValue>
+                                1500 ₽
+                            </MainCartBottomLeftInnerValue>
+                        </MainCartBottomLeftInner>
+                    </MainCartBottomLeft>
+                    <Link to='/Checkout' className="link">
+                        <MainCartBottomBtn>
+                            Оформить заказ
+                        </MainCartBottomBtn>
+                    </Link>
+                    </MainCartBottom>
             </MainCartContainer>
             <Footer />
         </>

@@ -6,6 +6,8 @@ import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
 import { Link } from "react-router-dom";
 
 export function Header() {
+    const CartLength = localStorage.getItem('CartLength')
+
     return (
         <>
             <HeaderContainer>
@@ -45,7 +47,9 @@ export function Header() {
                         <HeaderBtnLink>Корзина</HeaderBtnLink>
                     </Link>
                     <HeaderBtnLine></HeaderBtnLine>
-                    <HeaderBtnCount>4</HeaderBtnCount>
+                    <HeaderBtnCount>
+                        {CartLength}
+                    </HeaderBtnCount>
                 </HeaderBtn>
             </HeaderContainer>
         </>

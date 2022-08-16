@@ -1,4 +1,4 @@
-import { CartCarCostBox, CartCardDescriptionBox, CartCardDescriptionBoxText, CartCardDescriptionBoxTitle, CartCardValue, CartCardValueBox, CartCardWrapperInner, CartCardWrapperInnerImg } from "./CartCard.component";
+import { CartCarCostBox, CartCardDescriptionBox, CartCardDescriptionBoxText, CartCardDescriptionBoxTitle, CartCardValue, CartCardValueBox, CartCardWrapperInner, CartCardWrapperInnerImg, CartCardWrapperInnerLine } from "./CartCard.component";
 import HomeCardImg from '../../Assets/Images/HomeCardImg.png';
 import { useState } from "react";
 
@@ -28,6 +28,7 @@ export function CartCard(props) {
                             alignItems: 'center',
                             justifyContent: 'center',
                             fontSize: '33px',
+                            cursor: 'pointer',
                             color: '#72A479',
                             background: '#fff'}}
                             onClick={() => setCount(count -= 1)}>
@@ -44,6 +45,7 @@ export function CartCard(props) {
                             justifyContent: 'center',
                             fontSize: '33px',
                             color: '#72A479',
+                            cursor: 'pointer',
                             background: '#fff'}}
                             onClick={() => setCount(count += 1)}>      
                         </i>
@@ -60,13 +62,14 @@ export function CartCard(props) {
                             alignItems: 'center',
                             justifyContent: 'center',
                             fontSize: '33px',
+                            cursor: 'pointer',
                             color: '#72A479',
                             background: '#fff',
                             marginLeft: '72px'}}>
-
                             </i>
                     </CartCarCostBox>
             </CartCardWrapperInner> 
+            <CartCardWrapperInnerLine />
         </>
     )
 }

@@ -6,7 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 export function Contact() {
     return (
         <ContactWrapper>
-            <iframe title="Titlevacha" width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style={{width: '100%', height: '100%'}}></iframe>
+            <iframe title="Titlevacha" width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" style={{width: '100%', height: '100%'}}></iframe>
             <ContactBox>
                 <ContactBoxTitle>
                     КОНТАКТЫ

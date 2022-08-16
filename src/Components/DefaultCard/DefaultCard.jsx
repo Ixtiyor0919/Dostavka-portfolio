@@ -4,6 +4,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link } from "react-router-dom";
 
 export function HomeDefaultCard() {
+
     return (
         <Link to='/Single' className='link'>
             <HomeCard>
