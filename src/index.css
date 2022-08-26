@@ -32,3 +32,30 @@ code {
   text-decoration: none;
   box-shadow: unset !important;
 }
+
+.btn-active {
+  background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+  /* border-radius: 10px 0px 0px 10px; */
+}
+.btn {
+  padding: 20px 50px !important;
+  font-family: 'Gilroy' !important;
+  font-style: normal  !important;
+  font-weight: 500  !important;
+  font-size: 16px  !important;
+  line-height: 19px  !important;
+  color: #FFFFFF  !important;
+  border: none  !important;
+  outline: none  !important;
+}
+.btn-actived {
+  padding: 20px 50px !important;
+  font-family: 'Gilroy' !important;
+  font-style: normal  !important;
+  font-weight: 500  !important;
+  font-size: 16px  !important;
+  line-height: 19px  !important;
+  color: #FFFFFF  !important;
+  border: none  !important;
+  outline: none  !important;
+}
