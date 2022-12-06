@@ -26,7 +26,7 @@ export const SingleProducctData = styled.div`
 `
 export const SingleProductImg = styled.img`
     width: 600px;
-    height: 400px;
+    height: 416px;
 `
 export const SingleProductInnerTop = styled.div`
     padding: 40px 0 25px 50px;

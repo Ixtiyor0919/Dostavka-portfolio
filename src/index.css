@@ -23,20 +23,38 @@ code {
   text-decoration: none;
 }
 
-.active {
-  text-decoration: none;
-  border-bottom:  3px solid #618967 !important;
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  padding: 28px 32px !important;
+  margin-bottom: -1px !important;
+  font-family: 'Gilroy' !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  color: #CFCFCF !important;
+  border-bottom: 3px solid transparent !important;
+  text-transform: unset !important;
+}
+
+.active, .Mui-selected {
+  color: #FFFFFF !important;
   box-shadow: 0px 5px 12px rgba(114, 164, 121, 0.3) !important;
 }
-.inactive {
-  text-decoration: none;
-  box-shadow: unset !important;
+
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #618967 !important;
+}
+
+.css-ptiqhd-MuiSvgIcon-root {
+  width: 2em !important;
+  height: 1.5em !important;
+  color: #FFFFFF !important;
 }
 
 .btn-active {
   background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
-  /* border-radius: 10px 0px 0px 10px; */
 }
+
 .btn {
   padding: 20px 50px !important;
   font-family: 'Gilroy' !important;
@@ -48,6 +66,7 @@ code {
   border: none  !important;
   outline: none  !important;
 }
+
 .btn-actived {
   padding: 20px 50px !important;
   font-family: 'Gilroy' !important;
@@ -58,4 +77,30 @@ code {
   color: #FFFFFF  !important;
   border: none  !important;
   outline: none  !important;
+}
+
+.form_control {
+  user-select: none;
+}
+
+.form_radio_label {
+  font-family: 'Gilroy' !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 19px !important;
+  color: #FFFFFF !important;
+}
+
+.radio_color {
+  color: #72A479 !important;
+}
+
+.radio_label > .css-ahj2mt-MuiTypography-root {
+  font-family: 'Gilroy' !important; 
+  font-style: normal !important; 
+  font-weight: 500 !important; 
+  font-size: 13px !important;  
+  line-height: 15px !important;
+  color: #FFFFFF !important;
 }

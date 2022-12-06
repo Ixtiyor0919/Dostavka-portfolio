@@ -74,7 +74,6 @@ export const MenuDescriptionBoxBtn =styled.button`
     cursor: pointer;
 `
 export const MenuCardsBox = styled.div`
-    width: 50%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;    

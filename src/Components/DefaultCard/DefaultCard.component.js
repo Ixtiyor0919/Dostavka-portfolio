@@ -68,6 +68,7 @@ export const HomeCard = styled.div`
         ${HomeInnerCard} {
             justify-content: space-between;
         }
+        transform: scale(1.020, 1.015);
     }
 `
 export const HomeInnerBtnBox = styled.div`

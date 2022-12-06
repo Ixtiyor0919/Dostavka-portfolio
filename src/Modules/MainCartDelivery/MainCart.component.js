@@ -22,11 +22,14 @@ export const MainCartPagesLink = styled.p`
     line-height: 19px;
     color: #FFFFFF;
 `
-export const MainCartContainerInnerTop = styled.div`
+export const PagesContainerInnerTop = styled.div`
+    max-width: 1440px;
+    padding: 50px 86px 40px 86px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
 `
-export const MainCartContainerInnerTopLine = styled.hr`
+export const PagesContainerInnerTopLine = styled.hr`
     width: 33px;
     height: 4px;
     display: flex;
@@ -35,7 +38,7 @@ export const MainCartContainerInnerTopLine = styled.hr`
     background: #618967;
     transform: rotate(90deg);   
 `
-export const MainCartContainerInnerTopTitle = styled.h2`
+export const PagesContainerInnerTopTitle = styled.h2`
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 700;
@@ -90,7 +93,6 @@ export const CartAddWrapperInnerLine = styled.hr`
     background-color: #44403F;
 `
 export const MainCartBottom = styled.div`
-    width: 76%;
     padding: 20px 28px 10px 38px;
     margin: 0 auto;
     display: flex;

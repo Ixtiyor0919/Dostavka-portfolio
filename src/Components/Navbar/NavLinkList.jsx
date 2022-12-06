@@ -1,22 +1,39 @@
-import { NavLinkShablon } from "../NavLinkComponent/NavLinkShablon";
-import { NavbarContainer, NavbarContainerLine, NavbarContainerLineFirst } from "./NavLink.component";
+import { NavbarContainer, NavbarContainerLine } from "./NavLink.component"
+import { useState } from "react"
+import { Box, Tab, Tabs } from "@mui/material"
 
-export function NavLinkList() {
+function NavLinkList() {
+  const [value, setValue] = useState("first")
 
-    return (
-        <>
-        {/* <NavbarContainerLineFirst /> */}
-        <NavbarContainer>
-            <NavLinkShablon title={'Холодные закуски'} />
-            <NavLinkShablon  title={'Горячие закуски'} />
-            <NavLinkShablon  title={'Мясные блюда'} />
-            <NavLinkShablon title={'Супы'} />
-            <NavLinkShablon  title={'Рыбные блюда'} />
-            <NavLinkShablon  title={'Гриль меню'} />
-            <NavLinkShablon title={'Фирменные блюда'} />
-            <NavLinkShablon  title={'Напитки'} />
-        </NavbarContainer>
-        <NavbarContainerLine />
-        </>
-    )
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+  }
+
+  return (
+    <>
+      <NavbarContainer>
+        <Box sx={{ width: "100%" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            aria-label="scrollable auto tabs example"
+          >
+            <Tab value="first" label="Холодные закуски" />
+            <Tab value="second" label="Горячие закуски" />
+            <Tab value="third" label="Мясные блюда" />
+            <Tab value="fouth" label="Супы" />
+            <Tab value="fifth" label="Рыбные блюда" />
+            <Tab value="sixth" label="Гриль меню" />
+            <Tab value="seventh" label="Фирменные блюда" />
+            <Tab value="eightth" label="Напитки" />
+          </Tabs>
+        </Box>
+      </NavbarContainer>
+      <NavbarContainerLine />
+    </>
+  )
 }
+
+export default NavLinkList

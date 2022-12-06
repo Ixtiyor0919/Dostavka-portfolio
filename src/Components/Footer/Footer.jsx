@@ -28,12 +28,12 @@ export function Footer() {
                         Возврат товара
                     </Page>
                 </Link>
-                <Link to='/' className="link">
+                <Link to='/DeliveryConditions' className="link">
                     <Page>
                         Условия доставки
                     </Page>
                 </Link>
-                <Link to='/' className="link">
+                <Link to='/Action' className="link">
                     <Page>
                         Акции
                     </Page>

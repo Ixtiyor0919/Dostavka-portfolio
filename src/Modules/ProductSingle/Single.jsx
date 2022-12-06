@@ -5,10 +5,10 @@ import { Header } from "../../Components/Header/Header";
 import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards";
 import { SinglePagesLink, SinglePagesLinkBox, SingleProducctData, SingleProduct, SingleProductCartBox, SingleProductCartBtn, SingleProductCartBtnBox, SingleProductCartLine, SingleProductContentNames, SingleProductContentValues, SingleProductCount, SingleProductDescription, SingleProductImg, SingleProductInnerLine, SingleProductInnerNamesBox, SingleProductInnerNamesBoxInner, SingleProductInnerTop, SingleProductTitle, SingleProductWeightMain } from "./Single.component";
 import SingleImg from "../../Assets/Images/SingleImg.png";
-import { NavLinkList } from "../../Components/Navbar/NavLinkList";
 import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
+import NavLinkList from "../../Components/Navbar/NavLinkList";
 
-export function Single() { 
+function Single() { 
 
     return (
         <>
@@ -34,7 +34,7 @@ export function Single() {
                     </SinglePagesLinkBox>
                 </Link>
                 <SingleProducctData>
-                    <SingleProductImg src={SingleImg} alt='singl-product' width={600} height={400   } />
+                    <SingleProductImg src={SingleImg} alt='singl-product' width={600} height={416} />
                     <SingleProductInnerTop>
                         <SingleProductTitle>
                             Ягненок
@@ -112,3 +112,5 @@ export function Single() {
         </>
     )
 }
+
+export default Single;

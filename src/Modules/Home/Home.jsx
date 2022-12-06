@@ -5,9 +5,9 @@ import { HomeMain, HomeTitle, MenuCardsBox, MenuCardsBoxCard, MenuCardsBoxCardTi
 import { HomeCards } from '../../Components/HomeCardsWrapper/HomeCards';
 import { Contact } from '../../Components/Contact/Contact';
 import { Footer } from '../../Components/Footer/Footer';
-import { NavLinkList } from '../../Components/Navbar/NavLinkList';
+import NavLinkList from '../../Components/Navbar/NavLinkList';
 
-export function Home() {
+function Home() {
 
     // const HomeData = [
     //     {
@@ -139,3 +139,4 @@ export function Home() {
         </>
     )
 }
+export default Home;

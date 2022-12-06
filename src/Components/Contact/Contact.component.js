@@ -6,8 +6,12 @@ export const ContactWrapper = styled.div`
     align-items: bottom;
     position: relative;
 `
+export const MapBox = styled.div`
+    width: 100%;
+    height: 100%;
+`
 export const ContactBox = styled.div`
-    width: 28%;
+    width: 30%;
     padding: 24px 42px 24px 52px;
     position: absolute;
     left: 100px;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
     max-width: 1440px;
-    padding: 0 86px;
+    padding: 0 100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ export const NavbarContainerLineFirst = styled.hr`
 `
 export const NavbarContainerLine = styled.hr`
     position: sticky;
-    top: 183px;
+    top: 182px;
     height: 0;
     left: 0;
     right: 0;
