@@ -1,16 +1,16 @@
 import {
-  CartCarCostBox,
-  CartCardDescriptionBox,
-  CartCardDescriptionBoxText,
-  CartCardDescriptionBoxTitle,
   CartCardValue,
+  CartCarCostBox,
   CartCardValueBox,
   CartCardWrapperInner,
+  CartCardDescriptionBox,
   CartCardWrapperInnerImg,
   CartCardWrapperInnerLine,
-} from "./CartCard.component"
-import HomeCardImg from "../../Assets/Images/HomeCardImg.png"
-import { useState } from "react"
+  CartCardDescriptionBoxText,
+  CartCardDescriptionBoxTitle,
+} from "./CartCard.component";
+import { useState } from "react";
+import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
 
 export function CartCard(props) {
   let [count, setCount] = useState(0)
@@ -51,7 +51,7 @@ export function CartCard(props) {
               color: "#72A479",
               background: "#fff",
             }}
-            onClick={() => handleLocalCart()}
+            onClick={handleLocalCart}
           ></i>
           <CartCardValue>{countPilus}</CartCardValue>
           <i
@@ -68,7 +68,7 @@ export function CartCard(props) {
               cursor: "pointer",
               background: "#fff",
             }}
-            onClick={() => handleLocalCartCircle()}
+            onClick={handleLocalCartCircle}
           ></i>
         </CartCardValueBox>
         <CartCarCostBox>

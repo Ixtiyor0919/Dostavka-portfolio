@@ -21,11 +21,11 @@ export const SingleProduct = styled.div`
 `
 export const SingleProducctData = styled.div`
     display: flex;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
 `
 export const SingleProductImg = styled.img`
-    width: 600px;
+    width: 50%;
     height: 416px;
 `
 export const SingleProductInnerTop = styled.div`

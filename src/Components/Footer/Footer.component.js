@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-    max-width: 1440px;
     padding: 26px 100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     background: linear-gradient(270.7deg, #44403F 0.4%, #211F20 100%);
+    @media (max-width: 768px) {
+        flex-direction: column;
+      }
 `
 export const FooterDescription = styled.div`
     width: 20%;
@@ -38,6 +40,9 @@ export const PagesBox = styled.div`
     gap: 30px;
     display: flex;
     align-items: center;
+    @media (max-width: 768px) {
+        display: none;
+      }
 `
 export const Page = styled.p`
     font-family: 'Gilroy';

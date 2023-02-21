@@ -1,12 +1,14 @@
 import './App.css';
-import RoutesPage from './RoutesPage';
-import Map from '../Api/ApiMap';
+import RoutesPage from "../Routes/RoutesPage";
+import ScrollToTop from '../Components/Scrolls/ScrollToTop';
 
 function App() {
-  return (  
-    // <Map>
+  return (
+    <>
+    <ScrollToTop>
       <RoutesPage />
-    // </Map>
+    </ScrollToTop>
+    </>
   );
 }
 

@@ -1,18 +1,19 @@
 import { Route, Routes } from "react-router-dom"
-import Home from "../Modules/Home/Home"
-import Single from "../Modules/ProductSingle/Single"
-import { MainCart } from "../Modules/MainCartDelivery/MainCart"
-import { Checkout } from "../Modules/Checkout/Checkout"
-import DeliveryConditions from "../Modules/DeliveryAndContacts/DeliveryConditions"
-import Action from "../Modules/Action/Action"
-import StockModal from "../Modules/Stock/Stock"
+import Home from "../Pages/Home/Home"
+import Single from "../Pages/ProductSingle/Single"
+import { MainCart } from "../Pages/MainCartDelivery/MainCart"
+import { Checkout } from "../Pages/Checkout/Checkout"
+import DeliveryConditions from "../Pages/DeliveryAndContacts/DeliveryConditions"
+import Action from "../Pages/Action/Action"
+import StockModal from "../Pages/Stock/Stock"
+import LayoutMenu from "../Layout/Layout"
 
 const RoutesPage = () => {
   return (
     <>
       <Routes>
-        <Route>
-          <Route path="/" element={<Home />} />
+        <Route element={<LayoutMenu />}>
+          <Route index element={<Home />} />
           <Route path="/Single" element={<Single />} />
           <Route path="/MainCart" element={<MainCart />} />
           <Route path="/Checkout" element={<Checkout />} />

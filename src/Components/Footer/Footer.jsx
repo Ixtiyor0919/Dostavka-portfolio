@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import Logo from '../../Assets/Images/Logo.svg'
+import { LogoSvgImage } from "../../Assets/Svg/SvgImages";
 import { FooterContainer, FooterDescription, FooterLinks, FooterLogo, FooterText, Page, PagesBox } from "./Footer.component";
 
 export function Footer() {
     return (
         <FooterContainer>
             <Link to='/' className="link">
-                <FooterLogo src={Logo} alt='logo' width={55} height={45} />
+                <LogoSvgImage width="55" height="45" />
             </Link>
             <FooterDescription>
                 <FooterText>

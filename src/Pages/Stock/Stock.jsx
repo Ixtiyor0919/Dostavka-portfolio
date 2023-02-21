@@ -5,7 +5,7 @@ import {
   StockModalBtn,
   StockModalTitle,
 } from "./Stock.component";
-import CartStockImg from '../../Assets/Images/CartStockImg.png';
+import CartStockImg from "../../Assets/Images/CartStockImg.png";
 
 const StockModal = () => {
   return (
@@ -17,6 +17,6 @@ const StockModal = () => {
       </ModalIsEmpty>
     </ModalIsEmptyWrapper>
   )
-}
+};
 
 export default StockModal

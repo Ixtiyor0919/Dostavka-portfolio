@@ -1,5 +1,3 @@
-import { Header } from "../../Components/Header/Header";
-import { Footer } from "../../Components/Footer/Footer";
 import {
   CheckoutTopLink,
   CheckoutTopLinkBox,
@@ -55,7 +53,6 @@ export function Checkout() {
 
   return (
     <>
-      <Header />
       <NavLinkList />
       <CheckoutWrapper>
         <CheckoutWrapperTop>
@@ -369,7 +366,6 @@ export function Checkout() {
           </MainCartBottomBtn>
         </MainCartBottom>
       </CheckoutWrapper>
-      <Footer />
     </>
   )
 }

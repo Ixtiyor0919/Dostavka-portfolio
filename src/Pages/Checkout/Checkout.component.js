@@ -15,7 +15,6 @@ export const CheckoutTopLinkBox = styled.div `
 `
 export const CheckoutTopLink = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
@@ -39,7 +38,6 @@ export const CheckoutWrapperItemInput = styled.input `
     padding: 20px 0 20px 30px;
     border-radius: 10px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -55,7 +53,6 @@ export const CheckoutWrapperItemInput = styled.input `
 export const CheckoutWrapperItemTitle = styled.h2 `
     margin-bottom: 30px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
@@ -63,7 +60,6 @@ export const CheckoutWrapperItemTitle = styled.h2 `
 `
 export const CheckoutWrapperItemInnerTitle = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
@@ -80,9 +76,8 @@ export const CheckoutWrapperItemTopInner = styled.div `
     display: inline-flex;
 `
 export const CheckoutWrapperItemTopInnerLabel = styled.label `
-    height: 21px;
+    height: 100%;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
@@ -102,7 +97,6 @@ export const CheckoutWrapperItemRadioInput = styled.input `
 `
 export const CheckoutWrapperText = styled.p`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
@@ -122,7 +116,6 @@ export const CheckoutWrapperItemPersonCountWrapper = styled.div`
 `
 export const CheckoutWrapperItemPersonCountWrapperText = styled.p`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -130,7 +123,6 @@ export const CheckoutWrapperItemPersonCountWrapperText = styled.p`
 `
 export const CheckoutWrapperItemPersonCountWrapperValue = styled.p`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;

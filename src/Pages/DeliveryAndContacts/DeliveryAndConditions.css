@@ -21,6 +21,7 @@
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 .accordion-body {

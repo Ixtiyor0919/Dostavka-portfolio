@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeCardsWrapper = styled.div`
     width: 100%;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
 `
 export const HomeCardsInnerTop = styled.div`
     margin-left: 8%;
@@ -28,11 +28,13 @@ export const HomeCardsInnerTopTitle = styled.h2`
     color: #FFFFFF;
 `
 export const HomeCardsInnerSlider = styled.div`
-    padding-top: 50px;
-    gap: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    // padding-top: 50px;
+    // gap: 20px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // overflow-x: auto;
 `
 export const HomeLine = styled.hr`
     width: 100%;

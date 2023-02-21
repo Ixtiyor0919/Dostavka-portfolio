@@ -82,6 +82,9 @@ export const ContactNumberBox = styled.div`
     align-items: baseline;
     margin-bottom: 30px;
     margin-top: 20px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+      }
 `
 export const ContactNumberBoxInner = styled.div`
     margin-left: 24px;

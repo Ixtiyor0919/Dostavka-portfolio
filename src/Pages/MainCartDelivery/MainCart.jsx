@@ -1,10 +1,8 @@
-import { Link, useNavigate } from "react-router-dom"
-import { CartAdd } from "../../Components/CartAddComponent/CartAdd"
-import { CartCard } from "../../Components/CartCards/CartCard"
-import { Footer } from "../../Components/Footer/Footer"
-import { Header } from "../../Components/Header/Header"
-import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component"
-import NavLinkList from "../../Components/Navbar/NavLinkList"
+import { Link, useNavigate } from "react-router-dom";
+import { CartAdd } from "../../Components/CartAddComponent/CartAdd";
+import { CartCard } from "../../Components/CartCards/CartCard";
+import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
+import NavLinkList from "../../Components/Navbar/NavLinkList";
 import {
   CartAddWrapper,
   CartAddWrapperInner,
@@ -28,7 +26,7 @@ import {
   PagesContainerInnerTop,
   PagesContainerInnerTopLine,
   PagesContainerInnerTopTitle,
-} from "./MainCart.component"
+} from "./MainCart.component";
 
 export function MainCart() {
   const navigate = useNavigate()
@@ -50,58 +48,57 @@ export function MainCart() {
       title: "ea molestias queasi exercitationem repellat qui ipsa sit aut",
       body: "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odiso et labore et velit aut",
     },
-    {
-        "id": 4,
-        "title": "sunt jaut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sgunt rem eveniet architecto",
-    },
-    {
-        "id": 5,
-        "title": "qui est ersse",
-        "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reictiendis\nqui aperiam non debitis possimus qui neque nisi nulla",
-    },
-    {
-        "id": 6,
-        "title": "ea molesutias quasi exercitationem repellat qui ipsa sit aut",
-        "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius oddio et labore et velit aut",
-    },
-    {
-        "id": 7,
-        "title": "sunit aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sgunt rem eveniet architecto",
-    },
-    {
-        "id": 8,
-        "title": "qui egst esse",
-        "body": "est rerum tempore vitae\nsequi sinbt nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
-    },
-    {
-        "id": 9,
-        "title": "ea mollestias quasi exercitationem repellat qui ipsa sit aut",
-        "body": "et iusto sed quo iure\nvodluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
-    },
-    {
-        "id": 10,
-        "title": "sunt aut faciere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandahe consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-    },
-    {
-        "id": 11,
-        "title": "qui est essqe",
-        "body": "est rerum tempore vitae\nsejqui sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
-    },
-    {
-        "id": 12,
-        "title": "ea moklestias quasi exercitationmem repellat qui ipsa sit aut",
-        "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
-    },
+    // {
+    //     "id": 4,
+    //     "title": "sunt jaut facere repellat provident occaecati excepturi optio reprehenderit",
+    //     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sgunt rem eveniet architecto",
+    // },
+    // {
+    //     "id": 5,
+    //     "title": "qui est ersse",
+    //     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reictiendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    // },
+    // {
+    //     "id": 6,
+    //     "title": "ea molesutias quasi exercitationem repellat qui ipsa sit aut",
+    //     "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius oddio et labore et velit aut",
+    // },
+    // {
+    //     "id": 7,
+    //     "title": "sunit aut facere repellat provident occaecati excepturi optio reprehenderit",
+    //     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sgunt rem eveniet architecto",
+    // },
+    // {
+    //     "id": 8,
+    //     "title": "qui egst esse",
+    //     "body": "est rerum tempore vitae\nsequi sinbt nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    // },
+    // {
+    //     "id": 9,
+    //     "title": "ea mollestias quasi exercitationem repellat qui ipsa sit aut",
+    //     "body": "et iusto sed quo iure\nvodluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    // },
+    // {
+    //     "id": 10,
+    //     "title": "sunt aut faciere repellat provident occaecati excepturi optio reprehenderit",
+    //     "body": "quia et suscipit\nsuscipit recusandahe consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    // },
+    // {
+    //     "id": 11,
+    //     "title": "qui est essqe",
+    //     "body": "est rerum tempore vitae\nsejqui sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    // },
+    // {
+    //     "id": 12,
+    //     "title": "ea moklestias quasi exercitationmem repellat qui ipsa sit aut",
+    //     "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    // },
   ]
 
   localStorage.setItem("CartLength", CartData.length)
 
   return (
     <>
-      <Header />
       <NavbarContainerLineFirst />
       <NavLinkList />
       <MainCartContainer>
@@ -181,7 +178,6 @@ export function MainCart() {
           </Link>
         </MainCartBottom>
       </MainCartContainer>
-      <Footer />
     </>
   )
 }

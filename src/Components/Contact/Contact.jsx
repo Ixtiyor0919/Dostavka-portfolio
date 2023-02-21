@@ -20,7 +20,6 @@ import {
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined"
 import MailOutlineIcon from "@mui/icons-material/MailOutline"
 import FacebookIcon from "@mui/icons-material/Facebook"
-import SimpleMap from "../../Api/ApiMap"
 
 export function Contact() {
   return (
@@ -37,7 +36,6 @@ export function Contact() {
           marginWidth="0"
           style={{ width: "100%", height: "100%" }}
         ></iframe>
-        {/* <SimpleMap /> */}
       </MapBox>
       <ContactBox>
         <ContactBoxTitle>КОНТАКТЫ</ContactBoxTitle>

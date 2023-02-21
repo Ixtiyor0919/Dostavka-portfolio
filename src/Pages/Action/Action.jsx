@@ -1,18 +1,16 @@
-import { Header } from "../../Components/Header/Header"
-import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component"
-import NavLinkList from "../../Components/Navbar/NavLinkList"
-import { Contact } from "../../Components/Contact/Contact"
-import { ActionWrapper } from "./Action.component"
+import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
+import NavLinkList from "../../Components/Navbar/NavLinkList";
+import { Contact } from "../../Components/Contact/Contact";
+import { ActionWrapper } from "./Action.component";
 import {
   PagesContainerInnerTop,
   PagesContainerInnerTopLine,
   PagesContainerInnerTopTitle,
-} from "../MainCartDelivery/MainCart.component"
-import ActionCard from "../../Components/ActionCard/ActionCard"
-import { Footer } from "../../Components/Footer/Footer"
-import ActionImgFirst from "../../Assets/Images/ActionImgFirst.png"
-import ActionImgSecond from "../../Assets/Images/ActionImgSecond.png"
-import ActionImgThird from "../../Assets/Images/ActionImgThird.png"
+} from "../MainCartDelivery/MainCart.component";
+import ActionCard from "../../Components/ActionCard/ActionCard";
+import ActionImgFirst from "../../Assets/Images/ActionImgFirst.png";
+import ActionImgSecond from "../../Assets/Images/ActionImgSecond.png";
+import ActionImgThird from "../../Assets/Images/ActionImgThird.png";
 
 function Action() {
   const ActionData = [
@@ -83,7 +81,6 @@ function Action() {
 
   return (
     <>
-      <Header />
       <NavLinkList />
       <PagesContainerInnerTop>
         <PagesContainerInnerTopLine />
@@ -103,7 +100,6 @@ function Action() {
         ))}
       </ActionWrapper>
       <Contact />
-      <Footer />
     </>
   )
 }

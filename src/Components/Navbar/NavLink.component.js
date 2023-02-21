@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
-    max-width: 1440px;
     padding: 0 100px;
     margin: 0 auto;
     display: flex;
@@ -16,6 +15,9 @@ export const NavbarContainer = styled.nav`
     justify-content: center;
     // filter: grayscale(1);
     backdrop-filter: blur(1px);
+    @media (max-width: 768px) {
+      padding: unset;
+      }
 `
 export const NavbarContainerLineFirst = styled.hr`
     position: sticky;

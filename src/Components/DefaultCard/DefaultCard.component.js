@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const HomeCardCount = styled.span`
+export const HomeCardCount = styled.span `
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -20,7 +20,13 @@ export const HomeCardCount = styled.span`
     right: -10px;
     transition: all .3s;
 `
-export const HomeCardCost = styled.p`
+export const CardImg = styled.img `
+    width: 325px;
+    height: 230px;
+    border-topleft-radius: 10px;
+    border-top-right-radius: 10px;
+`
+export const HomeCardCost = styled.p `
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 600;
@@ -29,7 +35,7 @@ export const HomeCardCost = styled.p`
     color: #FFFFFF;
     margin-right: auto;
 `
-export const HomeCardCart = styled.p`
+export const HomeCardCart = styled.p `
     padding: 14px 16px 14px 19px;
     font-family: 'Gilroy';
     font-style: normal;
@@ -41,24 +47,44 @@ export const HomeCardCart = styled.p`
     border-radius: 10px;
     display: flex;
     align-items: center;
+    transition: all .3s;
     :active {
         background: linear-gradient(114.93deg,#7ad788 5.11%,#8ed498 94%);
         box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
     }
 `
-export const HomeInnerCard = styled.div`
+export const HomeInnerCard = styled.div `
     padding: 14px 16px 18px 16px;
     border-radius: 10px;
+    position: relative;
 `
-export const HomeCard = styled.div`
+export const HomeInnerBtn = styled.div `
+    width: 60px;
+    height: 40px;
+    display: flex;
+    bottom: 5%;
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    color: #ffffff;
+    display: none;
+    justify-content: center;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    :active {
+        background: linear-gradient(114.93deg,#7ad788 5.11%,#8ed498 94%);
+        box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
+    }
+`
+
+export const HomeCard = styled.div `
     width: 325px;
     height: 400px;
     border-radius: 10px;
     cursor: pointer;
-    position: relative;
     user-select: none;
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     transition: all .2s;
+    position: relative;
     :hover {
         background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
         box-shadow: 0px 30px 45px rgba(43, 40, 40, 0.6);
@@ -68,15 +94,26 @@ export const HomeCard = styled.div`
         ${HomeInnerCard} {
             justify-content: space-between;
         }
+        ${HomeCardCost} {
+            position: absolute;
+            bottom: -22%;
+            left: 43%;
+        }
+        ${HomeInnerBtn} {
+            display: flex;
+        }
+        ${HomeCardCart} {
+            display: none;
+        }
         transform: scale(1.020, 1.015);
     }
 `
-export const HomeInnerBtnBox = styled.div`
+export const HomeInnerBtnBox = styled.div `
     margin-top: 15px;
     display: flex;
     align-items: center;
 `
-export const HomeCardTitle = styled.h3`
+export const HomeCardTitle = styled.h3 `
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 700;
@@ -87,7 +124,7 @@ export const HomeCardTitle = styled.h3`
     margin-right: 52%;
     margin-bottom: 5px;
 `
-export const HomeCardDescription = styled.p`
+export const HomeCardDescription = styled.p `
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
@@ -95,7 +132,7 @@ export const HomeCardDescription = styled.p`
     line-height: 17px;
     color: #CFCFCF;
 `
-export const HomeCardWeight = styled.span`
+export const HomeCardWeight = styled.span `
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;

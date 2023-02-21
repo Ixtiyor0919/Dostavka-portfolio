@@ -1,11 +1,9 @@
-import { Footer } from "../../Components/Footer/Footer"
-import { Header } from "../../Components/Header/Header"
-import NavLinkList from "../../Components/Navbar/NavLinkList"
+import NavLinkList from "../../Components/Navbar/NavLinkList";
 import {
   PagesContainerInnerTop,
   PagesContainerInnerTopLine,
   PagesContainerInnerTopTitle,
-} from "../MainCartDelivery/MainCart.component"
+} from "../MainCartDelivery/MainCart.component";
 import {
   ConditionsWrapper,
   ConditionsWrapperBottom,
@@ -15,8 +13,8 @@ import {
   ConditionsWrapperTimesBoxDescription,
   ConditionsWrapperTimesBoxTitle,
   ConditionsWrapperTimesInnerBox,
-} from "./DeliveryConditions.component"
-import "./DeliveryAndConditions.css"
+} from "./DeliveryConditions.component";
+import "./DeliveryAndConditions.css";
 import {
   Accordion,
   AccordionButton,
@@ -24,12 +22,11 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
 function DeliveryConditions() {
   return (
     <>
-      <Header />
       <NavLinkList />
       <PagesContainerInnerTop>
         <PagesContainerInnerTopLine />
@@ -56,7 +53,6 @@ function DeliveryConditions() {
                 nisi ut aliquip ex ea commodo consequat.
               </AccordionPanel>
             </AccordionItem>
-
             <AccordionItem className="accordion-item">
               <h2>
                 <AccordionButton className="accordion-header">
@@ -73,7 +69,6 @@ function DeliveryConditions() {
                 nisi ut aliquip ex ea commodo consequat.
               </AccordionPanel>
             </AccordionItem>
-
             <AccordionItem className="accordion-item">
               <h2>
                 <AccordionButton className="accordion-header">
@@ -90,7 +85,6 @@ function DeliveryConditions() {
                 nisi ut aliquip ex ea commodo consequat.
               </AccordionPanel>
             </AccordionItem>
-
             <AccordionItem className="accordion-item">
               <h2>
                 <AccordionButton className="accordion-header">
@@ -106,7 +100,6 @@ function DeliveryConditions() {
                 обязательно сообщайте их нам
               </AccordionPanel>
             </AccordionItem>
-
             <AccordionItem className="accordion-item">
               <h2>
                 <AccordionButton className="accordion-header">
@@ -123,7 +116,6 @@ function DeliveryConditions() {
                 nisi ut aliquip ex ea commodo consequat.
               </AccordionPanel>
             </AccordionItem>
-
             <AccordionItem className="accordion-item">
               <h2>
                 <AccordionButton className="accordion-header">
@@ -141,9 +133,10 @@ function DeliveryConditions() {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
+
           <ConditionsWrapperContentMap>
             <iframe
-              title='google_map_black'
+              title="google_map_black"
               width="50%"
               height="100%"
               id="gmap_canvas"
@@ -185,7 +178,6 @@ function DeliveryConditions() {
           </ConditionsWrapperTimesBoxDescription>
         </ConditionsWrapperBottom>
       </ConditionsWrapper>
-      <Footer />
     </>
   )
 }

@@ -33,6 +33,9 @@ export const MenuWrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @media (max-width: 768px) {
+        display: none;
+      }
 `
 export const MenuDescriptionBox = styled.div`
     width: 100%
@@ -91,6 +94,7 @@ export const MenuCardsBoxCard = styled.div`
         box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
     }
 `
+export const MenuCardsBoxCardImg = styled.img``
 export const MenuCardsBoxCardTitle = styled.h4`
     margin-top: 30px;
     font-family: 'Gilroy';
