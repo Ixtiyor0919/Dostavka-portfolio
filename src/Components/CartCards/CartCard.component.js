@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CartCardWrapperInner = styled.div`
+export const CartCardWrapperInner = styled.div `
     padding: 20px 40px 20px 20px;
     display: flex; 
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
@@ -8,14 +8,14 @@ export const CartCardWrapperInner = styled.div`
     justify-content: space-between;   
     user-select: none;
 `
-export const CartCardWrapperInnerImg = styled.img`
+export const CartCardWrapperInnerImg = styled.img `
     border-radius: 5px;
 `
-export const CartCardDescriptionBox = styled.div`
+export const CartCardDescriptionBox = styled.div `
     width: 30%;
     margin-right: 20%;
 `
-export const CartCardDescriptionBoxTitle = styled.div`
+export const CartCardDescriptionBoxTitle = styled.div `
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 700;
@@ -23,7 +23,7 @@ export const CartCardDescriptionBoxTitle = styled.div`
     line-height: 22px;
     color: #FFFFFF;
 `
-export const CartCardDescriptionBoxText = styled.div`
+export const CartCardDescriptionBoxText = styled.div `
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
@@ -31,11 +31,11 @@ export const CartCardDescriptionBoxText = styled.div`
     line-height: 14px;
     color: #A6A7AB;
 `
-export const CartCardValueBox = styled.div`
+export const CartCardValueBox = styled.div `
     display: flex; 
     align-items: center;
 `
-export const CartCardValue = styled.div`
+export const CartCardValue = styled.div `
     font-family: 'Greenwich';
     font-style: normal;
     font-weight: 700;
@@ -44,12 +44,12 @@ export const CartCardValue = styled.div`
     color: #FFFFFF;
     margin: 0 14px;
 `
-export const CartCarCostBox = styled.div`
+export const CartCarCostBox = styled.div `
     display: flex; 
     align-items: center;
     justify-content: space-between;
 `
-export const CartCardWrapperInnerLine = styled.hr`
+export const CartCardWrapperInnerLine = styled.hr `
     width: 100%;
     height: 2px;
     border: none;

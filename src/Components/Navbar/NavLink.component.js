@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Tab, Tabs } from "@mui/material"
 
-export const NavbarContainer = styled.nav`
+export const NavbarContainer = styled.nav `
     padding: 0 100px;
     margin: 0 auto;
     display: flex;
@@ -19,7 +20,7 @@ export const NavbarContainer = styled.nav`
       padding: unset;
       }
 `
-export const NavbarContainerLineFirst = styled.hr`
+export const NavbarContainerLineFirst = styled.hr `
     position: sticky;
     top: 104px;
     height: 0;
@@ -28,7 +29,7 @@ export const NavbarContainerLineFirst = styled.hr`
     border: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 99;
 `
-export const NavbarContainerLine = styled.hr`
+export const NavbarContainerLine = styled.hr `
     position: sticky;
     top: 182px;
     height: 0;
@@ -36,4 +37,15 @@ export const NavbarContainerLine = styled.hr`
     right: 0;
     z-index: 99;
     border: 1px solid rgba(255, 255, 255, 0.1);
+`
+export const TabsItem = styled(Tab)`
+    padding: 28px 32px !important;
+    margin-bottom: -1px !important;
+    font-family: 'Gilroy' !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    color: #CFCFCF !important;
+    border-bottom: 3px solid transparent !important;
+    text-transform: unset !important;
 `

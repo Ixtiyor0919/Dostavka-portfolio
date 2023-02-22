@@ -1,6 +1,6 @@
-import { NavbarContainer, NavbarContainerLine } from "./NavLink.component"
+import { NavbarContainer, NavbarContainerLine, TabsItem } from "./NavLink.component"
 import { useState } from "react"
-import { Box, Tab, Tabs } from "@mui/material"
+import { Box, Tabs } from "@mui/material"
 
 function NavLinkList() {
   const [value, setValue] = useState("first")
@@ -20,14 +20,14 @@ function NavLinkList() {
             scrollButtons="auto"
             aria-label="scrollable auto tabs example"
           >
-            <Tab value="first" label="Холодные закуски" />
-            <Tab value="second" label="Горячие закуски" />
-            <Tab value="third" label="Мясные блюда" />
-            <Tab value="fouth" label="Супы" />
-            <Tab value="fifth" label="Рыбные блюда" />
-            <Tab value="sixth" label="Гриль меню" />
-            <Tab value="seventh" label="Фирменные блюда" />
-            <Tab value="eightth" label="Напитки" />
+            <TabsItem value="first" label="Холодные закуски" />
+            <TabsItem value="second" label="Горячие закуски" />
+            <TabsItem value="third" label="Мясные блюда" />
+            <TabsItem value="fouth" label="Супы" />
+            <TabsItem value="fifth" label="Рыбные блюда" />
+            <TabsItem value="sixth" label="Гриль меню" />
+            <TabsItem value="seventh" label="Фирменные блюда" />
+            <TabsItem value="eightth" label="Напитки" />
           </Tabs>
         </Box>
       </NavbarContainer>

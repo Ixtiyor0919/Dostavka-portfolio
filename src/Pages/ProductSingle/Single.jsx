@@ -23,8 +23,8 @@ import {
   SingleProductWeightMain,
 } from "./Single.component";
 import SingleImg from "../../Assets/Images/SingleImg.png";
-import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
 import NavLinkList from "../../Components/Navbar/NavLinkList";
+import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
 
 function Single() {
   return (
@@ -115,4 +115,4 @@ function Single() {
   )
 }
 
-export default Single
+export default Single;

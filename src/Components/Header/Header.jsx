@@ -14,6 +14,7 @@ import {
   MenuBtn,
   MenuBtnBurger,
 } from "./Header.component"
+import React from "react"
 import { Link } from "react-router-dom"
 import { Box, IconButton } from "@mui/material"
 import { LogoSvgImage } from "../../Assets/Svg/SvgImages"
@@ -24,7 +25,11 @@ import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined"
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined"
 
 export function Header() {
+  const [colors, setColor] = React.useState(null)
   const CartLength = localStorage.getItem("CartLength")
+  const handleColorToggle = () => {
+    setColor((prev) => !prev)
+  }
 
   return (
     <>
@@ -45,13 +50,13 @@ export function Header() {
           }}
         >
           <AddresInputBox>
-            <IconButton aria-label="location" sx={{ color: "#fff" }}>
+            <IconButton onClick={handleColorToggle} aria-label="location">
               <FmdGoodOutlinedIcon
                 sx={{
                   width: "22px",
                   height: "22px",
-                  color: "darkgrey",
                   cursor: "pointer",
+                  color: !colors ? "#CFCFCF" : "#68956F",
                 }}
               />
             </IconButton>
