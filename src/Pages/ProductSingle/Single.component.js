@@ -20,7 +20,7 @@ export const SinglePagesLink = styled.p`
 `
 export const SingleProduct = styled.div`
     width: 100%;
-    padding: 40px 100px 50px 100px; 
+    padding: 40px 80px 50px 80px; 
     margin: 0 auto;
     @media (max-width: ${matchMD}px) {
         padding: 25px 50px 25px 50px; 
@@ -169,7 +169,7 @@ export const SingleFab = styled(Fab)`
     top: 10px;
     left: 25px;
     color: #6F9F76 !important;
-    display: none !imortant;
+    display: none !important;
     @media (max-width: ${matchSM}px) {
         display: block !important;
     }
