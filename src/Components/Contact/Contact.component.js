@@ -1,29 +1,40 @@
+import { Button } from "@mui/material";
 import styled from "styled-components";
+import { matchMD } from "../../Themes/Breakpoints";
 
 export const ContactWrapper = styled.div `
+    width: 100%;
     height: 75vh;
     display: flex;
     align-items: bottom;
     position: relative;
+    @media (max-width: ${matchMD}px) {
+        height: 1000px;
+    }
 `
 export const MapBox = styled.div `
     width: 100%;
     height: 100%;
 `
 export const ContactBox = styled.div `
-    width: 30%;
-    padding: 24px 42px 24px 52px;
+    width: 535px;
+    padding: 24px 45px;
     position: absolute;
     left: 100px;
     bottom: 40px;
     background: #2E2B2C;
     box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
+    @media (max-width: ${matchMD}px) {
+        width: 80%;
+        left: 10%;
+        top: 4%;
+        height: 55%;
+    }
 `
 export const ContactBoxTitle = styled.h2 `
     margin-bottom: 26px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 30px;
     line-height: 36px;
@@ -49,7 +60,6 @@ export const ContactBoxCardInner = styled.div `
 export const ContactBoxCardInnerSubtitle = styled.p `
     margin-bottom: 5px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
@@ -57,32 +67,30 @@ export const ContactBoxCardInnerSubtitle = styled.p `
 `
 export const ContactBoxCardInnerText = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
     color: #fff6f6;
 `
-export const ContactBoxBtn = styled.button `
-    padding: 22px 30px;
-    font-family: 'Proxima Nova';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 16px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    color: #FFFFFF;
+export const ContactBoxBtn = styled(Button) `
+    padding: 22px 30px !important;
+    font-family: 'Proxima Nova' !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    line-height: 16px !important;
+    cursor: pointer !important;
+    border: none !important;
+    outline: none !important;
+    color: #FFFFFF !important;
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
-    border-radius: 10px;
+    border-radius: 10px !important;
 `
 export const ContactNumberBox = styled.div `
     display: flex;
     align-items: baseline;
     margin-bottom: 30px;
     margin-top: 20px;
-    @media (max-width: 768px) {
+    @media (max-width: ${matchMD}px) {
         flex-direction: column;
       }
 `
@@ -91,7 +99,6 @@ export const ContactNumberBoxInner = styled.div `
 `
 export const ContactNumber = styled.span `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 23px;
     line-height: 28px;
@@ -99,7 +106,6 @@ export const ContactNumber = styled.span `
 `
 export const ContactNumberText = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
@@ -114,7 +120,6 @@ export const Sogials = styled.div `
 export const SogialsTitle = styled.h5 `
     margin-right: 26px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;

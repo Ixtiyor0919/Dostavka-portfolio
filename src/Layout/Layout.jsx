@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../Components/Header/Header";
-import { Footer } from "../Components/Footer/Footer";
+import { Header } from "./Header/Header";
+import { Footer } from "./Footer/Footer";
 import ScrollTop from "../Components/Scrolls/KeyboardScroll";
 import { Box, CssBaseline, Fab, Toolbar } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";

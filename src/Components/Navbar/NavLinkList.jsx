@@ -1,6 +1,6 @@
-import { NavbarContainer, NavbarContainerLine, TabsItem } from "./NavLink.component"
-import { useState } from "react"
-import { Box, Tabs } from "@mui/material"
+import { useState } from "react";
+import { Box, Tabs } from "@mui/material";
+import { NavbarContainer, TabsItem } from "./NavLink.component";
 
 function NavLinkList() {
   const [value, setValue] = useState("first")
@@ -31,7 +31,6 @@ function NavLinkList() {
           </Tabs>
         </Box>
       </NavbarContainer>
-      <NavbarContainerLine />
     </>
   )
 }

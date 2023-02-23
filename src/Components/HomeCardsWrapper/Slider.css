@@ -9,7 +9,7 @@
 }
 .swiper-slide {
   background: rgb(255, 0, 0);
-
+  flex-shrink: 1;
   /* Center slide text vertically */
   display: flex;
   justify-content: center;

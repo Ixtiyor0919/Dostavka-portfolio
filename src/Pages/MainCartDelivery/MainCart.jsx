@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { CartAdd } from "../../Components/CartAddComponent/CartAdd";
 import { CartCard } from "../../Components/CartCards/CartCard";
-import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
 import NavLinkList from "../../Components/Navbar/NavLinkList";
 import {
   CartAddWrapper,
@@ -99,7 +98,6 @@ export function MainCart() {
 
   return (
     <>
-      <NavbarContainerLineFirst />
       <NavLinkList />
       <MainCartContainer>
         <MainCartContainerTop>

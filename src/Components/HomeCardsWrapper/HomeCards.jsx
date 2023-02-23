@@ -101,7 +101,7 @@ export function HomeCards(props) {
             spaceBetween={10}
             centeredSlides={true}
             className="mySwiper"
-            // modules={FreeMode}
+            modules={FreeMode}
             breakpoints={{
               640: {
                 slidesPerView: 2,

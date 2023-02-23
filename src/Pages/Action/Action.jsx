@@ -1,4 +1,3 @@
-import { NavbarContainerLineFirst } from "../../Components/Navbar/NavLink.component";
 import NavLinkList from "../../Components/Navbar/NavLinkList";
 import { Contact } from "../../Components/Contact/Contact";
 import { ActionWrapper } from "./Action.component";
@@ -86,7 +85,6 @@ function Action() {
         <PagesContainerInnerTopLine />
         <PagesContainerInnerTopTitle>АКЦИИ</PagesContainerInnerTopTitle>
       </PagesContainerInnerTop>
-      <NavbarContainerLineFirst />
       <ActionWrapper>
         {ActionData.map((item) => (
           <ActionCard

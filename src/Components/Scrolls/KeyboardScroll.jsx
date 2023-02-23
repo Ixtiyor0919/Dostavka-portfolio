@@ -28,7 +28,7 @@ const ScrollTop = (props) => {
             <Box
                 onClick={handleClick}
                 role="presentation"
-                sx={{ position: "fixed", bottom: 50, right: 50, zIndex: 5 }}
+                sx={{ position: "fixed", bottom: 90, right: 60, zIndex: 5 }}
             >
                 {children}
             </Box>

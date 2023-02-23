@@ -1,6 +1,7 @@
+import { Button } from "@mui/material";
 import styled from "styled-components";
-import HomeImg from '../../Assets/Images/HomeImg.png'
-import HomeKafe from '../../Assets/Images/HomeKafe.png'
+import HomeImg from '../../Assets/Images/HomeImg.png';
+import HomeKafe from '../../Assets/Images/HomeKafe.png';
 
 export const HomeMain = styled.div`
     width: 100%;
@@ -11,6 +12,9 @@ export const HomeMain = styled.div`
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    @media (max-width: 600px) {
+        height: 300px;
+    }
 `
 
 export const HomeTitle = styled.h2`
@@ -24,6 +28,9 @@ export const HomeTitle = styled.h2`
     text-align: center;
     color: #FFFFFF;
     transform: rotate(-8.37deg);
+    @media (max-width: 600px) {
+        font-size: 35px;
+    }
 `
 export const MenuWrapper = styled.div`  
     padding: 70px 100px 70px 70px;
@@ -60,21 +67,21 @@ export const MenuDescriptionBoxText =styled.p`
     margin-bottom: 60px;
     color: #CFCFCF;
 `
-export const MenuDescriptionBoxBtn =styled.button`
-    padding: 22px 25px 22px 64px;
-    font-family: 'Proxima Nova';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 16px;
-    color: #FFFFFF;
-    border: none;
-    outline: none;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    cursor: pointer;
+export const MenuDescriptionBoxBtn = styled(Button)`
+    padding: 25px 50px !important;
+    font-family: 'Proxima Nova' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    line-height: 16px !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    outline: none !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
 `
 export const MenuCardsBox = styled.div`
     display: flex;

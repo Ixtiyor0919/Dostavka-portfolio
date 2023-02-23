@@ -26,15 +26,14 @@ export function Contact() {
     <ContactWrapper>
       <MapBox>
         <iframe
-          width="600"
-          height="500"
+          width="100%"
+          height="100%"
           id="gmap_canvas"
           src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
           frameBorder="0"
           scrolling="no"
           marginHeight="0"
           marginWidth="0"
-          style={{ width: "100%", height: "100%" }}
         ></iframe>
       </MapBox>
       <ContactBox>
@@ -91,7 +90,7 @@ export function Contact() {
             <FacebookIcon
               style={{
                 background: "white",
-                fontSize: "17px",
+                fontSize: "20px",
                 color: "#000",
                 borderRadius: "5px",
                 padding: "2px",

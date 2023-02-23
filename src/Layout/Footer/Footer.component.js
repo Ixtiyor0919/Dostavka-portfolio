@@ -1,18 +1,27 @@
 import styled from "styled-components";
+import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const FooterContainer = styled.div `
-    padding: 26px 100px;
+    padding: 25px 100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: linear-gradient(270.7deg, #44403F 0.4%, #211F20 100%);
-    @media (max-width: 768px) {
-        flex-direction: column;
-      }
+    @media (max-width: ${matchMD}px) {
+        padding: 20px 50px;
+    }
+    @media (max-width: ${matchSM}px) {
+        padding: 15px 20px;
+    }
 `
 export const FooterDescription = styled.div `
     width: 20%;
-    margin-right: 90px;
+    @media (max-width: ${matchMD}px) {
+        width: unset;
+        margin-left: 10%;
+        margin-right: unset;
+    }
 `
 export const FooterLogo = styled.img `
     display: block;
@@ -40,9 +49,9 @@ export const PagesBox = styled.div `
     gap: 30px;
     display: flex;
     align-items: center;
-    @media (max-width: 768px) {
+    @media (max-width: ${matchSM}px) {
         display: none;
-      }
+    }
 `
 export const Page = styled.p `
     font-family: 'Gilroy';
@@ -51,4 +60,7 @@ export const Page = styled.p `
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
+    @media (max-width: ${matchMD}px) {
+        font-size: 18px;
+    }
 `

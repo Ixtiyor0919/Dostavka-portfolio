@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import styled from "styled-components";
 
 export const MainCartContainer = styled.div`
@@ -101,18 +102,17 @@ export const MainCartBottom = styled.div`
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     border-radius: 10px;
 `
-export const MainCartBottomBtn = styled.button`
-    padding: 17px 50px;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 10px;
-    color: #FFFFFF;
+export const MainCartBottomBtn = styled(Button)`
+    padding: 17px 50px !important;
+    font-family: 'Gilroy' !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    border-radius: 10px !important;
+    color: #FFFFFF !important;
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
 `
 export const MainCartBottomLeft = styled.div`

@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   HomeCard,
   HomeCardCart,
@@ -9,16 +9,14 @@ import {
   HomeCardWeight,
   HomeInnerBtnBox,
   HomeInnerCard,
-  InnerCardRemove,
-  InnerCardAdd,
   HomeInnerBtn,
   CardImg,
-} from "./DefaultCard.component";
-import { Link } from "react-router-dom";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+} from "./DefaultCard.component"
+import { Link } from "react-router-dom"
+import AddIcon from "@mui/icons-material/Add"
+import RemoveIcon from "@mui/icons-material/Remove"
+import HomeCardImg from "../../Assets/Images/HomeCardImg.png"
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"
 
 export function HomeDefaultCard({ id, title, body, weight, cost }) {
   const { count, setCount } = React.useState(0)
@@ -35,10 +33,7 @@ export function HomeDefaultCard({ id, title, body, weight, cost }) {
   return (
     <HomeCard>
       <Link to="/Single" className="link" style={{ display: "block" }}>
-        <CardImg
-          src={HomeCardImg}
-          alt="HomeCardImage"
-        />
+        <CardImg src={HomeCardImg} alt="HomeCardImage" />
         <HomeCardCount>{countLocal > 0 ? countLocal : 0}</HomeCardCount>
         <HomeInnerCard>
           <HomeCardTitle>{title}</HomeCardTitle>
@@ -48,7 +43,7 @@ export function HomeDefaultCard({ id, title, body, weight, cost }) {
             <HomeCardCost>620 ₽</HomeCardCost>
             <Link to="/MainCart" className="link">
               <HomeCardCart>
-                {cost}
+                В корзину
                 <AddShoppingCartIcon
                   style={{
                     width: "24px",
@@ -61,11 +56,11 @@ export function HomeDefaultCard({ id, title, body, weight, cost }) {
           </HomeInnerBtnBox>
         </HomeInnerCard>
       </Link>
-      <HomeInnerBtn style={{left: '15px'}}>
-        <RemoveIcon onClick={handleClickRemove} sx={{fontSize: '1.8rem'}}/>
+      <HomeInnerBtn style={{ left: "15px" }}>
+        <RemoveIcon onClick={handleClickRemove} sx={{ fontSize: "1.8rem" }} />
       </HomeInnerBtn>
-      <HomeInnerBtn style={{right: '15px'}}>
-        <AddIcon onClick={handleClickAdd} sx={{fontSize: '1.8rem'}}/>
+      <HomeInnerBtn style={{ right: "15px" }}>
+        <AddIcon onClick={handleClickAdd} sx={{ fontSize: "1.8rem" }} />
       </HomeInnerBtn>
     </HomeCard>
   )

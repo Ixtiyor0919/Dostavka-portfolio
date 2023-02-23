@@ -8,24 +8,23 @@ import {
   HeaderBtn,
   HeaderBtnCount,
   HeaderBtnLine,
-  HeaderBtnLink,
   HeaderBtnMedia,
+  HeaderCartIcon,
   HeaderContainer,
   MenuBtn,
   MenuBtnBurger,
-} from "./Header.component"
-import React from "react"
-import { Link } from "react-router-dom"
-import { Box, IconButton } from "@mui/material"
-import { LogoSvgImage } from "../../Assets/Svg/SvgImages"
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined"
-import { NavbarContainerLineFirst } from "../Navbar/NavLink.component"
-import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined"
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined"
+} from "./Header.component";
+import React from "react";
+import { Link } from "react-router-dom";
+import { Box, IconButton } from "@mui/material";
+import { LogoSvgImage } from "../../Assets/Svg/SvgImages";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
+import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 
 export function Header() {
   const [colors, setColor] = React.useState(null)
+  const [searchOpen, setSearchOpen] = React.useState(false)
   const CartLength = localStorage.getItem("CartLength")
   const handleColorToggle = () => {
     setColor((prev) => !prev)
@@ -50,7 +49,13 @@ export function Header() {
           }}
         >
           <AddresInputBox>
-            <IconButton onClick={handleColorToggle} aria-label="location">
+            <IconButton
+              onClick={handleColorToggle}
+              aria-label="location"
+              sx={{
+                color: "#fff",
+              }}
+            >
               <FmdGoodOutlinedIcon
                 sx={{
                   width: "22px",
@@ -95,20 +100,12 @@ export function Header() {
             </ContactBoxInner>
           </ContactBox>
         </Box>
-        <HeaderBtn>
-          <Link to="/MainCart" className="link">
-            <HeaderBtnLink>Корзина</HeaderBtnLink>
-          </Link>
+        <HeaderBtn endIcon={<HeaderCartIcon />} component={Link} to="/MainCart">
+          Корзина
           <HeaderBtnLine />
           <HeaderBtnCount>{CartLength}</HeaderBtnCount>
         </HeaderBtn>
-        <HeaderBtnMedia>
-          <ShoppingCartOutlinedIcon style={{ color: "#fff" }} />
-          <HeaderBtnLine />
-          <HeaderBtnLink>kорзина</HeaderBtnLink>
-        </HeaderBtnMedia>
       </HeaderContainer>
-      <NavbarContainerLineFirst />
     </>
   )
 }
