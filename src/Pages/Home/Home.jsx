@@ -18,7 +18,6 @@ import MenuCardBestCHefs from "../../Assets/Images/MenuCardBestCHefs.svg";
 import MenuCardImgNewProducts from "../../Assets/Images/MenuCardImgNewProducts.svg";
 
 function Home() {
-
   return (
     <>
       <HomeMain>
