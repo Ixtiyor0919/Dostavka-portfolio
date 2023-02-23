@@ -169,8 +169,8 @@ export const SingleFab = styled(Fab)`
     top: 10px;
     left: 25px;
     color: #6F9F76 !important;
-    display: none;
+    display: none !imortant;
     @media (max-width: ${matchSM}px) {
-        display: block;
+        display: block !important;
     }
 `
