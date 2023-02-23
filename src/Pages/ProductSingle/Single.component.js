@@ -31,6 +31,7 @@ export const SingleProduct = styled.div`
 `
 export const SingleProductMain = styled.div`
     display: flex;
+    height: 400px;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
@@ -83,7 +84,7 @@ export const SingleProductWeightMain = styled.p`
     font-size: 14px;
     line-height: 16px;
     color: #FFFFFF;
-    margin-top: 35%;
+    margin-top: 16%;
     margin-bottom: 22px;
     @media (max-width: ${matchSM}px) {
         margin-top: 3%;
@@ -168,4 +169,8 @@ export const SingleFab = styled(Fab)`
     top: 10px;
     left: 25px;
     color: #6F9F76 !important;
+    display: none;
+    @media (max-width: ${matchSM}px) {
+        display: block;
+    }
 `
