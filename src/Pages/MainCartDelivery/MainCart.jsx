@@ -22,10 +22,15 @@ import {
   MainCartContainerTop,
   MainCartPagesLink,
   MainCartPagesLinkBox,
+  ModalIsEmpty,
+  ModalIsEmptyImg,
+  ModalIsEmptyWrapper,
   PagesContainerInnerTop,
-  PagesContainerInnerTopLine,
   PagesContainerInnerTopTitle,
+  StockModalBtn,
+  StockModalTitle,
 } from "./MainCart.component";
+import CartStockImg from "../../Assets/Images/CartStockImg.png";
 
 export function MainCart() {
   const navigate = useNavigate()
@@ -115,7 +120,6 @@ export function MainCart() {
             <MainCartPagesLink>к выбору блюда</MainCartPagesLink>
           </MainCartPagesLinkBox>
           <PagesContainerInnerTop style={{ padding: "unset" }}>
-            <PagesContainerInnerTopLine />
             <PagesContainerInnerTopTitle>КОРЗИНА</PagesContainerInnerTopTitle>
             <MainCartContainerInnerTopText>
               (в корзине {CartData.length} товара)
@@ -146,6 +150,7 @@ export function MainCart() {
           </CartAddWrapperInner>
           <CartAddWrapperLine />
         </CartAddWrapper>
+        
         <MainCartBottom style={{ width: "76%" }}>
           <MainCartBottomLeft>
             <MainCartBottomLeftInner>
@@ -156,7 +161,7 @@ export function MainCart() {
                 500 ₽
               </MainCartBottomLeftInnerTotalValue>
             </MainCartBottomLeftInner>
-            <MainCartBottomLeftInner style={{ margin: "5px 0 10px 0" }}>
+            <MainCartBottomLeftInner>
               <MainCartBottomLeftInnerText>
                 До бесплатной доставки не хватет:
               </MainCartBottomLeftInnerText>
@@ -176,6 +181,14 @@ export function MainCart() {
           </Link>
         </MainCartBottom>
       </MainCartContainer>
+
+      <ModalIsEmptyWrapper>
+      <ModalIsEmpty>
+        <ModalIsEmptyImg src={CartStockImg} />
+        <StockModalTitle>КОРЗИНА ПУСТАЯ</StockModalTitle>
+        <StockModalBtn component={Link} to="/">Посмотреть меню</StockModalBtn>
+      </ModalIsEmpty>
+    </ModalIsEmptyWrapper>
     </>
   )
 }

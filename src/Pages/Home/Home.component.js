@@ -1,9 +1,15 @@
-import { Button } from "@mui/material";
+import {
+    Button
+} from "@mui/material";
 import styled from "styled-components";
 import HomeImg from '../../Assets/Images/HomeImg.png';
 import HomeKafe from '../../Assets/Images/HomeKafe.png';
+import {
+    matchMD,
+    matchSM
+} from "../../Themes/Breakpoints";
 
-export const HomeMain = styled.div`
+export const HomeMain = styled.div `
     width: 100%;
     height: 484px;
     display: flex;
@@ -12,12 +18,12 @@ export const HomeMain = styled.div`
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    @media (max-width: 600px) {
+    @media (max-width: ${matchSM}px) {
         height: 300px;
     }
 `
 
-export const HomeTitle = styled.h2`
+export const HomeTitle = styled.h2 `
     width: 61%;
     height: 146px;
     font-family: 'Zing Rust Demo';
@@ -28,11 +34,11 @@ export const HomeTitle = styled.h2`
     text-align: center;
     color: #FFFFFF;
     transform: rotate(-8.37deg);
-    @media (max-width: 600px) {
+    @media (max-width: ${matchSM}px) {
         font-size: 35px;
     }
 `
-export const MenuWrapper = styled.div`  
+export const MenuWrapper = styled.div `  
     padding: 70px 100px 70px 70px;
     display: flex;
     align-items: center;
@@ -40,37 +46,43 @@ export const MenuWrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    @media (max-width: 768px) {
+    @media (max-width: ${matchMD}px) {
+        padding: 50px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    @media (max-width: ${matchSM}px) {
         display: none;
-      }
+    }
 `
-export const MenuDescriptionBox = styled.div`
+export const MenuDescriptionBox = styled.div `
     width: 100%
 `
-export const MenuDescriptionBoxTitle =styled.h2`
+export const MenuDescriptionBoxTitle = styled.h2 `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 39px;
     text-transform: uppercase;
     color: #FFFFFF;
 `
-export const MenuDescriptionBoxText =styled.p`
+export const MenuDescriptionBoxText = styled.p `
     width: 52%;     
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
     margin-top: 26px;
     margin-bottom: 60px;
     color: #CFCFCF;
+    @media (max-width: ${matchMD}px) {
+        width: unset;
+    }
 `
-export const MenuDescriptionBoxBtn = styled(Button)`
+export const MenuDescriptionBoxBtn = styled(Button)
+`
     padding: 25px 50px !important;
     font-family: 'Proxima Nova' !important;
-    font-style: normal !important;
     font-weight: 700 !important;
     font-size: 13px !important;
     line-height: 16px !important;
@@ -83,13 +95,13 @@ export const MenuDescriptionBoxBtn = styled(Button)`
     border-radius: 10px !important;
     cursor: pointer !important;
 `
-export const MenuCardsBox = styled.div`
+export const MenuCardsBox = styled.div `
     display: flex;
     align-items: center;
     flex-wrap: wrap;    
     gap: 15px;
 `
-export const MenuCardsBoxCard = styled.div`
+export const MenuCardsBoxCard = styled.div `
     // width: 22%;
     padding: 65px 22px 40px 22px;
     text-align: center;
@@ -101,11 +113,10 @@ export const MenuCardsBoxCard = styled.div`
         box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
     }
 `
-export const MenuCardsBoxCardImg = styled.img``
-export const MenuCardsBoxCardTitle = styled.h4`
+export const MenuCardsBoxCardImg = styled.img ``
+export const MenuCardsBoxCardTitle = styled.h4 `
     margin-top: 30px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;

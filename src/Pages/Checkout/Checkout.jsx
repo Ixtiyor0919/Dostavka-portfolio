@@ -20,36 +20,37 @@ import {
   CheckoutWrapperItemPersonCountWrapperValue,
   CheckoutWrapperItemBottom,
   CheckoutWrapperItemBottomCheckbox,
+  MiddleDivider,
+  LabelThird,
 } from "./Checkout.component";
-import { useNavigate } from "react-router-dom";
-import NavLinkList from "../../Components/Navbar/NavLinkList";
-import { useState } from "react";
 import {
   MainCartBottom,
   MainCartBottomBtn,
   MainCartBottomLeftInnerText,
   MainCartBottomLeftInnerValue,
   PagesContainerInnerTop,
-  PagesContainerInnerTopLine,
   PagesContainerInnerTopTitle,
 } from "../MainCartDelivery/MainCart.component";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { useState } from "react";
 import Radio from "@mui/material/Radio";
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import DoneIcon from '@mui/icons-material/Done';
+import { useNavigate } from "react-router-dom";
+import FormLabel from "@mui/material/FormLabel";
+import DoneIcon from "@mui/icons-material/Done";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControl from "@mui/material/FormControl";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import NavLinkList from "../../Components/Navbar/NavLinkList";
+import FormControlLabel from "@mui/material/FormControlLabel";
 export function Checkout() {
   const navigate = useNavigate()
   let [count, setCount] = useState(0)
   localStorage.setItem("PersonCount", count)
-  const [valu, setValu] = useState('female');
-  const [check, setCheck] = useState(false);
+  const [valu, setValu] = useState("female")
+  const [check, setCheck] = useState(false)
 
   const handleChange = (event) => {
-    setValu(event.target.value);
-  };
+    setValu(event.target.value)
+  }
 
   return (
     <>
@@ -69,7 +70,6 @@ export function Checkout() {
             <CheckoutTopLink>в корзину</CheckoutTopLink>
           </CheckoutTopLinkBox>
           <PagesContainerInnerTop>
-            <PagesContainerInnerTopLine />
             <PagesContainerInnerTopTitle>
               Оформление заказа
             </PagesContainerInnerTopTitle>
@@ -96,39 +96,26 @@ export function Checkout() {
         </CheckoutWrapperItem>
         <CheckoutWrapperItem>
           <CheckoutWrapperItemTitle>2. Доставка</CheckoutWrapperItemTitle>
-          <CheckoutWrapperItemForm style={{ display: "grid", gap: "20px" }}>
-            <CheckoutWrapperItemTop style={{ gap: "20px" }}>
-              <CheckoutWrapperItemTopInner style={{ width: "50%" }}>
+          <CheckoutWrapperItemForm>
+            <CheckoutWrapperItemTop>
+              <CheckoutWrapperItemTopInner>
                 <CheckoutWrapperItemRadioInput
                   type="radio"
                   name="inputradio"
                   id="radio1"
                   value="value1"
                 />
-                <CheckoutWrapperItemTopInnerLabel
-                  style={{ padding: "20px 48px", width: "50%" }}
-                  for="radio1"
-                >
+                <CheckoutWrapperItemTopInnerLabel for="radio1">
                   Доставка
                 </CheckoutWrapperItemTopInnerLabel>
-                <hr
-                  style={{
-                    width: "0.7px",
-                    height: "63px",
-                    border: "none",
-                    backgroundColor: "#72a479",
-                  }}
-                />
+                <MiddleDivider />
                 <CheckoutWrapperItemRadioInput
                   type="radio"
                   name="inputradio"
                   id="radio2"
                   value="value2"
                 />
-                <CheckoutWrapperItemTopInnerLabel
-                  style={{ padding: "20px 48px", width: "50%" }}
-                  for="radio2"
-                >
+                <CheckoutWrapperItemTopInnerLabel for="radio2">
                   Самовывоз
                 </CheckoutWrapperItemTopInnerLabel>
               </CheckoutWrapperItemTopInner>
@@ -141,7 +128,7 @@ export function Checkout() {
                     marginRight: "10px",
                   }}
                 />
-                <CheckoutWrapperText style={{ fontWeight: "500" }}>
+                <CheckoutWrapperText>
                   Доставим через 1 час 30 минут
                 </CheckoutWrapperText>
               </CheckoutWrapperItemTopInnerRight>
@@ -195,52 +182,23 @@ export function Checkout() {
                 id="radio3"
                 value="value3"
               />
-              <CheckoutWrapperItemTopInnerLabel
-                style={{ padding: "20px 32px", height: "21px", width: "23%" }}
-                for="radio3"
-              >
-                Оплата онлайн
-              </CheckoutWrapperItemTopInnerLabel>
-              <hr
-                style={{
-                  width: "0.7px",
-                  height: "63px",
-                  border: "none",
-                  backgroundColor: "#72a479",
-                }}
-              />
+              <LabelThird for="radio3">Оплата онлайн</LabelThird>
+              <MiddleDivider />
               <CheckoutWrapperItemRadioInput
                 type="radio"
                 name="inputradio"
                 id="radio4"
                 value="value4"
               />
-              <CheckoutWrapperItemTopInnerLabel
-                style={{ padding: "20px 32px", height: "21px", width: "23%" }}
-                for="radio4"
-              >
-                Курьеру картой
-              </CheckoutWrapperItemTopInnerLabel>
-              <hr
-                style={{
-                  width: "0.7px",
-                  height: "63px",
-                  border: "none",
-                  backgroundColor: "#72a479",
-                }}
-              />
+              <LabelThird for="radio4">Курьеру картой</LabelThird>
+              <MiddleDivider />
               <CheckoutWrapperItemRadioInput
                 type="radio"
                 name="inputradio"
                 id="radio5"
                 value="value5"
               />
-              <CheckoutWrapperItemTopInnerLabel
-                style={{ padding: "20px 32px", height: "21px", width: "20%" }}
-                for="radio5"
-              >
-                Наличными
-              </CheckoutWrapperItemTopInnerLabel>
+              <LabelThird for="radio5">Наличными</LabelThird>
             </CheckoutWrapperItemTopInner>
             <CheckoutWrapperItemInput
               style={{ width: "19%" }}
@@ -264,30 +222,17 @@ export function Checkout() {
                   id="radio6"
                   value="value6"
                 />
-                <CheckoutWrapperItemTopInnerLabel
-                  style={{ padding: "20px 17px", width: "43%" }}
-                  for="radio6"
-                >
+                <CheckoutWrapperItemTopInnerLabel for="radio6">
                   В ближайшее время
                 </CheckoutWrapperItemTopInnerLabel>
-                <hr
-                  style={{
-                    width: "0.7px",
-                    height: "63px",
-                    border: "none",
-                    backgroundColor: "#72a479",
-                  }}
-                />
+                <MiddleDivider />
                 <CheckoutWrapperItemRadioInput
                   type="radio"
                   name="inputradio"
                   id="radio7"
                   value="value7"
                 />
-                <CheckoutWrapperItemTopInnerLabel
-                  style={{ padding: "20px 44px", width: "30%" }}
-                  for="radio7"
-                >
+                <CheckoutWrapperItemTopInnerLabel for="radio7">
                   Ко времениy
                 </CheckoutWrapperItemTopInnerLabel>
               </CheckoutWrapperItemTopInner>
@@ -297,10 +242,8 @@ export function Checkout() {
                 style={{ width: "27%" }}
               />
             </CheckoutWrapperItemTop>
-            <CheckoutWrapperItemPersonCountWrapper style={{ width: "36%" }}>
-              <CheckoutWrapperItemPersonCountWrapperText
-                style={{ marginRight: "auto" }}
-              >
+            <CheckoutWrapperItemPersonCountWrapper>
+              <CheckoutWrapperItemPersonCountWrapperText>
                 Кол-во персон
               </CheckoutWrapperItemPersonCountWrapperText>
               <i
@@ -308,9 +251,7 @@ export function Checkout() {
                 onClick={() => setCount((count -= 1))}
                 style={{ color: "white", fontSize: "20px", cursor: " pointer" }}
               ></i>
-              <CheckoutWrapperItemPersonCountWrapperValue
-                style={{ margin: "0 12px" }}
-              >
+              <CheckoutWrapperItemPersonCountWrapperValue>
                 {count}
               </CheckoutWrapperItemPersonCountWrapperValue>
               <i
@@ -321,8 +262,11 @@ export function Checkout() {
             </CheckoutWrapperItemPersonCountWrapper>
             <CheckoutWrapperItemBottom className="checkout_item_bottom">
               <FormControl className="form_control">
-                <FormLabel id="demo-controlled-radio-buttons-group" className="form_radio_label">
-                Хотите мы позвоним?
+                <FormLabel
+                  id="demo-controlled-radio-buttons-group"
+                  className="form_radio_label"
+                >
+                  Хотите мы позвоним?
                 </FormLabel>
                 <RadioGroup
                   aria-labelledby="demo-controlled-radio-buttons-group"
@@ -332,16 +276,16 @@ export function Checkout() {
                 >
                   <FormControlLabel
                     value="doNotCallBack"
-                    control={<Radio color='success' className="radio_color"/>}
+                    control={<Radio color="success" className="radio_color" />}
                     label="Не перезванивать"
                     className="radio_label"
                   />
                   <FormControlLabel
                     value="operatorCall"
-                    control={<Radio color='success' className="radio_color"/>}
+                    control={<Radio color="success" className="radio_color" />}
                     className="radio_label"
                     label="Потребуется звонок оператора"
-                    style={{fontSize: '10px'}}
+                    style={{ fontSize: "10px" }}
                   />
                 </RadioGroup>
               </FormControl>
@@ -349,11 +293,15 @@ export function Checkout() {
           </CheckoutWrapperItemForm>
         </CheckoutWrapperItem>
         <MainCartBottom style={{ padding: "17px 20px 17px 30px" }}>
-          <CheckoutWrapperItemBottomCheckbox className="checkout_item_checkbox" onClick={() => setCheck(!check)} >
+          <CheckoutWrapperItemBottomCheckbox
+            className="checkout_item_checkbox"
+            onClick={() => setCheck(!check)}
+          >
             {check ? (
-               <DoneIcon style={{color: '#72A479', height: '22px'}} />
-            ): ''
-          }
+              <DoneIcon style={{ color: "#72A479", height: "22px" }} />
+            ) : (
+              ""
+            )}
           </CheckoutWrapperItemBottomCheckbox>
           <MainCartBottomLeftInnerText
             style={{ fontSize: "13px", lineHeight: "15px" }}
@@ -361,9 +309,7 @@ export function Checkout() {
             Я согласен на обработку моих перс. данных в соответствии с
           </MainCartBottomLeftInnerText>
           <MainCartBottomLeftInnerValue>Условиями</MainCartBottomLeftInnerValue>
-          <MainCartBottomBtn>
-            Оформить заказ
-          </MainCartBottomBtn>
+          <MainCartBottomBtn>Оформить заказ</MainCartBottomBtn>
         </MainCartBottom>
       </CheckoutWrapper>
     </>

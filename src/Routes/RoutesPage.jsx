@@ -1,12 +1,11 @@
-import { Route, Routes } from "react-router-dom"
-import Home from "../Pages/Home/Home"
-import Single from "../Pages/ProductSingle/Single"
-import { MainCart } from "../Pages/MainCartDelivery/MainCart"
-import { Checkout } from "../Pages/Checkout/Checkout"
-import DeliveryConditions from "../Pages/DeliveryAndContacts/DeliveryConditions"
-import Action from "../Pages/Action/Action"
-import StockModal from "../Pages/Stock/Stock"
-import LayoutMenu from "../Layout/Layout"
+import Home from "../Pages/Home/Home";
+import LayoutMenu from "../Layout/Layout";
+import Action from "../Pages/Action/Action";
+import { Route, Routes } from "react-router-dom";
+import Single from "../Pages/ProductSingle/Single";
+import { Checkout } from "../Pages/Checkout/Checkout";
+import { MainCart } from "../Pages/MainCartDelivery/MainCart";
+import DeliveryConditions from "../Pages/DeliveryAndContacts/DeliveryConditions";
 
 const RoutesPage = () => {
   return (
@@ -19,7 +18,6 @@ const RoutesPage = () => {
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/DeliveryConditions" element={<DeliveryConditions />} />
           <Route path="/Action" element={<Action />} />
-          <Route path="/StockModal" element={<StockModal />} />
         </Route>
         {/* <Route path="login" element={<Login />} />
         <Route path="*" element={<Error404 />} />

@@ -1,6 +1,7 @@
-import { Button, Fab } from "@mui/material";
 import styled from "styled-components";
+import { Button, Fab } from "@mui/material";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 export const SinglePagesLinkBox = styled.div`
     display: flex;
@@ -19,7 +20,7 @@ export const SinglePagesLink = styled.p`
     color: #FFFFFF;
 `
 export const SingleProduct = styled.div`
-    width: 100%;
+    max-width: 1440px;
     padding: 40px 80px 50px 80px; 
     margin: 0 auto;
     @media (max-width: ${matchMD}px) {
@@ -43,7 +44,7 @@ export const SingleProductMain = styled.div`
 `
 export const SingleProductImg = styled.img`
     width: 50%;
-    height: 416px;
+    height: 100%;
     @media (max-width: ${matchSM}px) {
         width: 100%;
         height: 50%;
@@ -69,6 +70,14 @@ export const SingleProductTitle = styled.h3`
     font-size: 25px;
     line-height: 30px;
     color: #FFFFFF;
+    @media (max-width: ${matchMD}px) {
+        font-size: 22px;
+        line-height: 27px;
+    }
+    @media (max-width: ${matchSM}px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
 `
 export const SingleProductDescription = styled.p`
     width: 95%;
@@ -77,6 +86,14 @@ export const SingleProductDescription = styled.p`
     font-size: 14px;
     line-height: 16px;
     color: #CFCFCF;
+    @media (max-width: ${matchMD}px) {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    @media (max-width: ${matchSM}px) {
+        font-size: 12px;
+        line-height: 14px;
+    }
 `
 export const SingleProductWeightMain = styled.p`
     font-family: 'Gilroy';
@@ -84,8 +101,11 @@ export const SingleProductWeightMain = styled.p`
     font-size: 14px;
     line-height: 16px;
     color: #FFFFFF;
-    margin-top: 16%;
-    margin-bottom: 22px;
+    margin-top: 28%;
+    margin-bottom: 22px; 
+    @media (max-width: ${matchMD}px) {
+        margin-top: 26%;
+    }
     @media (max-width: ${matchSM}px) {
         margin-top: 3%;
     }
@@ -150,7 +170,10 @@ export const SingleProductInnerLine = styled.hr`
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 13.5%;
+    bottom: 10%;
+    @media (max-width: ${matchSM}px) {
+        bottom: 13.5%;
+    }
 `
 export const SingleProductInnerValuesBox = styled.div`
     display: flex;
@@ -166,11 +189,17 @@ export const SingleProductContentValues = styled.p`
 `
 export const SingleFab = styled(Fab)`
     position: absolute !important;
-    top: 10px;
+    top: 20px;
     left: 25px;
-    color: #6F9F76 !important;
+    color: #969696 !important;
     display: none !important;
+    z-index: 10 !important;
     @media (max-width: ${matchSM}px) {
-        display: block !important;
+        display: flex !important;
+        align-items: center;
     }
+`
+export const KeyboardLeftIcon = styled(KeyboardArrowLeftIcon) `
+    font-size: 1.8rem;
+    color: #6F9F76;
 `

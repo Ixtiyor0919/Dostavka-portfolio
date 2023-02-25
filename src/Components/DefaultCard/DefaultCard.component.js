@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const HomeCardCount = styled.span `
     width: 50px;
     height: 50px;
     border-radius: 50%;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
@@ -28,21 +28,21 @@ export const CardImg = styled.img `
 `
 export const HomeCardCost = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
     margin-right: auto;
+    transition: all .3s;
 `
 export const HomeCardCart = styled.p `
     padding: 14px 16px 14px 19px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    display: ${props => props.visibility ? 'none': 'block'};
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     border-radius: 10px;
     display: flex;
@@ -69,6 +69,7 @@ export const HomeInnerBtn = styled.div `
     color: #ffffff;
     display: none;
     justify-content: center;
+    display: ${props => props.visibility ? 'block': 'none'};
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     :active {
         background: linear-gradient(114.93deg,#7ad788 5.11%,#8ed498 94%);
@@ -91,20 +92,20 @@ export const HomeCard = styled.div `
         ${HomeCardCount} {
             display: flex;
         }
-        ${HomeInnerCard} {
-            justify-content: space-between;
-        }
-        ${HomeCardCost} {
-            position: absolute;
-            bottom: -22%;
-            left: 43%;
-        }
-        ${HomeInnerBtn} {
-            display: flex;
-        }
-        ${HomeCardCart} {
-            display: none;
-        }
+        // ${HomeInnerCard} {
+        //     justify-content: space-between;
+        // }
+        // ${HomeCardCost} {
+        //     position: absolute;
+        //     bottom: -22%;
+        //     left: 43%;
+        // }
+        // ${HomeInnerBtn} {
+        //     display: flex;
+        // }
+        // ${HomeCardCart} {
+        //     display: none;
+        // }
         transform: scale(1.020, 1.015);
     }
 `
@@ -115,7 +116,6 @@ export const HomeInnerBtnBox = styled.div `
 `
 export const HomeCardTitle = styled.h3 `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 22px;
     line-height: 27px;
@@ -123,18 +123,28 @@ export const HomeCardTitle = styled.h3 `
     display: inline-block;
     margin-right: 52%;
     margin-bottom: 5px;
+    @media (max-width: ${matchMD}px) {
+        font-size: 21px;
+        line-height: 26px;
+    }    
+    @media (max-width: ${matchSM}px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
 `
 export const HomeCardDescription = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 17px;
-    color: #CFCFCF;
+    color: #CFCFCF;   
+    @media (max-width: ${matchSM}px) {
+        font-size: 12px;
+        line-height: 17px;
+    }
 `
 export const HomeCardWeight = styled.span `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;

@@ -1,10 +1,17 @@
 import { Button } from "@mui/material";
 import styled from "styled-components";
+import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const MainCartContainer = styled.div`
     max-width: 1100px;
     padding: 34px 0 90px 0;
     margin: 0 auto;
+    @media (max-width: ${matchMD}px) {
+        padding: 25px 30px 60px 30px;
+    }
+    @media (max-width: ${matchMD}px) {
+        padding: 20px;
+    }
 `
 export const MainCartContainerTop = styled.div`
     margin-bottom: 75px;
@@ -17,7 +24,6 @@ export const MainCartPagesLinkBox = styled.div`
 `
 export const MainCartPagesLink = styled.p`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
@@ -25,10 +31,17 @@ export const MainCartPagesLink = styled.p`
 `
 export const PagesContainerInnerTop = styled.div`
     max-width: 1440px;
-    padding: 50px 86px 40px 86px;
+    padding: 50px 86px;
     margin: 0 auto;
     display: flex;
     align-items: center;
+    @media (max-width: ${matchMD}px) {
+        padding: 40px 50px;
+    }
+    @media (max-width: ${matchSM}px) {
+        padding: 40px 20px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
 `
 export const PagesContainerInnerTopLine = styled.hr`
     width: 33px;
@@ -41,17 +54,25 @@ export const PagesContainerInnerTopLine = styled.hr`
 `
 export const PagesContainerInnerTopTitle = styled.h2`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 39px;
     text-transform: uppercase;
     color: #FFFFFF;
     margin-right: 15px;
+    padding-left: 15px;
+    border-left: 4px solid #618967;
+    @media (max-width: ${matchMD}px) {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    @media (max-width: ${matchSM}px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
 `
 export const MainCartContainerInnerTopText = styled.p`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 500;
     font-size: 15px;
     line-height: 18px;
@@ -72,11 +93,13 @@ export const CartAddWrapperInner = styled.div`
     overflow: hidden;
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     margin-bottom: 30px;
+    @media (max-width: ${matchSM}px) {
+        flex-direction: column;
+    }
 `
 export const CartAddWrapperTitle = styled.h2`
     margin-bottom: 30px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 25px;
     line-height: 30px;
@@ -101,6 +124,9 @@ export const MainCartBottom = styled.div`
     justify-content: space-between;
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     border-radius: 10px;
+    @media (max-width: ${matchSM}px) {
+        flex-direction: column;
+    }
 `
 export const MainCartBottomBtn = styled(Button)`
     padding: 17px 50px !important;
@@ -118,13 +144,13 @@ export const MainCartBottomBtn = styled(Button)`
 export const MainCartBottomLeft = styled.div`
 `
 export const MainCartBottomLeftInner = styled.div`
+    margin: 5px 0 10px 0;
     display: flex;
     align-items: center;
 `
 export const MainCartBottomLeftInnerTotalText = styled.p`
     margin-right: 5px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
@@ -132,7 +158,6 @@ export const MainCartBottomLeftInnerTotalText = styled.p`
 `
 export const MainCartBottomLeftInnerTotalValue = styled.span`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 25px;
     line-height: 25px;
@@ -141,7 +166,6 @@ export const MainCartBottomLeftInnerTotalValue = styled.span`
 export const MainCartBottomLeftInnerText = styled.p`
     margin-right: 5px;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
@@ -150,9 +174,65 @@ export const MainCartBottomLeftInnerText = styled.p`
 `
 export const MainCartBottomLeftInnerValue = styled.p`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 500;
     font-size: 15px;
     line-height: 18px;
     color: #72A479;
+`
+
+export const ModalIsEmptyWrapper = styled.div`
+    width: 100%;
+    height: 70vh;
+    background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
+    opacity: 0.5
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+`
+export const ModalIsEmpty = styled.div`
+    width: 40%;
+    height: 70%;
+    padding: 50px;
+    gap: 15px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 15px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: ${matchMD}px) {
+        width: 50%;
+        height: 70%;
+    }
+    @media (max-width: ${matchSM}px) {
+        width: 92%;
+        height: 70%;
+    }
+`
+export const ModalIsEmptyImg = styled.img`
+    width: 180px;
+    height: 160px;
+`
+
+export const StockModalTitle = styled.h2`
+    font-family: 'Gilroy';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+`
+export const StockModalBtn = styled(Button)`
+    padding: 17px 34px !important;
+    font-family: 'Gilroy' !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    color: #FFFFFF !important;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px !important;
+    border: none !important;
+    outline: none !important;
 `

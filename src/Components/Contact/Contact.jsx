@@ -6,6 +6,7 @@ import {
   ContactBoxCardInnerSubtitle,
   ContactBoxCardInnerText,
   ContactBoxLine,
+  ContactBoxMediaBtn,
   ContactBoxTitle,
   ContactNumber,
   ContactNumberBox,
@@ -16,10 +17,10 @@ import {
   Sogials,
   SogialsInner,
   SogialsTitle,
-} from "./Contact.component"
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined"
-import MailOutlineIcon from "@mui/icons-material/MailOutline"
-import FacebookIcon from "@mui/icons-material/Facebook"
+} from "./Contact.component";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 
 export function Contact() {
   return (
@@ -68,17 +69,17 @@ export function Contact() {
           />
           <ContactBoxCardInner>
             <ContactBoxCardInnerSubtitle>
-              Наш адрес:
+              Наша почта:
             </ContactBoxCardInnerSubtitle>
             <ContactBoxCardInnerText>
-              МО, городской округ Красногорск, село Ильинкое, Экспериментальная
-              улица, 10
+              auto.wash@gmail.com
             </ContactBoxCardInnerText>
           </ContactBoxCardInner>
         </ContactBoxCard>
-        <ContactBoxLine></ContactBoxLine>
+        <ContactBoxLine />
         <ContactNumberBox>
           <ContactBoxBtn>ЗАБРОНИРОВАТЬ СТОЛ</ContactBoxBtn>
+          <ContactBoxMediaBtn>ПРОЛОЖИТЬ МАРШРУТ</ContactBoxMediaBtn>
           <ContactNumberBoxInner>
             <ContactNumber>+7 (917) 510-57-59</ContactNumber>
             <ContactNumberText>Звоните или оставляйте заявку</ContactNumberText>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const HomeCardsWrapper = styled.div`
     width: 100%;
@@ -20,15 +21,22 @@ export const HomeCardsInnerTopLine = styled.hr`
 `
 export const HomeCardsInnerTopTitle = styled.h2`
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 39px;
     text-transform: uppercase;
     color: #FFFFFF;
+    @media (max-width: ${matchMD}px) {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    @media (max-width: ${matchSM}px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
 `
 export const HomeCardsInnerSlider = styled.div`
-    position: relative;
+    // position: relative; 
     // padding-top: 50px;
     // gap: 20px;
     // display: flex;

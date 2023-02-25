@@ -1,4 +1,3 @@
-import { HomeDefaultCard } from "../DefaultCard/DefaultCard"
 import {
   HomeCardsInnerSlider,
   HomeCardsInnerTop,
@@ -7,11 +6,13 @@ import {
   HomeCardsWrapper,
   HomeLine,
 } from "./HomeCards.component"
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "./Slider.css"
+import "swiper/css";
+import "./Slider.css";
+import "swiper/css/pagination";
 import "swiper/css/free-mode";
-import { FreeMode } from "swiper";
+import { FreeMode, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { HomeDefaultCard } from "../DefaultCard/DefaultCard";
 export function HomeCards(props) {
   const homeData = [
     {
@@ -99,21 +100,21 @@ export function HomeCards(props) {
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
-            centeredSlides={true}
+            // centeredSlides={true}
             className="mySwiper"
-            modules={FreeMode}
+            modules={[FreeMode, Pagination]}
             breakpoints={{
-              640: {
-                slidesPerView: 2,
+              400: {
+                slidesPerView: 1,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 4,
+                slidesPerView: 2,
                 spaceBetween: 40,
               },
               1024: {
                 slidesPerView: 5,
-                spaceBetween: 50,
+                spaceBetween: 30,
               },
             }}
           >

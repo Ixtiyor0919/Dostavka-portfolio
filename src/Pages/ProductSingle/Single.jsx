@@ -17,49 +17,48 @@ import {
   SingleProductWeightMain,
   SingleProductMain,
   SingleFab,
-} from "./Single.component";
-import { Box } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
-import SingleImg from "../../Assets/Images/SingleImg.png";
-import { Contact } from "../../Components/Contact/Contact";
-import NavLinkList from "../../Components/Navbar/NavLinkList";
-import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+  KeyboardLeftIcon,
+} from "./Single.component"
+import { Box } from "@mui/material"
+import { Link, useNavigate } from "react-router-dom"
+import SingleImg from "../../Assets/Images/SingleImg.png"
+import { Contact } from "../../Components/Contact/Contact"
+import NavLinkList from "../../Components/Navbar/NavLinkList"
+import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards"
 
 function Single() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <>
       <NavLinkList />
       <SingleProduct>
-          <SinglePagesLinkBox onClick={() => navigate(-1)}>
-            <i
-              class="bx bx-chevron-left"
-              style={{
-                width: "26px",
-                height: "26px",
-                background:
-                  "linear-gradient(114.93deg, #618967 5.11%, #72A479 94%",
-                color: "#fff",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "25px",
-              }}
-            ></i>
-            <SinglePagesLink>Вернуться назад</SinglePagesLink>
-          </SinglePagesLinkBox>
+        <SinglePagesLinkBox onClick={() => navigate(-1)}>
+          <i
+            class="bx bx-chevron-left"
+            style={{
+              width: "26px",
+              height: "26px",
+              background:
+                "linear-gradient(114.93deg, #618967 5.11%, #72A479 94%",
+              color: "#fff",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "25px",
+            }}
+          ></i>
+          <SinglePagesLink>Вернуться назад</SinglePagesLink>
+        </SinglePagesLinkBox>
         <SingleProductMain>
-          <SingleFab onClick={() => navigate(-1)} size="small" aria-label="back">
-            <KeyboardArrowLeftIcon sx={{ fontSize: "1.8rem" }} />
+          <SingleFab
+            onClick={() => navigate(-1)}
+            size="small"
+            aria-label="back"
+          >
+            <KeyboardLeftIcon />
           </SingleFab>
-          <SingleProductImg
-            src={SingleImg}
-            alt="singl-product"
-            width="50%"
-            height="100%"
-          />
+          <SingleProductImg src={SingleImg} alt="single product" />
           <SingleProductData>
             <Box>
               <SingleProductTitle>Ягненок</SingleProductTitle>
@@ -110,8 +109,8 @@ function Single() {
                 <SingleProductContentNames>Вес</SingleProductContentNames>
                 <SingleProductContentValues>210 г</SingleProductContentValues>
               </Box>
+              <SingleProductInnerLine />
             </SingleProductInnerNamesBox>
-            <SingleProductInnerLine />
           </SingleProductData>
         </SingleProductMain>
       </SingleProduct>

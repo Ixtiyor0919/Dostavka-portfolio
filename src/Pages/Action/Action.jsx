@@ -3,7 +3,6 @@ import { Contact } from "../../Components/Contact/Contact";
 import { ActionWrapper } from "./Action.component";
 import {
   PagesContainerInnerTop,
-  PagesContainerInnerTopLine,
   PagesContainerInnerTopTitle,
 } from "../MainCartDelivery/MainCart.component";
 import ActionCard from "../../Components/ActionCard/ActionCard";
@@ -82,7 +81,6 @@ function Action() {
     <>
       <NavLinkList />
       <PagesContainerInnerTop>
-        <PagesContainerInnerTopLine />
         <PagesContainerInnerTopTitle>АКЦИИ</PagesContainerInnerTopTitle>
       </PagesContainerInnerTop>
       <ActionWrapper>

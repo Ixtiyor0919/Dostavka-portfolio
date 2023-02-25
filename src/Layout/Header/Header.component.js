@@ -78,11 +78,13 @@ export const AddresInputBox = styled.div `
     align-items: center;
     background: #504B4A;
     border-radius: 10px;
+    @media (max-width: ${matchMD}px) {
+        width: 70%;
+    }
 `
 export const AddresInput = styled.input `
     width: 80%;
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
@@ -111,7 +113,6 @@ export const ContactBoxInner = styled.div `
 `
 export const ContactTitle = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 20px;
@@ -119,7 +120,6 @@ export const ContactTitle = styled.p `
 `
 export const ContactNumber = styled.p `
     font-family: 'Gilroy';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 25px;
@@ -135,14 +135,10 @@ export const HeaderBtn = styled(Button)
     color: #FFFFFF !important;
     padding: 16px 13px 16px 24px !important;
     display: flex !important;
-    align-items: center !important;
-    justify-content: space-around !important;
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     border-radius: 10px !important;
     user-select: none !important;
     @media (max-width: ${matchSM}px) {
-        font-family: 'Gilroy' !important;
-        font-weight: 600 !important;
         font-size: 12px !important;
         line-height: 14px !important;
         padding: 8px !important;
