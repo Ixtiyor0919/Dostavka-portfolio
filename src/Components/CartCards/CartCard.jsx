@@ -6,17 +6,23 @@ import {
   CartCardWrapperInner,
   CartCardDescriptionBox,
   CartCardWrapperInnerImg,
-  CartCardWrapperInnerLine,
   CartCardDescriptionBoxText,
   CartCardDescriptionBoxTitle,
+  CartButtonsBox,
 } from "./CartCard.component";
 import { useState } from "react";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Icons } from "../CartIcons/Icons";
+import AddIcon from '@mui/icons-material/Add';
+import ClearIcon from '@mui/icons-material/Clear';
+import RemoveIcon from '@mui/icons-material/Remove';
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
-import { Box } from "@mui/material";
+import { GradientLine } from "../../Components/HomeCardsWrapper/HomeCards.component";
 
 export function CartCard(props) {
+  const theme = useTheme()
   let [count, setCount] = useState(0)
-
+  const matchDownMD = useMediaQuery(theme.breakpoints.down("md"))
   const handleLocalCart = () => {
     setCount((count -= 1))
     localStorage.setItem(`${props.title}`, count)
@@ -41,65 +47,20 @@ export function CartCard(props) {
               {props.body}
             </CartCardDescriptionBoxText>
           </CartCardDescriptionBox>
-          <Box>
-          <CartCardValueBox>
-            <i
-              class="bx bxs-minus-circle"
-              style={{
-                width: "26px",
-                height: "26px",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "33px",
-                cursor: "pointer",
-                color: "#72A479",
-                background: "#fff",
-              }}
-              onClick={handleLocalCart}
-            ></i>
-            <CartCardValue>{countPilus}</CartCardValue>
-            <i
-              class="bx bxs-plus-circle"
-              style={{
-                width: "26px",
-                height: "26px",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "33px",
-                color: "#72A479",
-                cursor: "pointer",
-                background: "#fff",
-              }}
-              onClick={handleLocalCartCircle}
-            ></i>
-          </CartCardValueBox>
-          <CartCarCostBox>
-            <CartCardValue>1640 ₽</CartCardValue>
-            <i
-              class="bx bxs-x-circle"
-              style={{
-                width: "26px",
-                height: "26px",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "33px",
-                cursor: "pointer",
-                color: "#72A479",
-                background: "#fff",
-                // marginLeft: "72px",
-              }}
-            ></i>
-          </CartCarCostBox>
-          </Box>
+          <CartButtonsBox>
+            <CartCardValueBox>
+              <Icons Icon={RemoveIcon} width={!matchDownMD ? 30 : 22} height={!matchDownMD ? 30 : 22} size={!matchDownMD ? 20 : 18} onClick={handleLocalCart} />
+              <CartCardValue>{countPilus}</CartCardValue>
+              <Icons Icon={AddIcon} width={!matchDownMD ? 30 : 22} height={!matchDownMD ? 30 : 22} size={!matchDownMD ? 20 : 18} onClick={handleLocalCartCircle} />
+            </CartCardValueBox>
+            <CartCarCostBox>
+              <CartCardValue>1640 ₽</CartCardValue>
+              <Icons Icon={ClearIcon} width={!matchDownMD ? 30 : 22} height={!matchDownMD ? 30 : 22} size={!matchDownMD ? 20 : 16} />
+            </CartCarCostBox>
+          </CartButtonsBox>
         </BoxData>
       </CartCardWrapperInner>
-      <CartCardWrapperInnerLine />
+      <GradientLine />
     </>
   )
 }

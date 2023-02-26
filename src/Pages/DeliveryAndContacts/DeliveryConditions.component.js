@@ -10,12 +10,12 @@ import styled from "styled-components";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const ConditionsWrapper = styled.div `
-    padding: 0 100px 50px 100px;
+    padding: 50px 100px;
     @media (max-width: ${matchMD}px) {
-        padding: 0 50px 25px 50px;
+        padding: 50px 25px;
     }
     @media (max-width: ${matchSM}px) {
-        padding: 0 20px 20px 20px;
+        padding: 20px;
     }
 `
 export const ConditionsWrapperContent = styled.div `

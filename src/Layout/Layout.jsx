@@ -15,6 +15,7 @@ export default function LayoutMenu(props) {
         <Header />
       </Toolbar>
       <Box component="main" sx={{marginTop: "2.6%"}}>
+      <CssBaseline />
         <ScrollTop {...props}>
           <Fab
             sx={{

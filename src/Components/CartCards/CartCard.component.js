@@ -3,6 +3,7 @@ import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const CartCardWrapperInner = styled.div `
     padding: 20px 40px 20px 20px;
+    gap: 40px;
     display: flex; 
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     align-items: center;
@@ -19,7 +20,9 @@ export const CartCardWrapperInnerImg = styled.img `
 `
 export const CartCardDescriptionBox = styled.div `
     width: 30%;
-    // margin-right: 20%;
+    @media (max-width: ${matchMD}px) {
+        width: 40%;
+    }
     @media (max-width: ${matchSM}px) {
         width: unset;
     }
@@ -52,38 +55,48 @@ export const CartCardDescriptionBoxText = styled.div `
 export const CartCardValueBox = styled.div `
     display: flex; 
     align-items: center;
+    gap: 20px;
 `
-export const CartCardValue = styled.div `
+export const CartCardValue = styled.span `
     font-family: 'Greenwich';
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
     color: #FFFFFF;
-    margin: 0 14px;
-    @media (max-width: ${matchMD}px) {
-        font-size: 15px;
+    @media (max-width: ${matchSM}px) {
+        font-size: 17px;
         line-height: 20px;
     }
-    @media (max-width: ${matchSM}px) {
-        font-size: 12px;
-        line-height: 15px;
-    }
 `
-export const CartCarCostBox = styled.div `
+export const CartButtonsBox = styled.div `
+    width: 50%;
     display: flex; 
     align-items: center;
     justify-content: space-between;
+    @media (max-width: ${matchSM}px) {
+        width: unset;
+        flex-direction: column;
+        align-items: end;
+        gap: 10px;
+    }
 `
-export const CartCardWrapperInnerLine = styled.hr `
-    width: 100%;
-    height: 2px;
-    border: none;
-    background-color: #44403F;
+export const CartCarCostBox = styled.div `
+    width: 50%;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: ${matchSM}px) {
+        width: unset;
+    }
 `
-
 export const BoxData = styled.div`
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: ${matchMD}px) {
+        width: 80%;
+    }
     @media (max-width: ${matchSM}px) {
         gap: 10px;
+        flex-direction: column;
     }
 `

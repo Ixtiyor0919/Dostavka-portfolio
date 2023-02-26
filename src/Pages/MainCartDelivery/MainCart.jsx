@@ -1,13 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import { CartAdd } from "../../Components/CartAddComponent/CartAdd";
-import { CartCard } from "../../Components/CartCards/CartCard";
-import NavLinkList from "../../Components/Navbar/NavLinkList";
 import {
   CartAddWrapper,
   CartAddWrapperInner,
   CartAddWrapperInnerLine,
   CartAddWrapperLine,
-  CartAddWrapperTitle,
   CartCardWrapper,
   MainCartBottom,
   MainCartBottomBtn,
@@ -18,40 +13,40 @@ import {
   MainCartBottomLeftInnerTotalValue,
   MainCartBottomLeftInnerValue,
   MainCartContainer,
-  MainCartContainerInnerTopText,
   MainCartContainerTop,
-  MainCartPagesLink,
-  MainCartPagesLinkBox,
   ModalIsEmpty,
   ModalIsEmptyImg,
   ModalIsEmptyWrapper,
-  PagesContainerInnerTop,
-  PagesContainerInnerTopTitle,
   StockModalBtn,
   StockModalTitle,
 } from "./MainCart.component";
+import { Link } from "react-router-dom";
+import { Subtitle } from "../../Components/Subtitle/Subtitle";
+import NavLinkList from "../../Components/Navbar/NavLinkList";
+import { CartCard } from "../../Components/CartCards/CartCard";
 import CartStockImg from "../../Assets/Images/CartStockImg.png";
+import { CartAdd } from "../../Components/CartAddComponent/CartAdd";
+import { BackComponent } from "../../Components/BackButton/BackButton";
 
 export function MainCart() {
-  const navigate = useNavigate()
 
   const CartData = [
     {
       id: 1,
       title:
-        "sunt aut facere repellat provhident occaecati excepturi optio reprehenderit",
+        "sunt aut facere repellat",
       body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet arichitecto",
     },
     {
       id: 2,
-      title: "qui est esgse",
+      title: "qui est esgse rerum",
       body: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciebndis\nqui aperiam non debitis possimus qui neque nisi nulla",
     },
-    {
-      id: 3,
-      title: "ea molestias queasi exercitationem repellat qui ipsa sit aut",
-      body: "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odiso et labore et velit aut",
-    },
+    // {
+    //   id: 3,
+    //   title: "ea molestias queasi exercitationem repellat qui ipsa sit aut",
+    //   body: "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odiso et labore et velit aut",
+    // },
     // {
     //     "id": 4,
     //     "title": "sunt jaut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -106,25 +101,8 @@ export function MainCart() {
       <NavLinkList />
       <MainCartContainer>
         <MainCartContainerTop>
-          <MainCartPagesLinkBox onClick={() => navigate(-1)}>
-            <i
-              class="bx bx-chevron-left"
-              style={{
-                width: "26px",
-                height: "26px",
-                color: "#fff",
-                fontSize: "30px",
-                marginLeft: "5px",
-              }}
-            ></i>
-            <MainCartPagesLink>к выбору блюда</MainCartPagesLink>
-          </MainCartPagesLinkBox>
-          <PagesContainerInnerTop style={{ padding: "unset" }}>
-            <PagesContainerInnerTopTitle>КОРЗИНА</PagesContainerInnerTopTitle>
-            <MainCartContainerInnerTopText>
-              (в корзине {CartData.length} товара)
-            </MainCartContainerInnerTopText>
-          </PagesContainerInnerTop>
+          <BackComponent text="к выбору блюда" />
+          <Subtitle title="КОРЗИНА" pL="0" textLength={`в корзине ${CartData.length} товара`} />
         </MainCartContainerTop>
         <CartCardWrapper>
           {CartData.map((item) => (
@@ -137,8 +115,9 @@ export function MainCart() {
             />
           ))}
         </CartCardWrapper>
+
         <CartAddWrapper>
-          <CartAddWrapperTitle>ДОБАВИТЬ К ЗАКАЗУ</CartAddWrapperTitle>
+        <Subtitle title="ДОБАВИТЬ К ЗАКАЗУ" pL="0" />
           <CartAddWrapperInner>
             <CartAdd title={"КВАС АНАНАСОВЫЙ"} />
             <CartAddWrapperInnerLine />
@@ -151,7 +130,7 @@ export function MainCart() {
           <CartAddWrapperLine />
         </CartAddWrapper>
         
-        <MainCartBottom style={{ width: "76%" }}>
+        <MainCartBottom>
           <MainCartBottomLeft>
             <MainCartBottomLeftInner>
               <MainCartBottomLeftInnerTotalText>

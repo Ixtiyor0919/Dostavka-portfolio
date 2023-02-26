@@ -21,6 +21,7 @@ import { LogoSvgImage } from "../../Assets/Svg/SvgImages";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
+import { ColorMode } from "../../Modules/Settings/DarkAndLightMode/DarkAndLight";
 
 export function Header() {
   const [colors, setColor] = React.useState(null)
@@ -36,6 +37,7 @@ export function Header() {
         {/* <MenuBtn>
           <MenuBtnBurger />
         </MenuBtn> */}
+        {/* <ColorMode /> */}
         <Link to="/" className="link">
           <LogoSvgImage width="55" height="45" />
         </Link>

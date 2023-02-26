@@ -1,8 +1,4 @@
 import {
-  PagesContainerInnerTop,
-  PagesContainerInnerTopTitle,
-} from "../MainCartDelivery/MainCart.component";
-import {
   AccordionHeaderText,
   ConditionsAccordion,
   ConditionsAccordionButton,
@@ -19,16 +15,15 @@ import {
 } from "./DeliveryConditions.component";
 import { Typography, Box } from "@mui/material";
 import NavLinkList from "../../Components/Navbar/NavLinkList";
+import { Subtitle } from "../../Components/Subtitle/Subtitle";
+import { GradientLine } from "../../Components/HomeCardsWrapper/HomeCards.component";
 
 function DeliveryConditions() {
   return (
     <>
       <NavLinkList />
-      <PagesContainerInnerTop>
-        <PagesContainerInnerTopTitle>
-          Условия доставки
-        </PagesContainerInnerTopTitle>
-      </PagesContainerInnerTop>
+      <Subtitle title="Условия доставки" />
+        <GradientLine />
       <ConditionsWrapper>
         <ConditionsWrapperContent>
           <ConditionsAccordion allowToggle>

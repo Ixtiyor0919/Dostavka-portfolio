@@ -3,16 +3,15 @@ import { Box, Tabs } from "@mui/material";
 import { NavbarContainer, TabsItem } from "./NavLink.component";
 
 function NavLinkList() {
-  const [value, setValue] = useState("first")
+  const [value, setValue] = useState("first");
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue)
   }
 
   return (
     <>
       <NavbarContainer>
-        <Box sx={{ width: "100%" }}>
           <Tabs
             value={value}
             onChange={handleChange}
@@ -29,10 +28,9 @@ function NavLinkList() {
             <TabsItem value="seventh" label="Фирменные блюда" />
             <TabsItem value="eightth" label="Напитки" />
           </Tabs>
-        </Box>
       </NavbarContainer>
     </>
   )
 }
 
-export default NavLinkList
+export default NavLinkList;

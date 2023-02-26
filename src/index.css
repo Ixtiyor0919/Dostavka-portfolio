@@ -95,12 +95,3 @@ code {
 .radio_color {
   color: #72A479 !important;
 }
-
-.radio_label > .css-ahj2mt-MuiTypography-root {
-  font-family: 'Gilroy' !important; 
-  font-style: normal !important; 
-  font-weight: 500 !important; 
-  font-size: 13px !important;  
-  line-height: 15px !important;
-  color: #FFFFFF !important;
-}

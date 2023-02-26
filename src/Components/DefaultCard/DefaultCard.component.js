@@ -33,7 +33,7 @@ export const HomeCardCost = styled.p `
     line-height: 24px;
     color: #FFFFFF;
     margin-right: auto;
-    transition: all .3s;
+    transition: all 0.3s ease-in-out;
 `
 export const HomeCardCart = styled.p `
     padding: 14px 16px 14px 19px;

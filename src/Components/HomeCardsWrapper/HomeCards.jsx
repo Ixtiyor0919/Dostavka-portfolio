@@ -1,18 +1,18 @@
 import {
+  GradientLine,
   HomeCardsInnerSlider,
   HomeCardsInnerTop,
-  HomeCardsInnerTopLine,
   HomeCardsInnerTopTitle,
   HomeCardsWrapper,
   HomeLine,
 } from "./HomeCards.component"
-import "swiper/css";
-import "./Slider.css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-import { FreeMode, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { HomeDefaultCard } from "../DefaultCard/DefaultCard";
+import "swiper/css"
+import "./Slider.css"
+import "swiper/css/pagination"
+import "swiper/css/free-mode"
+import { FreeMode, Pagination } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { HomeDefaultCard } from "../DefaultCard/DefaultCard"
 export function HomeCards(props) {
   const homeData = [
     {
@@ -90,10 +90,10 @@ export function HomeCards(props) {
 
   return (
     <>
-      <HomeLine />
+      {/* <HomeLine /> */}
+      <GradientLine />
       <HomeCardsWrapper>
         <HomeCardsInnerTop>
-          <HomeCardsInnerTopLine />
           <HomeCardsInnerTopTitle>{props.data}</HomeCardsInnerTopTitle>
         </HomeCardsInnerTop>
         <HomeCardsInnerSlider>
@@ -119,7 +119,7 @@ export function HomeCards(props) {
             }}
           >
             {homeData.map((item) => (
-              <SwiperSlide>
+              <SwiperSlide key={item.id}>
                 <HomeDefaultCard
                   key={item.id}
                   id={item.id}

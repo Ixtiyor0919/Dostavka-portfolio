@@ -1,21 +1,26 @@
-import { Button } from "@mui/material";
 import styled from "styled-components";
+import { Button } from "@mui/material";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const MainCartContainer = styled.div`
     max-width: 1100px;
-    padding: 34px 0 90px 0;
+    padding: 35px 0 100px 0;
     margin: 0 auto;
     @media (max-width: ${matchMD}px) {
-        padding: 25px 30px 60px 30px;
+        padding: 25px 50px 60px 50px;
     }
-    @media (max-width: ${matchMD}px) {
+    @media (max-width: ${matchSM}px) {
         padding: 20px;
     }
 `
 export const MainCartContainerTop = styled.div`
-    margin-bottom: 75px;
-    margin-left: 12%;
+    margin-left: 20%;
+    @media (max-width: ${matchMD}px) {
+        margin-left: 10%;
+    }
+    @media (max-width: ${matchSM}px) {
+        margin: unset;
+    }
 `
 export const MainCartPagesLinkBox = styled.div`
     display: flex;
@@ -28,48 +33,6 @@ export const MainCartPagesLink = styled.p`
     font-size: 16px;
     line-height: 19px;
     color: #FFFFFF;
-`
-export const PagesContainerInnerTop = styled.div`
-    max-width: 1440px;
-    padding: 50px 86px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    @media (max-width: ${matchMD}px) {
-        padding: 40px 50px;
-    }
-    @media (max-width: ${matchSM}px) {
-        padding: 40px 20px;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    }
-`
-export const PagesContainerInnerTopLine = styled.hr`
-    width: 33px;
-    height: 4px;
-    display: flex;
-    align-items: center;
-    border: none;
-    background: #618967;
-    transform: rotate(90deg);   
-`
-export const PagesContainerInnerTopTitle = styled.h2`
-    font-family: 'Gilroy';
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 39px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    margin-right: 15px;
-    padding-left: 15px;
-    border-left: 4px solid #618967;
-    @media (max-width: ${matchMD}px) {
-        font-size: 25px;
-        line-height: 30px;
-    }
-    @media (max-width: ${matchSM}px) {
-        font-size: 20px;
-        line-height: 24px;
-    }
 `
 export const MainCartContainerInnerTopText = styled.p`
     font-family: 'Gilroy';
@@ -117,13 +80,15 @@ export const CartAddWrapperInnerLine = styled.hr`
     background-color: #44403F;
 `
 export const MainCartBottom = styled.div`
-    padding: 20px 28px 10px 38px;
+    max-width: 700px;
+    padding: 20px 25px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     border-radius: 10px;
+    gap: 10px;
     @media (max-width: ${matchSM}px) {
         flex-direction: column;
     }
@@ -144,12 +109,11 @@ export const MainCartBottomBtn = styled(Button)`
 export const MainCartBottomLeft = styled.div`
 `
 export const MainCartBottomLeftInner = styled.div`
-    margin: 5px 0 10px 0;
     display: flex;
     align-items: center;
+    gap: 10px;
 `
 export const MainCartBottomLeftInnerTotalText = styled.p`
-    margin-right: 5px;
     font-family: 'Gilroy';
     font-weight: 500;
     font-size: 18px;
@@ -171,6 +135,7 @@ export const MainCartBottomLeftInnerText = styled.p`
     line-height: 14px;
     text-align: center;
     color: #FFFFFF;
+    display: inline;
 `
 export const MainCartBottomLeftInnerValue = styled.p`
     font-family: 'Gilroy';
@@ -178,6 +143,7 @@ export const MainCartBottomLeftInnerValue = styled.p`
     font-size: 15px;
     line-height: 18px;
     color: #72A479;
+    display: inline;
 `
 
 export const ModalIsEmptyWrapper = styled.div`

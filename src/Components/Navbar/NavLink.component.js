@@ -23,7 +23,7 @@ export const NavbarContainer = styled.nav `
         top: 12.9%;
     }
     @media (max-width: ${matchSM}px) {
-        padding: 0 20px;
+        padding: unset;
         top: 11.4%;
     }
 `

@@ -6,34 +6,22 @@ import {
   CartAddCardText,
   CartAddCardTitle,
 } from "./CartAdd.component";
+import { Box } from "@mui/material" ;
+import { Icons } from "../CartIcons/Icons";
+import AddIcon from '@mui/icons-material/Add';
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
-import { Box } from "@mui/material";
 
 export function CartAdd(props) {
   return (
     <CartAddCard>
-        <CartAddCardImg src={HomeCardImg} width={210} height={120} />
-        <CartAddCardTitle>{props.title}</CartAddCardTitle>
+      <CartAddCardImg src={HomeCardImg} width={210} height={120} />
+      <CartAddCardTitle>{props.title}</CartAddCardTitle>
       <Box>
-      <CartAddCardInner>
-        <CartAddCardText>Добавить</CartAddCardText>
-        <i
-          class="bx bxs-plus-circle"
-          style={{
-            width: "18px",
-            height: "18px",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "24px",
-            color: "#72A479",
-            cursor: "pointer",
-            background: "#fff",
-          }}
-        ></i>
-      </CartAddCardInner>
-      <CartAddCardCost>1640 ₽</CartAddCardCost>
+        <CartAddCardInner>
+          <CartAddCardText>Добавить</CartAddCardText>
+          <Icons Icon={AddIcon} size={18} width={25} height={25} />
+        </CartAddCardInner>
+        <CartAddCardCost>1640 ₽</CartAddCardCost>
       </Box>
     </CartAddCard>
   )

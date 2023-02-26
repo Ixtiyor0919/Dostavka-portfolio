@@ -1,14 +1,12 @@
-import NavLinkList from "../../Components/Navbar/NavLinkList";
-import { Contact } from "../../Components/Contact/Contact";
 import { ActionWrapper } from "./Action.component";
-import {
-  PagesContainerInnerTop,
-  PagesContainerInnerTopTitle,
-} from "../MainCartDelivery/MainCart.component";
+import { Contact } from "../../Components/Contact/Contact";
+import NavLinkList from "../../Components/Navbar/NavLinkList";
+import { Subtitle } from "../../Components/Subtitle/Subtitle";
 import ActionCard from "../../Components/ActionCard/ActionCard";
 import ActionImgFirst from "../../Assets/Images/ActionImgFirst.png";
-import ActionImgSecond from "../../Assets/Images/ActionImgSecond.png";
 import ActionImgThird from "../../Assets/Images/ActionImgThird.png";
+import ActionImgSecond from "../../Assets/Images/ActionImgSecond.png";
+import { GradientLine } from "../../Components/HomeCardsWrapper/HomeCards.component";
 
 function Action() {
   const ActionData = [
@@ -80,9 +78,8 @@ function Action() {
   return (
     <>
       <NavLinkList />
-      <PagesContainerInnerTop>
-        <PagesContainerInnerTopTitle>АКЦИИ</PagesContainerInnerTopTitle>
-      </PagesContainerInnerTop>
+      <Subtitle title="АКЦИИ" />
+      <GradientLine />
       <ActionWrapper>
         {ActionData.map((item) => (
           <ActionCard

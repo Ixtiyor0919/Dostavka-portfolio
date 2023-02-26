@@ -3,14 +3,14 @@ import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 
 export const ActionWrapper = styled.div`
-    padding: 0 40px 60px 40px;
+    padding: 40px;
     row-gap: 50px;
     column-gap: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     @media (max-width: ${matchMD}px) {
-        padding: 0 30px 40px 30px;
+        padding: 30px;
         row-gap: 40px;
         column-gap: 20px;
     }

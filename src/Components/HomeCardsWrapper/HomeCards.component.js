@@ -10,14 +10,11 @@ export const HomeCardsInnerTop = styled.div`
     display: flex;
     align-items: center;
 `
-export const HomeCardsInnerTopLine = styled.hr`
-    width: 33px;
-    height: 4px;
-    display: flex;
-    align-items: center;
-    border: none;
-    background: #618967;
-    transform: rotate(90deg);   
+export const GradientLine = styled.hr`
+    height: 2px;
+    border: 0;
+    // background-image: linear-gradient(90deg,rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100.87%);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100.87%);
 `
 export const HomeCardsInnerTopTitle = styled.h2`
     font-family: 'Gilroy';
@@ -26,6 +23,8 @@ export const HomeCardsInnerTopTitle = styled.h2`
     line-height: 39px;
     text-transform: uppercase;
     color: #FFFFFF;
+    padding-left: 15px;
+    border-left: 4px solid #618967;
     @media (max-width: ${matchMD}px) {
         font-size: 25px;
         line-height: 30px;

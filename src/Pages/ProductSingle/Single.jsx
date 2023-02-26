@@ -1,5 +1,4 @@
 import {
-  SinglePagesLink,
   SinglePagesLinkBox,
   SingleProductData,
   SingleProduct,
@@ -25,6 +24,7 @@ import SingleImg from "../../Assets/Images/SingleImg.png"
 import { Contact } from "../../Components/Contact/Contact"
 import NavLinkList from "../../Components/Navbar/NavLinkList"
 import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards"
+import { BackComponent } from "../../Components/BackButton/BackButton"
 
 function Single() {
   const navigate = useNavigate()
@@ -32,23 +32,8 @@ function Single() {
     <>
       <NavLinkList />
       <SingleProduct>
-        <SinglePagesLinkBox onClick={() => navigate(-1)}>
-          <i
-            class="bx bx-chevron-left"
-            style={{
-              width: "26px",
-              height: "26px",
-              background:
-                "linear-gradient(114.93deg, #618967 5.11%, #72A479 94%",
-              color: "#fff",
-              borderRadius: "50%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "25px",
-            }}
-          ></i>
-          <SinglePagesLink>Вернуться назад</SinglePagesLink>
+        <SinglePagesLinkBox>
+          <BackComponent text="Вернуться назад" styled />
         </SinglePagesLinkBox>
         <SingleProductMain>
           <SingleFab

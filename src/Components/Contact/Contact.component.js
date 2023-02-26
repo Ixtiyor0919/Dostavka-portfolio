@@ -26,29 +26,28 @@ export const MapBox = styled.div `
 `
 export const ContactBox = styled.div `
     width: 40%;
-    height: 70%;
-    padding: 24px 50px;
+    padding: 25px 35px;
     position: absolute;
     left: 100px;
     bottom: 40px;
+    gap: 20px;
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
     background: #2E2B2C;
     box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.15);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     @media (max-width: ${matchMD}px) {
-        height: 70%;
         left: 50px;
         bottom: 50px;
         padding: 20px 35px;
     }
     @media (max-width: ${matchSM}px) {
-        width: 90%;
-        height: 60%;
+        width: unset;
         left: 20px;
         top: 20px;
-        padding: 20px;
+        right: 20px;
+        bottom: unset;
+        padding: 15px;
         gap: 10px;
     }
 `
@@ -66,10 +65,9 @@ export const ContactBoxTitle = styled.h3 `
     }
 `
 export const ContactBoxLine = styled.hr `
-    height: 8px;
+    height: 2px;
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 48.33%, rgba(255, 255, 255, 0) 100.87%);
     border: 0;
-    height: 1px;
 `
 export const ContactBoxCard = styled.div `
     display: flex;

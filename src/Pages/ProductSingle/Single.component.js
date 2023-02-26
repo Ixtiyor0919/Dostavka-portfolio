@@ -11,14 +11,6 @@ export const SinglePagesLinkBox = styled.div`
         display: none;
     }
 `
-export const SinglePagesLink = styled.p`
-    margin-left: 10px;
-    font-family: 'Gilroy';
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    color: #FFFFFF;
-`
 export const SingleProduct = styled.div`
     max-width: 1440px;
     padding: 40px 80px 50px 80px; 
