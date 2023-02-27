@@ -87,7 +87,7 @@ export const CartCarCostBox = styled.div `
     justify-content: space-between;
     @media (max-width: ${matchSM}px) {
         width: unset;
-        gap: 20px;
+        gap: 10px;
     }
 `
 export const BoxData = styled.div`
