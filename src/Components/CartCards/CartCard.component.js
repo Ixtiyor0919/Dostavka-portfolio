@@ -56,6 +56,9 @@ export const CartCardValueBox = styled.div `
     display: flex; 
     align-items: center;
     gap: 20px;
+    @media (max-width: ${matchSM}px) {
+        gap: 10px;
+    }
 `
 export const CartCardValue = styled.span `
     font-family: 'Greenwich';
