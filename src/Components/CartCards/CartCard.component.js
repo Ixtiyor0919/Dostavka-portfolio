@@ -49,7 +49,7 @@ export const CartCardDescriptionBoxText = styled.div `
     line-height: 14px;
     color: #A6A7AB;
     @media (max-width: ${matchSM}px) {
-        display: none;
+        // display: none;
     }
 `
 export const CartCardValueBox = styled.div `
@@ -75,7 +75,7 @@ export const CartButtonsBox = styled.div `
     justify-content: space-between;
     @media (max-width: ${matchSM}px) {
         width: unset;
-        flex-direction: column;
+        // flex-direction: column;
         align-items: end;
         gap: 10px;
     }
@@ -87,6 +87,7 @@ export const CartCarCostBox = styled.div `
     justify-content: space-between;
     @media (max-width: ${matchSM}px) {
         width: unset;
+        gap: 20px;
     }
 `
 export const BoxData = styled.div`
@@ -98,5 +99,6 @@ export const BoxData = styled.div`
     @media (max-width: ${matchSM}px) {
         gap: 10px;
         flex-direction: column;
+        align-self: stretch;
     }
 `
