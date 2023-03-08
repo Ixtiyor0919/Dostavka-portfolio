@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { Box, Tabs } from "@mui/material";
+import { Tabs } from "@mui/material";
+import { useSelector } from "react-redux";
 import { NavbarContainer, TabsItem } from "./NavLink.component";
 
 function NavLinkList() {
-  const [value, setValue] = useState("first");
-
+  const [value, setValue] = useState(0);
   const handleChange = (newValue) => {
     setValue(newValue)
   }
+  let search = useSelector((state) => state.searchReducer.search);
 
   return (
     <>
-      <NavbarContainer>
+      <NavbarContainer searchOpen={search}>
           <Tabs
             value={value}
             onChange={handleChange}
@@ -19,14 +20,14 @@ function NavLinkList() {
             scrollButtons="auto"
             aria-label="scrollable auto tabs example"
           >
-            <TabsItem value="first" label="Холодные закуски" />
-            <TabsItem value="second" label="Горячие закуски" />
-            <TabsItem value="third" label="Мясные блюда" />
-            <TabsItem value="fouth" label="Супы" />
-            <TabsItem value="fifth" label="Рыбные блюда" />
-            <TabsItem value="sixth" label="Гриль меню" />
-            <TabsItem value="seventh" label="Фирменные блюда" />
-            <TabsItem value="eightth" label="Напитки" />
+            <TabsItem value={0} label="Холодные закуски" />
+            <TabsItem value={1} label="Горячие закуски" />
+            <TabsItem value={2} label="Мясные блюда" />
+            <TabsItem value={3} label="Супы" />
+            <TabsItem value={4} label="Рыбные блюда" />
+            <TabsItem value={5} label="Гриль меню" />
+            <TabsItem value={6} label="Фирменные блюда" />
+            <TabsItem value={7} label="Напитки" />
           </Tabs>
       </NavbarContainer>
     </>

@@ -26,6 +26,7 @@ import {
   CheckoutBottom,
   CheckoutBottomLink,
   CheckoutBottomInner,
+  CheckoutWrapperItemArea,
 } from "./Checkout.component";
 import {
   MainCartBottomBtn,
@@ -39,7 +40,7 @@ import CheckMark from "../../Assets/Images/CheckMark.png";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import NavLinkList from "../../Components/Navbar/NavLinkList";
-import { Subtitle } from "../../Components/Subtitle/Subtitle";
+import { Subtitle } from "../../Components/PublicSubtitle/Subtitle";
 import { BackComponent } from "../../Components/BackButton/BackButton";
 
 export function Checkout() {
@@ -97,7 +98,6 @@ export function Checkout() {
                   <CheckoutWrapperItemTopInnerLabel for="radio1">
                     Доставка
                   </CheckoutWrapperItemTopInnerLabel>
-                  {/* <MiddleDivider /> */}
                   <CheckoutWrapperItemRadioInput
                     type="radio"
                     name="inputradio"
@@ -132,7 +132,7 @@ export function Checkout() {
                   style={{ width: "55%" }}
                 />
                 <CheckoutWrapperItemInput
-                  type="text"
+                  type="number"
                   placeholder="Номер дома*"
                   style={{ width: "23%" }}
                 />
@@ -142,19 +142,18 @@ export function Checkout() {
                   style={{ width: "30%" }}
                 />
                 <CheckoutWrapperItemInput
-                  type="text"
+                  type="number"
                   placeholder="Подъезд"
                   style={{ width: "23%" }}
                 />
                 <CheckoutWrapperItemInput
-                  type="text"
+                  type="number"
                   placeholder="Этаж"
                   style={{ width: "23%" }}
                 />
-                <CheckoutWrapperItemInput
-                  style={{ width: "80%" }}
+                <CheckoutWrapperItemArea
                   type="text"
-                  placeholder="Комментарий"
+                  placeholder="Комментарий..."
                 />
               </CheckoutWrapperItemInner>
             </CheckoutWrapperItemForm>

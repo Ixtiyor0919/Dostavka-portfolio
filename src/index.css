@@ -95,3 +95,10 @@ code {
 .radio_color {
   color: #72A479 !important;
 }
+.MuiIconButton-sizeMedium {
+  color: #FFFFFF !important;
+}
+.css-sox5kk-MuiBackdrop-root {
+  backdrop-filter: brightness(0.5);
+  background-color: rgb(83 83 83 / 80%);
+}

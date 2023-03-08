@@ -10,12 +10,12 @@ import {
   MenuDescriptionBoxBtn,
   MenuDescriptionBoxText,
   MenuDescriptionBoxTitle,
-} from "./Home.component";
-import { Contact } from "../../Components/Contact/Contact";
-import NavLinkList from "../../Components/Navbar/NavLinkList";
-import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards"; 
-import MenuCardBestCHefs from "../../Assets/Images/MenuCardBestCHefs.svg";
-import MenuCardImgNewProducts from "../../Assets/Images/MenuCardImgNewProducts.svg";
+} from "./Home.component"
+import { Contact } from "../../Components/Contact/Contact"
+import NavLinkList from "../../Components/Navbar/NavLinkList"
+import { HomeCards } from "../../Components/HomeCardsWrapper/HomeCards"
+import MenuCardBestCHefs from "../../Assets/Images/MenuCardBestCHefs.svg"
+import MenuCardImgNewProducts from "../../Assets/Images/MenuCardImgNewProducts.svg"
 
 function Home() {
   return (

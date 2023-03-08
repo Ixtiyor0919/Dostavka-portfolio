@@ -1,16 +1,16 @@
 import React from "react";
 import {
+  CardImg,
   HomeCard,
   HomeCardCart,
   HomeCardCost,
+  HomeInnerBtn,
   HomeCardCount,
-  HomeCardDescription,
+  HomeInnerCard,
   HomeCardTitle,
   HomeCardWeight,
   HomeInnerBtnBox,
-  HomeInnerCard,
-  HomeInnerBtn,
-  CardImg,
+  HomeCardDescription,
 } from "./DefaultCard.component";
 import { Link } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
@@ -18,15 +18,15 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-export function HomeDefaultCard({ id, title, body, weight, cost }) {
+export function HomeDefaultCard({ id, title, body, weight, cost, click }) {
   const [ count, setCount ] = React.useState(0)
   const [ toggle, setToggle ] = React.useState(false)
   const handleClickRemove = () => {
-    setCount((count -= 1))
+    setCount(count - 1)
     localStorage.setItem(`${title}`, count)
   }
   const handleClickAdd = () => {
-    setCount((count += 1))
+    setCount(count + 1)
     localStorage.setItem(`${title}`, count)
   }
   const handleHoverBtn= () => {
@@ -34,8 +34,8 @@ export function HomeDefaultCard({ id, title, body, weight, cost }) {
   }
   const countLocal = localStorage.getItem(`${title}`, count)
   return (
-    <HomeCard>
-      {/* <Link to="/Single" className="link" style={{ display: "block" }}> */}
+    <HomeCard onClick={click}>
+      <Link to="/Single" className="link" style={{ display: "block" }}>
         <CardImg src={HomeCardImg} alt="HomeCardImage" />
         <HomeCardCount onClick={handleHoverBtn}>{countLocal > 0 ? countLocal : 0}</HomeCardCount>
         <HomeInnerCard>
@@ -58,7 +58,7 @@ export function HomeDefaultCard({ id, title, body, weight, cost }) {
             </Link>
           </HomeInnerBtnBox>
         </HomeInnerCard>
-      {/* </Link> */}
+      </Link>
       <HomeInnerBtn style={{ left: "15px" }}>
         <RemoveIcon onClick={handleClickRemove} sx={{ fontSize: "1.8rem" }} />
       </HomeInnerBtn>

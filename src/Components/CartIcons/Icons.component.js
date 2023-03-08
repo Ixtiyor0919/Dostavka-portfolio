@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { IconButton } from "@mui/material";
+import { matchSM } from "../../Themes/Breakpoints";
 
-export const CartIcon = styled(IconButton)`
+export const CartIcon = styled.span`
     display: flex;
     border-radius: 50%;
     align-items: center;
@@ -14,5 +15,11 @@ export const CartIcon = styled(IconButton)`
     }
     :hover {
         background-color: rgb(114, 164, 121);
+    }
+`
+export const Button = styled(IconButton)`
+    padding: 6px;
+    @media (max-width: ${matchSM}px) {
+        padding: 4px;
     }
 `

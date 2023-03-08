@@ -10,6 +10,8 @@ import {
   ContactBoxLine,
   ContactWrapper,
   ContactBoxTitle,
+  ContactMailIcon,
+  ContactLocalIcon,
   ContactNumberBox,
   ContactNumberText,
   ContactBoxMediaBtn,
@@ -19,8 +21,6 @@ import {
   ContactBoxCardInnerSubtitle,
 } from "./Contact.component";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 
 export function Contact() {
   return (
@@ -41,13 +41,7 @@ export function Contact() {
         <ContactBoxTitle>КОНТАКТЫ</ContactBoxTitle>
         <ContactBoxLine></ContactBoxLine>
         <ContactBoxCard>
-          <FmdGoodOutlinedIcon
-            sx={{
-              color: "#6D9C74",
-              width: "20px",
-              height: "20px",
-            }}
-          />
+          <ContactLocalIcon />
           <ContactBoxCardInner>
             <ContactBoxCardInnerSubtitle>
               Наш адрес:
@@ -59,14 +53,7 @@ export function Contact() {
           </ContactBoxCardInner>
         </ContactBoxCard>
         <ContactBoxCard>
-          <MailOutlineIcon
-            sx={{
-              color: "#6D9C74",
-              background: "transparent",
-              width: "20px",
-              height: "20px",
-            }}
-          />
+          <ContactMailIcon />
           <ContactBoxCardInner>
             <ContactBoxCardInnerSubtitle>
               Наша почта:

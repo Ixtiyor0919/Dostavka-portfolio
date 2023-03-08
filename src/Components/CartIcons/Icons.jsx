@@ -1,12 +1,14 @@
-import { CartIcon } from "./Icons.component";
+import { Button, CartIcon } from "./Icons.component";
 
 export const Icons = ({ Icon, size, width, height, onClick }) => {
   return (
-    <CartIcon
-      sx={{ width: `${width}px`, height: `${height}px` }}
-      onClick={onClick}
-    >
-      <Icon sx={{ fontSize: `${size}px` }} />
-    </CartIcon>
+    <Button>
+      <CartIcon
+        style={{ width: `${width}px`, height: `${height}px` }}
+        onClick={onClick}
+      >
+        <Icon sx={{ fontSize: `${size}px` }} />
+      </CartIcon>
+    </Button>
   )
 }

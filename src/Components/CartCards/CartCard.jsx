@@ -1,6 +1,7 @@
 import {
   BoxData,
   CartCardValue,
+  CartButtonsBox,
   CartCarCostBox,
   CartCardValueBox,
   CartCardWrapperInner,
@@ -8,16 +9,16 @@ import {
   CartCardWrapperInnerImg,
   CartCardDescriptionBoxText,
   CartCardDescriptionBoxTitle,
-  CartButtonsBox,
 } from "./CartCard.component";
 import { useState } from "react";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { Icons } from "../CartIcons/Icons";
-import AddIcon from '@mui/icons-material/Add';
-import ClearIcon from '@mui/icons-material/Clear';
-import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from "@mui/icons-material/Add";
+import ClearIcon from "@mui/icons-material/Clear";
+import RemoveIcon from "@mui/icons-material/Remove";
+import { useMediaQuery, useTheme } from "@mui/material";
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
-import { GradientLine } from "../../Components/HomeCardsWrapper/HomeCards.component";
+import { GradientLine } from "../HomeCardsWrapper/HomeCards.component";
+import { CartAddWrapperInnerLine } from "../../Pages/MainCartDelivery/MainCart.component";
 
 export function CartCard(props) {
   const theme = useTheme()
@@ -37,7 +38,7 @@ export function CartCard(props) {
   return (
     <>
       <CartCardWrapperInner>
-        <CartCardWrapperInnerImg src={HomeCardImg} width={120} height={90} />
+        <CartCardWrapperInnerImg src={HomeCardImg} />
         <BoxData>
           <CartCardDescriptionBox>
             <CartCardDescriptionBoxTitle>
@@ -49,13 +50,30 @@ export function CartCard(props) {
           </CartCardDescriptionBox>
           <CartButtonsBox>
             <CartCardValueBox>
-              <Icons Icon={RemoveIcon} width={!matchDownMD ? 30 : 22} height={!matchDownMD ? 30 : 22} size={!matchDownMD ? 20 : 18} onClick={handleLocalCart} />
+              <Icons
+                Icon={RemoveIcon}
+                width={!matchDownMD ? 30 : 22}
+                height={!matchDownMD ? 30 : 22}
+                size={!matchDownMD ? 20 : 18}
+                onClick={handleLocalCart}
+              />
               <CartCardValue>{countPilus}</CartCardValue>
-              <Icons Icon={AddIcon} width={!matchDownMD ? 30 : 22} height={!matchDownMD ? 30 : 22} size={!matchDownMD ? 20 : 18} onClick={handleLocalCartCircle} />
+              <Icons
+                Icon={AddIcon}
+                width={!matchDownMD ? 30 : 22}
+                height={!matchDownMD ? 30 : 22}
+                size={!matchDownMD ? 20 : 18}
+                onClick={handleLocalCartCircle}
+              />
             </CartCardValueBox>
             <CartCarCostBox>
               <CartCardValue>1640 ₽</CartCardValue>
-              <Icons Icon={ClearIcon} width={!matchDownMD ? 30 : 22} height={!matchDownMD ? 30 : 22} size={!matchDownMD ? 20 : 16} />
+              <Icons
+                Icon={ClearIcon}
+                width={!matchDownMD ? 30 : 22}
+                height={!matchDownMD ? 30 : 22}
+                size={!matchDownMD ? 20 : 16}
+              />
             </CartCarCostBox>
           </CartButtonsBox>
         </BoxData>

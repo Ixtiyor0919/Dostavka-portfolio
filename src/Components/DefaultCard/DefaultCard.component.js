@@ -11,7 +11,6 @@ export const HomeCardCount = styled.span `
     line-height: 24px;
     color: #FFFFFF;
     background: #79B382;
-    display: flex;
     align-items: center;
     justify-content: center;
     display: none;
@@ -23,7 +22,7 @@ export const HomeCardCount = styled.span `
 export const CardImg = styled.img `
     width: 325px;
     height: 230px;
-    border-topleft-radius: 10px;
+    border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 `
 export const HomeCardCost = styled.p `
@@ -42,7 +41,6 @@ export const HomeCardCart = styled.p `
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
-    display: ${props => props.visibility ? 'none': 'block'};
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     border-radius: 10px;
     display: flex;
@@ -57,6 +55,7 @@ export const HomeInnerCard = styled.div `
     padding: 14px 16px 18px 16px;
     border-radius: 10px;
     position: relative;
+    transition: all 0.3s ease-in-out;
 `
 export const HomeInnerBtn = styled.div `
     width: 60px;
@@ -69,7 +68,6 @@ export const HomeInnerBtn = styled.div `
     color: #ffffff;
     display: none;
     justify-content: center;
-    display: ${props => props.visibility ? 'block': 'none'};
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     :active {
         background: linear-gradient(114.93deg,#7ad788 5.11%,#8ed498 94%);
@@ -106,7 +104,7 @@ export const HomeCard = styled.div `
         // ${HomeCardCart} {
         //     display: none;
         // }
-        transform: scale(1.020, 1.015);
+        // transform: scale(1.020, 1.015);
     }
 `
 export const HomeInnerBtnBox = styled.div `

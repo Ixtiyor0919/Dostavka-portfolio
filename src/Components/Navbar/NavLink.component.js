@@ -8,7 +8,7 @@ export const NavbarContainer = styled.nav `
     display: flex;
     align-items: center;
     position: sticky;
-    top: 13.9%;
+    top: 104px;
     left: 0;
     right: 0;
     z-index: 80;
@@ -20,11 +20,11 @@ export const NavbarContainer = styled.nav `
     background: linear-gradient(180deg, #211f2000 0%, #44403F 100%);
     @media (max-width: ${matchMD}px) {
         padding: 0 50px;
-        top: 12.9%;
+        top: 110px;
     }
     @media (max-width: ${matchSM}px) {
         padding: unset;
-        top: 11.4%;
+        top: ${props => props.searchOpen ? "150px" : "85px"};
     }
 `
 export const TabsItem = styled(Tab)`

@@ -70,11 +70,33 @@ padding: 20px 0 20px 20px;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    border: none;
     outline: none;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: transparent;
     color: #FFFFFF;
+    // appearance: none;
+    ::placeholder {
+        color: #FFFFFF;
+    }
+    @media (max-width: ${matchSM}px) {
+        width: 100% !important;
+    }
+`
+export const CheckoutWrapperItemArea= styled.textarea `
+    width: 80%;
+    height: 100px;
+    padding: 20px 0 20px 20px;
+    border-radius: 10px;
+    font-family: 'Gilroy';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: #FFFFFF;
+    appearance: none;
+    resize: none;
     ::placeholder {
         color: #FFFFFF;
     }
@@ -228,13 +250,14 @@ export const CheckoutWrapperItemBottom = styled.div `
     gap: 10px;
 `
 export const CheckoutWrapperItemBottomCheckbox = styled.span `
-    width: 25px;
+    min-width: 20px;
     height: 20px;
     background: #fff;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     user-select: none;
     text-align: center;
+    cursor: pointer;
 `
 export const MiddleDivider = styled.hr `
     width: 0.7px;

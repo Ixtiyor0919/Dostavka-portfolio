@@ -2,10 +2,11 @@ import styled from "styled-components";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 export const BackWrapper = styled.div`
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     margin-left: -10px;
+    cursor: pointer;
 `
 export const BackKeyboard = styled(KeyboardArrowLeftIcon)`
     width: 26px;

@@ -5,89 +5,23 @@ import {
   HomeCardsInnerTopTitle,
   HomeCardsWrapper,
   HomeLine,
-} from "./HomeCards.component"
-import "swiper/css"
-import "./Slider.css"
-import "swiper/css/pagination"
-import "swiper/css/free-mode"
-import { FreeMode, Pagination } from "swiper"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { HomeDefaultCard } from "../DefaultCard/DefaultCard"
+} from "./HomeCards.component";
+import "swiper/css";
+import "./Slider.css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import { useDispatch } from "react-redux";
+import { FreeMode, Pagination } from "swiper";
+import { HomeCardData } from "../../Api/Data";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { HomeDefaultCard } from "../DefaultCard/DefaultCard";
 export function HomeCards(props) {
-  const homeData = [
-    {
-      id: 1,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 2,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 3,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 4,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 5,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 6,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
+  const dispatch = useDispatch();
 
-    {
-      id: 7,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 8,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 9,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-    {
-      id: 10,
-      title: "Ягненок",
-      weight: "Вес: 225 г",
-      body: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-      cost: "620 ₽",
-    },
-  ]
-
+  const handleCard = (item) => {
+    dispatch({type: 'SINGLE_SUCCESS', currentSingle: item})
+    console.log("Clicked", item)
+  }
   return (
     <>
       {/* <HomeLine /> */}
@@ -102,31 +36,36 @@ export function HomeCards(props) {
             spaceBetween={10}
             // centeredSlides={true}
             className="mySwiper"
-            modules={[FreeMode, Pagination]}
+            // modules={[FreeMode, Pagination]}
             breakpoints={{
               400: {
                 slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 15,
               },
               768: {
                 slidesPerView: 2,
-                spaceBetween: 40,
+                spaceBetween: 25,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1440: {
+                slidesPerView: 4,
                 spaceBetween: 30,
               },
             }}
           >
-            {homeData.map((item) => (
+            {HomeCardData?.map((item) => (
               <SwiperSlide key={item.id}>
                 <HomeDefaultCard
-                  key={item.id}
                   id={item.id}
+                  key={item.id}
+                  body={item.text}
+                  cost={item.cost}
                   title={item.title}
                   wieght={item.weight}
-                  body={item.body}
-                  cost={item.cost}
+                  click={() => handleCard(item)}
                 />
               </SwiperSlide>
             ))}

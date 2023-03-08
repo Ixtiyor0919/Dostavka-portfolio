@@ -6,6 +6,8 @@ import {
     matchSM
 } from "../../Themes/Breakpoints";
 import styled from "styled-components";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 
 export const ContactWrapper = styled.div `
     width: 100%;
@@ -66,9 +68,9 @@ export const ContactBoxTitle = styled.h3 `
 `
 export const ContactBoxLine = styled.hr `
     height: 2px;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 48.33%, rgba(255, 255, 255, 0) 100.87%);
     border: 0;
-`
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 48.33%, rgba(255, 255, 255, 0) 100.87%);
+    `
 export const ContactBoxCard = styled.div `
     display: flex;
     align-items: top;
@@ -102,8 +104,8 @@ export const ContactBoxBtn = styled(Button)
     border: none !important;
     outline: none !important;
     color: #FFFFFF !important;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     border-radius: 10px !important;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
 `
 export const ContactBoxMediaBtn = styled(Button)
 `
@@ -175,4 +177,15 @@ export const SogialsInner = styled.div `
     display: flex;
     align-items: center;
     gap: 11px;
+`
+export const ContactLocalIcon = styled(FmdGoodOutlinedIcon)`
+    width: 20px;
+    height: 20px;
+    color: #6D9C74;
+`
+export const ContactMailIcon = styled(MailOutlineIcon)`
+    width: 20px;
+    height: 20px;
+    color: #6D9C74;
+    background: transparent;
 `

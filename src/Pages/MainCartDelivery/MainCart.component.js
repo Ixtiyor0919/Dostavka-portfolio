@@ -3,14 +3,13 @@ import { Button } from "@mui/material";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const MainCartContainer = styled.div`
-    max-width: 1100px;
-    padding: 35px 0 100px 0;
+    padding: 35px 200px 90px 200px;
     margin: 0 auto;
     @media (max-width: ${matchMD}px) {
-        padding: 25px 50px 60px 50px;
+        padding: 30px 50px 50px 50px;
     }
     @media (max-width: ${matchSM}px) {
-        padding: 20px;
+        padding: 25px 20px 50px 20px;
     }
 `
 export const MainCartContainerTop = styled.div`
@@ -46,9 +45,7 @@ export const CartCardWrapper = styled.div`
     border-radius: 10px;
     overflow: hidden;
 `
-export const CartAddWrapper = styled.div`
-    margin: 40px 0 50px 0;
-`
+export const CartAddWrapper = styled.div``
 export const CartAddWrapperInner = styled.div`
     display: flex;
     align-items: center;
@@ -68,29 +65,33 @@ export const CartAddWrapperTitle = styled.h2`
     line-height: 30px;
     color: #FFFFFF;
 `
-export const CartAddWrapperLine = styled.hr`
-    width: 96%;
-    margin: 0 auto;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-`
 export const CartAddWrapperInnerLine = styled.hr`
-    height: 234px;
-    width: 2px; 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #44403F;
+    height: 265px;
+    padding: 1.5px;
+    border: 0;
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100.87%);
+    @media (max-width: ${matchSM}px) {
+        width: 100%;
+        height: 2px;
+        background-image: linear-gradient(90deg,rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100.87%);
+    }
 `
 export const MainCartBottom = styled.div`
-    max-width: 700px;
+    max-width: 800px;
     padding: 20px 25px;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     border-radius: 10px;
     gap: 10px;
+    @media (max-width: ${matchMD}px) {
+        max-width: 600px;
+    }
     @media (max-width: ${matchSM}px) {
         flex-direction: column;
+        margin: 30px auto 0 auto;
     }
 `
 export const MainCartBottomBtn = styled(Button)`

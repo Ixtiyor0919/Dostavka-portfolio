@@ -1,21 +1,18 @@
 import {
-  AccordionHeaderText,
-  ConditionsAccordion,
-  ConditionsAccordionButton,
-  ConditionsAccordionIcon,
-  ConditionsAccordionItem,
-  ConditionsAccordionPanel,
   ConditionsWrapper,
+  ConditionsAccordion,
   ConditionsWrapperBottom,
   ConditionsWrapperContent,
-  ConditionsWrapperContentMap,
   ConditionsWrapperTimesBox,
-  ConditionsWrapperTimesBoxDescription,
+  ConditionsWrapperContentMap,
   ConditionsWrapperTimesBoxTitle,
+  ConditionsWrapperTimesBoxDescription,
 } from "./DeliveryConditions.component";
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
+import { AccordionData } from "../../Api/Data";
 import NavLinkList from "../../Components/Navbar/NavLinkList";
-import { Subtitle } from "../../Components/Subtitle/Subtitle";
+import { Subtitle } from "../../Components/PublicSubtitle/Subtitle";
+import { AccordionComponent } from "../../Components/Accordion/Accordion";
 import { GradientLine } from "../../Components/HomeCardsWrapper/HomeCards.component";
 
 function DeliveryConditions() {
@@ -23,106 +20,17 @@ function DeliveryConditions() {
     <>
       <NavLinkList />
       <Subtitle title="Условия доставки" />
-        <GradientLine />
+      <GradientLine />
       <ConditionsWrapper>
         <ConditionsWrapperContent>
           <ConditionsAccordion allowToggle>
-            <ConditionsAccordionItem>
-              <Typography variant="h2">
-                <ConditionsAccordionButton>
-                  <AccordionHeaderText>
-                    У наших курьеров всегда должна быть сдача!
-                  </AccordionHeaderText>
-                  <ConditionsAccordionIcon />
-                </ConditionsAccordionButton>
-              </Typography>
-              <ConditionsAccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </ConditionsAccordionPanel>
-            </ConditionsAccordionItem>
-            <ConditionsAccordionItem>
-              <Typography variant="h2">
-                <ConditionsAccordionButton>
-                  <AccordionHeaderText>
-                    У наших курьеров всегда должна быть сдача!
-                  </AccordionHeaderText>
-                  <ConditionsAccordionIcon />
-                </ConditionsAccordionButton>
-              </Typography>
-              <ConditionsAccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </ConditionsAccordionPanel>
-            </ConditionsAccordionItem>
-            <ConditionsAccordionItem>
-              <Typography variant="h2">
-                <ConditionsAccordionButton>
-                  <AccordionHeaderText>
-                    У наших курьеров всегда должна быть сдача!
-                  </AccordionHeaderText>
-                  <ConditionsAccordionIcon />
-                </ConditionsAccordionButton>
-              </Typography>
-              <ConditionsAccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </ConditionsAccordionPanel>
-            </ConditionsAccordionItem>
-            <ConditionsAccordionItem>
-              <Typography variant="h2">
-                <ConditionsAccordionButton>
-                  <AccordionHeaderText>
-                    У наших курьеров всегда должна быть сдача!
-                  </AccordionHeaderText>
-                  <ConditionsAccordionIcon />
-                </ConditionsAccordionButton>
-              </Typography>
-              <ConditionsAccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </ConditionsAccordionPanel>
-            </ConditionsAccordionItem>
-            <ConditionsAccordionItem>
-              <Typography variant="h2">
-                <ConditionsAccordionButton>
-                  <AccordionHeaderText>
-                    У наших курьеров всегда должна быть сдача!
-                  </AccordionHeaderText>
-                  <ConditionsAccordionIcon />
-                </ConditionsAccordionButton>
-              </Typography>
-              <ConditionsAccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </ConditionsAccordionPanel>
-            </ConditionsAccordionItem>
-            <ConditionsAccordionItem>
-              <Typography variant="h2">
-                <ConditionsAccordionButton>
-                  <AccordionHeaderText>
-                    У наших курьеров всегда должна быть сдача!
-                  </AccordionHeaderText>
-                  <ConditionsAccordionIcon />
-                </ConditionsAccordionButton>
-              </Typography>
-              <ConditionsAccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </ConditionsAccordionPanel>
-            </ConditionsAccordionItem>
+            {AccordionData?.map((item, index) => (
+              <AccordionComponent
+                key={index}
+                title={item.title}
+                text={item.text}
+              />
+            ))}
           </ConditionsAccordion>
 
           <ConditionsWrapperContentMap>

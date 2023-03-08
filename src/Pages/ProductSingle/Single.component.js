@@ -12,11 +12,10 @@ export const SinglePagesLinkBox = styled.div`
     }
 `
 export const SingleProduct = styled.div`
-    max-width: 1440px;
-    padding: 40px 80px 50px 80px; 
+    padding: 40px 150px 50px 150px; 
     margin: 0 auto;
     @media (max-width: ${matchMD}px) {
-        padding: 25px 50px 25px 50px; 
+        padding: 30px 80px 40px 80px; 
     }
     @media (max-width: ${matchSM}px) {
         padding: 0 0 50px 0;
@@ -34,6 +33,18 @@ export const SingleProductMain = styled.div`
         border-radius: unset;
     }
 `
+export const SigleDataBottom = styled.div`
+    display: grid;
+    gap: 25px;
+    @media (max-width: ${matchMD}px) {
+        display: grid;
+        gap: 20px;
+    }
+    @media (max-width: ${matchSM}px) {
+        display: grid;
+        gap: 15px;
+    }
+`
 export const SingleProductImg = styled.img`
     width: 50%;
     height: 100%;
@@ -43,17 +54,20 @@ export const SingleProductImg = styled.img`
     }
 `
 export const SingleProductData = styled.div`
-    padding: 40px 0 25px 50px;
+    width: 50%;
+    padding: 50px 50px 20px 50px;
     position: relative;
+    display: grid;
+    align-content: space-between;
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     @media (max-width: ${matchMD}px) {
-        padding: 20px 25px; 
+        padding: 40px 40px 15px 40px;
     }
     @media (max-width: ${matchSM}px) {
+        width: 100%;
         height: 50%;
         padding: 20px;
         text-align: center;
-        display: grid;
     }
 `
 export const SingleProductTitle = styled.h3`
@@ -93,19 +107,10 @@ export const SingleProductWeightMain = styled.p`
     font-size: 14px;
     line-height: 16px;
     color: #FFFFFF;
-    margin-top: 28%;
-    margin-bottom: 22px; 
-    @media (max-width: ${matchMD}px) {
-        margin-top: 26%;
-    }
-    @media (max-width: ${matchSM}px) {
-        margin-top: 3%;
-    }
 `
 export const SingleProductCartBox = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
     @media (max-width: ${matchSM}px) {
         justify-content: center;
     }
@@ -162,9 +167,12 @@ export const SingleProductInnerLine = styled.hr`
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 10%;
+    bottom: 39px;
+    @media (max-width: ${matchMD}px) {
+        bottom: 34px;
+    }
     @media (max-width: ${matchSM}px) {
-        bottom: 13.5%;
+        bottom: 39px;
     }
 `
 export const SingleProductInnerValuesBox = styled.div`
