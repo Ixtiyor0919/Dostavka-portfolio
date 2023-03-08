@@ -1,6 +1,7 @@
-import { AddButton, CloseButton, ModalTitle } from "./AdminModalStyled"
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined"
-import { Fade, Grid, Modal, TextField, Backdrop, Box } from "@mui/material"
+import React from "react";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import { AddButton, CloseButton, ModalTitle } from "./AdminModalStyled";
+import { Fade, Grid, Modal, TextField, Backdrop, Box } from "@mui/material";
 // import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 // import { LocalizationProvider } from '@mui/x-date-pickers';
 // import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -9,6 +10,7 @@ import { Fade, Grid, Modal, TextField, Backdrop, Box } from "@mui/material"
 
 export const AdminModal = ({ open, setOpen, branch, food }) => {
   const handleClose = () => setOpen(false)
+  const [loading, setLoading] = React.useState(false);
   const style = {
     top: "50%",
     left: "50%",
@@ -24,9 +26,12 @@ export const AdminModal = ({ open, setOpen, branch, food }) => {
     boxShadow:
       "0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)",
   }
-
+  function handleClick() {
+    setLoading(true);
+  }
   const handleSubmit = () => {
     handleClose()
+    handleClick()
   }
   return (
     <Modal
@@ -93,7 +98,8 @@ export const AdminModal = ({ open, setOpen, branch, food }) => {
                 textAlign: "center",
               }}
             >
-              <AddButton food={food} variant="contained" onClick={handleSubmit}>
+              <AddButton loading={loading}
+          loadingPosition="end" food={food} variant="contained" onClick={handleSubmit}>
                 {branch ? "Add restaurant" : "Add food"}
               </AddButton>
             </Grid>

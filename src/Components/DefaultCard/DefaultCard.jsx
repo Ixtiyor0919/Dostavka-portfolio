@@ -13,6 +13,7 @@ import {
   HomeCardDescription,
 } from "./DefaultCard.component";
 import { Link } from "react-router-dom";
+import { CartData } from "../../Api/Data";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
@@ -44,7 +45,7 @@ export function HomeDefaultCard({ id, title, body, weight, cost, click }) {
           <HomeCardDescription>{body}</HomeCardDescription>
           <HomeInnerBtnBox>
             <HomeCardCost>620 ₽</HomeCardCost>
-            <Link to="/MainCart" className="link">
+            <Link to={`/${CartData?.length > 0 ? 'MainCart' : ''}`} className="link">
               <HomeCardCart>
                 В корзину
                 <AddShoppingCartIcon
@@ -59,10 +60,10 @@ export function HomeDefaultCard({ id, title, body, weight, cost, click }) {
           </HomeInnerBtnBox>
         </HomeInnerCard>
       </Link>
-      <HomeInnerBtn style={{ left: "15px" }}>
+      <HomeInnerBtn toggle={toggle} style={{ left: "15px" }}>
         <RemoveIcon onClick={handleClickRemove} sx={{ fontSize: "1.8rem" }} />
       </HomeInnerBtn>
-      <HomeInnerBtn style={{ right: "15px"}}>
+      <HomeInnerBtn toggle={toggle} style={{ right: "15px"}}>
         <AddIcon onClick={handleClickAdd} sx={{ fontSize: "1.8rem" }} />
       </HomeInnerBtn>
     </HomeCard>

@@ -90,14 +90,6 @@ export function MainCart() {
           </Link>
         </MainCartBottom>
       </MainCartContainer>
-
-      {/* <ModalIsEmptyWrapper>
-      <ModalIsEmpty>
-        <ModalIsEmptyImg src={CartStockImg} />
-        <StockModalTitle>КОРЗИНА ПУСТАЯ</StockModalTitle>
-        <StockModalBtn component={Link} to="/">Посмотреть меню</StockModalBtn>
-      </ModalIsEmpty>
-    </ModalIsEmptyWrapper> */}
     </>
   )
 }

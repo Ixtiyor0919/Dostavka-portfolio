@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { PublicDrawerData } from "../../Api/Data";
 import { Drawer, Toolbar, Fab } from "@mui/material";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { DrawerComponent } from "../../Components/DrawerContent/DrawerContent";
 
 export const AppToolbar = styled(Toolbar)`
   padding: unset;
@@ -65,7 +63,7 @@ const StyledBurger = styled.div`
     }
   }
 `
-const StyledDrawer = styled(Drawer)`
+export const StyledDrawer = styled(Drawer)`
 .MuiDrawer-paper {
   width: 80%;
   height: 80vh;
@@ -113,19 +111,5 @@ export const Burger = ({ open, toggle, opened }) => {
       <div />
       <div />
     </StyledBurger>
-  )
-}
-
-export const Menu = ({ open, toggle }) => {
-  return (
-    <StyledDrawer
-      open={open}
-      onClose={toggle}
-      variant="temporary"
-      ModalProps={{ keepMounted: true }}
-    >
-      <Burger opened open={open} toggle={toggle} />
-      <DrawerComponent toggle={toggle} data={PublicDrawerData} />
-    </StyledDrawer>
   )
 }

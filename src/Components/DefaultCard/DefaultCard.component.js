@@ -68,6 +68,7 @@ export const HomeInnerBtn = styled.div `
     color: #ffffff;
     display: none;
     justify-content: center;
+    display: ${props => props.toggle ? "flex" : "none"};
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     :active {
         background: linear-gradient(114.93deg,#7ad788 5.11%,#8ed498 94%);

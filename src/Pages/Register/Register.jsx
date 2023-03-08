@@ -14,11 +14,12 @@ import {
   AuthFormTitle,
   AuthFormInput,
   AuthSubmitButton,
-} from "../Authoration/AuthStyled";
+} from "../../Components/Authoration/AuthStyled";
 import React from "react";
 import useToken from "../../Hooks/UseToken";
 import { useNavigate } from "react-router-dom";
-import { Authoration } from "../Authoration/Authoration";
+import { Authoration } from "../../Components/Authoration/Authoration";
+import FirebaseSocial from "../../Components/FirebaseSocial/FirebaseSocial";
 
 export const Register = () => {
   const initialState = {
@@ -91,18 +92,7 @@ export const Register = () => {
           <AuthFormLink to="/login">Log In</AuthFormLink>
         </Stack>
 
-        {/* authFirebase-------------------------- */}
-        {/* <Stack direction="row" spacing={2}>
-          <Button fullWidth size="large" color="inherit" variant="outlined">                
-            <Iconify icon="eva:google-fill" color="#DF3E30" width={22} height={22} />
-          </Button>
-          <Button fullWidth size="large" color="inherit" variant="outlined">
-            <Iconify icon="eva:facebook-fill" color="#1877F2" width={22} height={22} />
-          </Button>
-          <Button fullWidth size="large" color="inherit" variant="outlined">
-            <Iconify icon="eva:twitter-fill" color="#1C9CEA" width={22} height={22} />
-          </Button>
-        </Stack> */}
+        <FirebaseSocial />
       </AuthForm>
     </Authoration>
   )

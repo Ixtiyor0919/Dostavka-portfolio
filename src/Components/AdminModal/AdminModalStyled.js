@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { Button, IconButton } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
+import { IconButton } from "@mui/material";
 import { matchSM } from "../../Themes/Breakpoints";
 
-export const AddButton = styled(Button)`
+export const AddButton = styled(LoadingButton)`
     font-family: 'Inter';
     font-weight: 700;
     font-size: 18px;
@@ -16,6 +17,10 @@ export const AddButton = styled(Button)`
     width: ${props => props.food ? "50%": "100%"};
     &:hover {
         background-color: #403C3B;
+    }
+    &:hover {
+        background-color: #403C3B;
+        background-color: #9CAE9F;
     }
     @media (max-width: ${matchSM}px) {
         padding: 15px 0;

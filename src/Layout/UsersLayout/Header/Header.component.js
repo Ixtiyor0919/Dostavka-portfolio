@@ -4,12 +4,14 @@ import {
 } from "../../../Themes/Breakpoints";
 import styled from "styled-components";
 import {
+    Box,
     Button, IconButton
 } from "@mui/material";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 export const HeaderContainer = styled.div `
     width: 100%;
@@ -43,7 +45,7 @@ export const AddresInputBox = styled.div `
     border-radius: 10px;
     color: #ffffff;
     @media (max-width: ${matchMD}px) {
-        width: 70%;
+        width: 35%;
     }
     @media (max-width: ${matchSM}px) {
         width: ${props => props.searchopen ? "100%" : "unset"};
@@ -76,7 +78,6 @@ export const AddresInput = styled.input `
 export const ContactBox = styled.div `
     display: flex;
     align-items: center;
-    margin-right: 15%;
     @media (max-width: ${matchSM}px) {
         display: none;
     }
@@ -208,4 +209,34 @@ export const HeaderMiddle = styled.div `
         // transform: ${props => props.searchopen ? 'translateY(135%)' : 'translateY(5%)'};    
         // transform: ${props => props.searchopen ? 'scaleX(1.8)' : 'scaleX(0)'};    
     }
+`
+export const LoginButton = styled(Box)`
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    @media (max-width: ${matchSM}px) {
+        display: ${props => props.none ? "none" : "flex"};
+    }
+`
+export const LoginButtonHr = styled.hr`
+    width: 1.3px;
+    margin-right: 10px;
+    background-color: #635C5A;
+    height: ${props => props.none ? "50px" : "25px"};
+    border: 0;
+`
+export const LoginButtonIcon = styled(PersonOutlineIcon)`
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+`
+export const LoginButtonText = styled.p`
+    font-family: 'Gilroy';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
 `

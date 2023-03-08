@@ -67,17 +67,18 @@ export const PrivateDrawerData = [{
   }
 ]
 
-export const CartData = [{
-    id: 1,
-    title: "sunt aut facere repellat",
-    body: " rerum est autem sunt rem eveniet arichitecto",
-  },
-  {
-    id: 2,
-    title: "qui est esgse rerum",
-    body: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate",
-  },
+export const CartData = [
   // {
+  //   id: 1,
+  //   title: "sunt aut facere repellat",
+  //   body: " rerum est autem sunt rem eveniet arichitecto",
+  // },
+  // {
+  //   id: 2,
+  //   title: "qui est esgse rerum",
+  //   body: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate",
+  // },
+  // // {
   //   id: 3,
   //   title: "ea molestias queasi exercitationem repellat qui ipsa sit aut",
   //   body: "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odiso et labore et velit aut",
@@ -134,28 +135,28 @@ export const HomeCardData = [{
     title: "Ягненок",
     weight: "225 г",
     text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-    cost: "620 ₽",
+    cost: "450 ₽",
   },
   {
     id: 2,
-    title: "labore",
+    title: "Индейка",
     weight: "225 г",
     text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
     cost: "620 ₽",
   },
   {
     id: 3,
-    title: "nmolestiae",
+    title: "Гусь",
     weight: "225 г",
     text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-    cost: "620 ₽",
+    cost: "7 900 ₽",
   },
   {
     id: 4,
-    title: "accusantium",
+    title: "Утка",
     weight: "225 г",
     text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
-    cost: "620 ₽",
+    cost: "3 230 ₽",
   },
   {
     id: 5,

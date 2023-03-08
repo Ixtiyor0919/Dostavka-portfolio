@@ -10,10 +10,11 @@ import {
   AuthFormTitle,
   AuthFormInput,
   AuthSubmitButton,
-} from "../Authoration/AuthStyled";
+} from "../../Components/Authoration/AuthStyled";
 import React from "react";
 // import useToken from "../../Hooks/UseToken";
-import { Authoration } from "../Authoration/Authoration";
+import { Authoration } from "../../Components/Authoration/Authoration";
+import FirebaseSocial from "../../Components/FirebaseSocial/FirebaseSocial";
 
 export const Login = () => {
   const initialState = {
@@ -21,11 +22,12 @@ export const Login = () => {
     password: "",
   };
   // const { token, setToken } = useToken();
-  const [formData, setFormData] = React.useState({...initialState})
   const [showPassword, setShowPassword] = React.useState(false)
+  const [formData, setFormData] = React.useState({...initialState})
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
+
   const handleSubmit = () => {}
   return (
     <Authoration>
@@ -74,6 +76,7 @@ export const Login = () => {
           <AuthFormText>Don’t you have an account?</AuthFormText>
           <AuthFormLink to="/register">Register</AuthFormLink>
         </Stack>
+        <FirebaseSocial />
       </AuthForm>
     </Authoration>
   )

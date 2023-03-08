@@ -18,6 +18,8 @@ export const StyledButton = styled(ListItemButton)`
   transition: color 0.3s linear;
   background-color: #403C3B !important;
   :hover {
+    // background-color: #9CAE9F;
+    // background: #67936E;
     color: #65906c !important;
     background-color: #65906c40 !important;
   }
