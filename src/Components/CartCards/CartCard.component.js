@@ -1,3 +1,4 @@
+import { Dialog } from "@mui/material";
 import styled from "styled-components";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
 

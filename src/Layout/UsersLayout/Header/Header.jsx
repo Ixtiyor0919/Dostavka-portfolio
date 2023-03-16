@@ -21,15 +21,15 @@ import {
   LoginButtonText,
   HeaderIconButton,
   LocalButton,
-} from "./Header.component"
-import React from "react"
-import { Burger } from "../Styles"
-import { Menu } from "../Menu/Menu"
-import { Link } from "react-router-dom"
-import { IconButton } from "@mui/material"
-import { useDispatch, useSelector } from "react-redux"
-import { LogoSvgImage } from "../../../Assets/Svg/SvgImages"
-import { CartModal } from "../../../Components/CartModal/CartModal"
+} from "./Header.component";
+import React from "react";
+import { Burger } from "../Styles";
+import { Menu } from "../Menu/Menu";
+import { Link } from "react-router-dom";
+import { IconButton } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { LogoSvgImage } from "../../../Assets/Svg/SvgImages";
+import CartModal from "../../../Components/CartModal/CartModal";
 // import GoogleMaps from "../../../Components/SearchFilterInput/SearchInput";
 
 export function Header() {

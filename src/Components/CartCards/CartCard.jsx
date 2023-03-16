@@ -10,29 +10,36 @@ import {
   CartCardDescriptionBoxText,
   CartCardDescriptionBoxTitle,
 } from "./CartCard.component";
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { Loader } from "../Loader/Loader";
 import { Icons } from "../CartIcons/Icons";
 import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { CartSmallModal } from "../CartModal/CartModal";
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
 import { GradientLine } from "../HomeCardsWrapper/HomeCards.component";
-import { CartAddWrapperInnerLine } from "../../Pages/Cart/Cart.component";
-import { Loader } from "../Loader/Loader";
+// import { CartAddWrapperInnerLine } from "../../Pages/Cart/Cart.component";
 
 export function CartCard(props) {
   const theme = useTheme();
   const dispatch = useDispatch();
   const { id, title, text } = props;
+  const [open, setOpen] = React.useState(false);
   const local = JSON.parse(localStorage.getItem(`${id}`));
   let [count, setCount] = React.useState(local !== null ? local : 0);
   const matchDownMD = useMediaQuery(theme.breakpoints.down("md"));
   let { loading } = useSelector((state) => state.cartReducer);
-
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
   const handleRemove = () => {
-    if(count > 0) {
+    if(count === 1) {
+      handleClickOpen()
+    }
+    if(count > 1) {
       setCount((count -= 1))
       localStorage.setItem(`${id}`, count)
     }
@@ -46,19 +53,14 @@ export function CartCard(props) {
     localStorage.removeItem(`${id}`)
     dispatch({ type: "CART_DELETE", id: id })
   };
-  React.useEffect(() => {
-    if(local === 0) {
-      dispatch({ type: "CART_START" });
-      localStorage.removeItem(`${id}`)
-      dispatch({ type: "CART_DELETE", id: id })
-    }
-  }, [local])
+
   React.useEffect(() => {
     if(loading) {
       console.log("loading")
       return <Loader />
     };
   }, [loading])
+
   return (
     <>
       <CartCardWrapperInner>
@@ -102,6 +104,7 @@ export function CartCard(props) {
         </BoxData>
       </CartCardWrapperInner>
       <GradientLine />
+      <CartSmallModal id={id} open={open} setOpen={setOpen} />
     </>
   )
 };

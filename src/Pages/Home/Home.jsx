@@ -31,78 +31,46 @@ function Home() {
   const [grillMenu, setGrillMenu] = React.useState([]);
   const [specialties, setSpecialties] = React.useState([]);
   const [beverages, setBeverages] = React.useState([]);
-  let { category, loading } = useSelector((state) => state.categoryReducer);
-  
+  let { loading } = useSelector((state) => state.categoryReducer);
+
   React.useEffect(() => {
-    const filtered = HomeCardData?.filter((item) => item.category === category);
-      const coldSnacksFiltered = HomeCardData?.filter(
-        (item) => item.category === "Cold-snacks"
-      )
-      const hotAppetizersFiltered = HomeCardData?.filter(
-        (item) => item.category === "Hot-appetizers"
-      )
-      const meatDishesFiltered = HomeCardData?.filter(
-        (item) => item.category === "Meat-dishes"
-      )
-      const soupsFiltered = HomeCardData?.filter(
-        (item) => item.category === "Soups"
-      )
-      const fishDishesFiltered = HomeCardData?.filter(
-        (item) => item.category === "Fish-dishes"
-      )
-      const grillMenuFiltered = HomeCardData?.filter(
-        (item) => item.category === "Grill-menu"
-      )
-      const specialtiesFiltered = HomeCardData?.filter(
-        (item) => item.category === "Specialties"
-      )
-      const beveragesFiltered = HomeCardData?.filter(
-        (item) => item.category === "Beverages"
-      )
-      setColdSnacks(coldSnacksFiltered)
-      setHotAppetizers(hotAppetizersFiltered)
-      setMeatDishes(meatDishesFiltered)
-      setSoups(soupsFiltered)
-      setFishDishes(fishDishesFiltered)
-      setGrillMenu(grillMenuFiltered)
-      setSpecialties(specialtiesFiltered)
-      setBeverages(beveragesFiltered)
-    // if (category === "Cold-snacks") {
-    //   setColdSnacks(filtered)
-    //   setHotAppetizers([])
-    //   setMeatDishes([])
-    //   setSoups([])
-    //   setFishDishes([])
-    //   setGrillMenu([])
-    //   setSpecialties([])
-    //   setBeverages([])
-    // }
-    // if (category === "Hot-appetizers") {
-    //   setHotAppetizers(filtered)
-    // }
-    // if (category === "Meat-dishes") {
-    //   setMeatDishes(filtered)
-    // }
-    // if (category === "Soups") {
-    //   setSoups(filtered)
-    // }
-    // if (category === "Fish-dishes") {
-    //   setFishDishes(filtered)
-    // }
-    // if (category === "Grill-menu") {
-    //   setGrillMenu(filtered)
-    // }
-    // if (category === "Specialties") {
-    //   setSpecialties(filtered)
-    // }
-    // if (category === "Beverages") {
-    //   setBeverages(filtered)
-    // }
-  }, []);
+    const coldSnacksFiltered = HomeCardData?.filter(
+      (item) => item.category === "Cold-snacks"
+    )
+    const hotAppetizersFiltered = HomeCardData?.filter(
+      (item) => item.category === "Hot-appetizers"
+    )
+    const meatDishesFiltered = HomeCardData?.filter(
+      (item) => item.category === "Meat-dishes"
+    )
+    const soupsFiltered = HomeCardData?.filter(
+      (item) => item.category === "Soups"
+    )
+    const fishDishesFiltered = HomeCardData?.filter(
+      (item) => item.category === "Fish-dishes"
+    )
+    const grillMenuFiltered = HomeCardData?.filter(
+      (item) => item.category === "Grill-menu"
+    )
+    const specialtiesFiltered = HomeCardData?.filter(
+      (item) => item.category === "Specialties"
+    )
+    const beveragesFiltered = HomeCardData?.filter(
+      (item) => item.category === "Beverages"
+    )
+    setColdSnacks(coldSnacksFiltered)
+    setHotAppetizers(hotAppetizersFiltered)
+    setMeatDishes(meatDishesFiltered)
+    setSoups(soupsFiltered)
+    setFishDishes(fishDishesFiltered)
+    setGrillMenu(grillMenuFiltered)
+    setSpecialties(specialtiesFiltered)
+    setBeverages(beveragesFiltered)
+  }, [])
   React.useEffect(() => {
-    if(loading) {
+    if (coldSnacks?.length < 0) {
       return <Loader />
-    };
+    }
   }, [loading])
   return (
     <>
@@ -110,30 +78,18 @@ function Home() {
         <HomeTitle>Доставка ВКУСНЕЙШИХ БЛЮд за 60 минут</HomeTitle>
       </HomeMain>
       <NavLinkList />
-      {/* {coldSnacks?.length > 0 && ( */}
-        <HomeCards id="Cold-snacks" title="coldSnacks" data={coldSnacks} />
-      {/* )} */}
-      {/* {hotAppetizers?.length > 0 && ( */}
-        <HomeCards id="Hot-appetizers" title="hotAppetizers" data={hotAppetizers} />
-      {/* )} */}
-      {/* {meatDishes?.length > 0 && ( */}
-        <HomeCards id="Meat-dishes" title="meatDishes" data={meatDishes} />
-      {/* )} */}
-      {/* {/* {soups?.length > 0 &&  */}
-        <HomeCards id="Soups" title="soups" data={soups} />
-        {/* //  */}
-      {/* {fishDishes?.length > 0 && ( */}
-        <HomeCards id="Fish-dishes" title="fishDishes" data={fishDishes} />
-      {/* )} */}
-      {/* {grillMenu?.length > 0 && ( */}
-        <HomeCards id="Grill-menu" title="grillMenu" data={grillMenu} />
-      {/* )} */}
-      {/* {specialties?.length > 0 && ( */}
-        <HomeCards id="Specialties" title="specialties" data={specialties} />
-      {/* )} */}
-      {/* {beverages?.length > 0 && ( */}
-        <HomeCards id="Beverages" title="beverages" data={beverages} />
-      {/* )} */}
+      <HomeCards id="Cold-snacks" title="coldSnacks" data={coldSnacks} />
+      <HomeCards
+        id="Hot-appetizers"
+        title="hotAppetizers"
+        data={hotAppetizers}
+      />
+      <HomeCards id="Meat-dishes" title="meatDishes" data={meatDishes} />
+      <HomeCards id="Soups" title="soups" data={soups} />
+      <HomeCards id="Fish-dishes" title="fishDishes" data={fishDishes} />
+      <HomeCards id="Grill-menu" title="grillMenu" data={grillMenu} />
+      <HomeCards id="Specialties" title="specialties" data={specialties} />
+      <HomeCards id="Beverages" title="beverages" data={beverages} />
       <MenuWrapper>
         <MenuDescriptionBox>
           <MenuDescriptionBoxTitle>НАШЕ КАФЕ</MenuDescriptionBoxTitle>

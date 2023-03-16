@@ -734,10 +734,7 @@ export const ActionData = [{
   },
 ]
 
-export const categoryData = [{
-    label: "All",
-    value: "All"
-  },
+export const categoryData = [
   {
     label: "Холодные закуски",
     value: "Cold-snacks"

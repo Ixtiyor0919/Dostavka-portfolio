@@ -29,15 +29,13 @@ function NavLinkList() {
           aria-label="scrollable auto tabs example"
         >
           {categoryData?.map((item, index) => (
-            // <Link key={index} to={`#${item.value}`}>
               <TabsItem 
-              smooth
-               key={index} to={`#${item.value}`}
-              component={Link}
+                smooth
+                component={Link}
                 value={item.value}
                 label={item.label}
+                key={index} to={`#${item.value}`}
               />
-            // </Link>
           ))}
         </TabsList>
       </NavbarContainer>
