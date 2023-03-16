@@ -88,7 +88,7 @@ const CartSmallModal = ({ id, open, setOpen }) => {
         </DialogText>
       </DialogContent>
       <DialogBtns fullwidth>
-        <DialogBtn variant="outlined" onClick={handleClose}>
+        <DialogBtn no variant="outlined" onClick={handleClose}>
           no
         </DialogBtn>
         <DialogBtn variant="outlined" onClick={handleDelete}>

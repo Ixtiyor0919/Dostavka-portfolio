@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Box, Button, Dialog, DialogActions, DialogContentText } from "@mui/material";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Box, Button, Dialog, DialogActions, DialogContentText } from "@mui/material";
 
 export const style = styled.div`
 background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
@@ -68,19 +68,20 @@ export const StockModalBtn = styled(Button)`
 `
 export const CartDialog = styled(Dialog)`
     & .MuiPaper-rounded {
+        padding: 20px;
         border-radius: 15px;
         color: #ffffff;
         background: linear-gradient(180deg, #494544 0%, #504B4A 100%);
     }
 `
 export const DialogBtns = styled(DialogActions)`
-    padding: 20px;
     justify-content: space-around;
 `
 export const DialogBtn = styled(Button)`
     width: 40%;
     border-radius: 10px;
-    color: ${props => props.searchOpen ? "grey" : "#ffffff"};
+    color: ${props => props.no ? "grey" : "red"};
+    border: ${props => props.no ? "1px solid grey !important" : "1px solid red !important"};
 `
 export const DialogText = styled(DialogContentText)`
     color: grey;
