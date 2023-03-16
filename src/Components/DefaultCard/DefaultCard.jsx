@@ -5,6 +5,7 @@ import {
   HomeCardCart,
   HomeCardCost,
   HomeInnerBtn,
+  ShoppingIcon,
   HomeCardCount,
   HomeInnerCard,
   HomeCardTitle,
@@ -13,59 +14,84 @@ import {
   HomeCardDescription,
 } from "./DefaultCard.component";
 import { Link } from "react-router-dom";
-import { CartData } from "../../Api/Data";
+import { Loader } from "../Loader/Loader";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useDispatch, useSelector } from "react-redux";
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-export function HomeDefaultCard({ id, title, body, weight, cost, click }) {
-  const [ count, setCount ] = React.useState(0)
-  const [ toggle, setToggle ] = React.useState(false)
+export function HomeDefaultCard({ item }) {
+  const dispatch = useDispatch();
+  const { id, text, cost, title, weight } = item;
+  const [counted, setCounted] = React.useState(false);
+  const local = JSON.parse(localStorage.getItem(`${id}`));
+  let { loading } = useSelector((state) => state.cartReducer);
+  let [count, setCount] = React.useState(local !== null ? local : 0);
+
   const handleClickRemove = () => {
-    setCount(count - 1)
-    localStorage.setItem(`${title}`, count)
-  }
+    if(count > 0) {
+      setCount((count -= 1))
+      localStorage.setItem(`${id}`, count)
+    }
+  };
   const handleClickAdd = () => {
-    setCount(count + 1)
-    localStorage.setItem(`${title}`, count)
-  }
-  const handleHoverBtn= () => {
-    setToggle(!toggle)
-  }
-  const countLocal = localStorage.getItem(`${title}`, count)
+    setCount((count += 1))
+    localStorage.setItem(`${id}`, count)
+  };
+  const handleCard = () => {
+    dispatch({ type: "SINGLE_START" });
+    dispatch({ type: "SINGLE_SUCCESS", currentSingle: item })
+  };
+  const handleCartClick = () => {
+    handleClickAdd()
+    if(!local) {
+      dispatch({ type: "CART_START" });
+      dispatch({ type: "CART_SUCCESS", data: item })
+    } 
+  };
+   React.useEffect(() => {
+    if(local === 0) {
+      dispatch({ type: "CART_START" });
+      localStorage.removeItem(`${id}`)
+      dispatch({ type: "CART_DELETE", id: id })
+    }
+  }, [local])
+  React.useEffect(() => {
+    if(loading) {
+      return <Loader />
+    };
+  }, [loading])
+  React.useEffect(() => {
+    if(count > 0) {
+      setCounted(true)
+    } else {
+      setCounted(false)
+    }
+  }, [count])
   return (
-    <HomeCard onClick={click}>
+    <HomeCard onClick={handleCard} id={id}>
       <Link to="/Single" className="link" style={{ display: "block" }}>
         <CardImg src={HomeCardImg} alt="HomeCardImage" />
-        <HomeCardCount onClick={handleHoverBtn}>{countLocal > 0 ? countLocal : 0}</HomeCardCount>
+        <HomeCardCount>{local ? local : 0}</HomeCardCount>
         <HomeInnerCard>
           <HomeCardTitle>{title}</HomeCardTitle>
           <HomeCardWeight>{weight}</HomeCardWeight>
-          <HomeCardDescription>{body}</HomeCardDescription>
-          <HomeInnerBtnBox>
-            <HomeCardCost>620 ₽</HomeCardCost>
-            <Link to={`/${CartData?.length > 0 ? 'MainCart' : ''}`} className="link">
-              <HomeCardCart>
-                В корзину
-                <AddShoppingCartIcon
-                  style={{
-                    width: "24px",
-                    height: "24px",
-                    marginLeft: "16px",
-                  }}
-                />
-              </HomeCardCart>
-            </Link>
-          </HomeInnerBtnBox>
+          <HomeCardDescription>{text}</HomeCardDescription>
         </HomeInnerCard>
       </Link>
-      <HomeInnerBtn toggle={toggle} style={{ left: "15px" }}>
-        <RemoveIcon onClick={handleClickRemove} sx={{ fontSize: "1.8rem" }} />
-      </HomeInnerBtn>
-      <HomeInnerBtn toggle={toggle} style={{ right: "15px"}}>
-        <AddIcon onClick={handleClickAdd} sx={{ fontSize: "1.8rem" }} />
-      </HomeInnerBtn>
+      <HomeInnerBtnBox counted={counted}>
+        <HomeInnerBtn counted={counted} onClick={handleClickRemove}>
+          <RemoveIcon sx={{ fontSize: "1.8rem" }} />
+        </HomeInnerBtn>
+        <HomeCardCost>{cost}</HomeCardCost>
+        <HomeCardCart counted={counted} onClick={handleCartClick}>
+          В корзину
+          <ShoppingIcon />
+        </HomeCardCart>
+        <HomeInnerBtn counted={counted} onClick={handleClickAdd}>
+          <AddIcon sx={{ fontSize: "1.8rem" }} />
+        </HomeInnerBtn>
+      </HomeInnerBtnBox>
     </HomeCard>
   )
-}
+};

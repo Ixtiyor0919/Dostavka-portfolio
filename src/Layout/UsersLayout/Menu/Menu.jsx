@@ -5,10 +5,11 @@ import {
   LoginButtonText,
 } from "../Header/Header.component";
 import { Divider } from "@mui/material";
-import { Burger, StyledDrawer } from "../Styles";
-import { PublicDrawerData } from "../../../Api/Data";
-import { DrawerComponent } from "../../../Components/DrawerContent/DrawerContent";
 import { Link } from "react-router-dom";
+import { StyledDrawer } from "../Styles";
+import { PublicDrawerData } from "../../../Api/Data";
+import { CloseButton } from "../../../Components/CloseButton/CloseButton";
+import { DrawerComponent } from "../../../Components/DrawerContent/DrawerContent";
 
 export const Menu = ({ open, toggle }) => {
   return (
@@ -18,7 +19,7 @@ export const Menu = ({ open, toggle }) => {
       variant="temporary"
       ModalProps={{ keepMounted: true }}
     >
-      <Burger opened open={open} toggle={toggle} />
+      <CloseButton toggle={toggle} drawer />
       <LoginButton component={Link} to="/login">
         <LoginButtonHr />
         <LoginButtonIcon />

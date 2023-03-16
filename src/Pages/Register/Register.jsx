@@ -33,12 +33,12 @@ export const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   };
   const handleSubmit = () => {
-    setToken(formData?.fullName)
+    setToken(formData?.number)
     navigate("/");
   };
   React.useEffect(() => {
     if(token) {
-      navigate("/");
+      return navigate("/");
     }
   }, [])
   return (
@@ -80,7 +80,7 @@ export const Register = () => {
 
         <AuthSubmitButton
           size="large"
-          // type="submit"
+          type="submit"
           variant="contained"
           onClick={handleSubmit}
         >

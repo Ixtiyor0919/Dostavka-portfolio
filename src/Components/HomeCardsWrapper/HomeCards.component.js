@@ -15,6 +15,10 @@ export const GradientLine = styled.hr`
     border: 0;
     // background-image: linear-gradient(90deg,rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100.87%);
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100.87%);
+    &:first-child {
+        height: 0;
+        display: none;
+    }
 `
 export const HomeCardsInnerTopTitle = styled.h2`
     font-family: 'Gilroy';
@@ -42,10 +46,4 @@ export const HomeCardsInnerSlider = styled.div`
     // align-items: center;
     // justify-content: center;
     // overflow-x: auto;
-`
-export const HomeLine = styled.hr`
-    width: 100%;
-    height: 2px;
-    background-color: #44403F;
-    border: none;
 `

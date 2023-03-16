@@ -1,34 +1,45 @@
-import { useState } from "react";
-import { Tabs } from "@mui/material";
-import { useSelector } from "react-redux";
-import { NavbarContainer, TabsItem } from "./NavLink.component";
+import React from "react";
+import {
+  TabsItem,
+  TabsList,
+  NavbarContainer,
+} from "./NavLink.component";
+import { categoryData } from "../../Api/Data";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function NavLinkList() {
-  const [value, setValue] = useState(0);
-  const handleChange = (newValue) => {
+  const dispatch = useDispatch();
+  // let { category } = useSelector((state) => state.categoryReducer);
+  const [ value, setValue ] = React.useState("All");
+  const handleChange = (e, newValue) => {
+    dispatch({ type: "CATEGORY_START" });
     setValue(newValue)
-  }
+    dispatch({ type: "CATEGORY_SUCCESS", category: newValue })
+  };
   let search = useSelector((state) => state.searchReducer.search);
-
   return (
     <>
       <NavbarContainer searchOpen={search}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            aria-label="scrollable auto tabs example"
-          >
-            <TabsItem value={0} label="Холодные закуски" />
-            <TabsItem value={1} label="Горячие закуски" />
-            <TabsItem value={2} label="Мясные блюда" />
-            <TabsItem value={3} label="Супы" />
-            <TabsItem value={4} label="Рыбные блюда" />
-            <TabsItem value={5} label="Гриль меню" />
-            <TabsItem value={6} label="Фирменные блюда" />
-            <TabsItem value={7} label="Напитки" />
-          </Tabs>
+        <TabsList
+          value={value}
+          variant="scrollable"
+          scrollButtons="auto"
+          onChange={handleChange}
+          aria-label="scrollable auto tabs example"
+        >
+          {categoryData?.map((item, index) => (
+            // <Link key={index} to={`#${item.value}`}>
+              <TabsItem 
+              smooth
+               key={index} to={`#${item.value}`}
+              component={Link}
+                value={item.value}
+                label={item.label}
+              />
+            // </Link>
+          ))}
+        </TabsList>
       </NavbarContainer>
     </>
   )

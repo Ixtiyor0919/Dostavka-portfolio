@@ -9,13 +9,12 @@
   gap: 30px;
 }
 .swiper-slide {
-  margin: unset !important;
+  /* margin: unset !important; */
   flex-shrink: 1;
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow: hidden; */
 }
 .swiper-slide:hover {
   transform: scale(1.020, 1.015);

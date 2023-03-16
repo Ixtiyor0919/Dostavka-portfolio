@@ -1,30 +1,36 @@
-import { Tab } from "@mui/material";
 import styled from "styled-components";
+import { Tab, Tabs } from "@mui/material";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const NavbarContainer = styled.nav `
     padding: 0 100px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
     position: sticky;
     top: 104px;
     left: 0;
     right: 0;
     z-index: 80;
     gap: 15px;
-    justify-content: center;
     backdrop-filter: blur(1px);
     border-top: 2px solid rgba(255, 255, 255, 0.1);
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     background: linear-gradient(180deg, #211f2000 0%, #44403F 100%);
     @media (max-width: ${matchMD}px) {
         padding: 0 50px;
-        top: 110px;
+        top: 95.5px;
     }
     @media (max-width: ${matchSM}px) {
         padding: unset;
-        top: ${props => props.searchOpen ? "150px" : "85px"};
+        top: ${props => props.searchOpen ? "150px" : "88px"};
+    }
+`
+export const TabsList = styled(Tabs)`
+    & .MuiTabs-indicator {
+        background-color: #618967;
+    }
+    & .active, .Mui-selected {
+        color: #FFFFFF !important;
+        box-shadow: 0px 5px 12px rgba(114, 164, 121, 0.3) !important;
     }
 `
 export const TabsItem = styled(Tab)`

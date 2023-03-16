@@ -30,7 +30,7 @@ import {
 } from "./Checkout.component";
 import {
   MainCartBottomBtn,
-} from "../MainCartDelivery/MainCart.component";
+} from "../Cart/Cart.component";
 import { useState } from "react";
 import Radio from "@mui/material/Radio";
 import FormLabel from "@mui/material/FormLabel";

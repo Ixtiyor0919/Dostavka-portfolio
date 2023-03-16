@@ -85,7 +85,7 @@ export function Contact() {
               }}
             />
             <i
-              class="bx bxl-bootstrap"
+              className="bx bxl-bootstrap"
               style={{
                 background: "white",
                 color: "#000",
@@ -94,7 +94,7 @@ export function Contact() {
               }}
             ></i>
             <i
-              class="bx bxl-instagram-alt"
+              className="bx bxl-instagram-alt"
               style={{
                 background: "white",
                 color: "#000",
@@ -103,7 +103,7 @@ export function Contact() {
               }}
             ></i>
             <i
-              class="bx bxl-youtube"
+              className="bx bxl-youtube"
               style={{
                 background: "white",
                 color: "#000",

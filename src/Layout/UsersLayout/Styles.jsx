@@ -32,8 +32,6 @@ const StyledBurger = styled.div`
   flex-direction: column;
   justify-content: space-around;
   background-color: transparent;
-  z-index: ${(props) => (props.opened ? "2" : "1")};
-  position: ${(props) => (props.opened ? "absolute" : "unset")};
   @media (max-width: ${matchSM}px) {
     display: flex;
   }
@@ -48,19 +46,6 @@ const StyledBurger = styled.div`
     border-radius: 10px;
     transition: all 0.3s linear;
     transform-origin: 1px;
-
-    :first-child {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
-    }
-
-    :nth-child(2) {
-      opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
-    }
-
-    :nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
-    }
   }
 `
 export const StyledDrawer = styled(Drawer)`
@@ -104,9 +89,9 @@ export const KeyboardFab = styled(Fab)`
 export const KeyboardIcon = styled(KeyboardArrowUpIcon)`
   font-size: 1.8rem;
 `
-export const Burger = ({ open, toggle, opened }) => {
+export const Burger = ({ toggle }) => {
   return (
-    <StyledBurger opened={opened} open={open} onClick={toggle}>
+    <StyledBurger onClick={toggle}>
       <div />
       <div />
       <div />

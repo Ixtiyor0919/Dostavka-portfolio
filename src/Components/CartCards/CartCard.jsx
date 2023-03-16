@@ -10,7 +10,8 @@ import {
   CartCardDescriptionBoxText,
   CartCardDescriptionBoxTitle,
 } from "./CartCard.component";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Icons } from "../CartIcons/Icons";
 import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
@@ -18,35 +19,54 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { useMediaQuery, useTheme } from "@mui/material";
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
 import { GradientLine } from "../HomeCardsWrapper/HomeCards.component";
-import { CartAddWrapperInnerLine } from "../../Pages/MainCartDelivery/MainCart.component";
+import { CartAddWrapperInnerLine } from "../../Pages/Cart/Cart.component";
+import { Loader } from "../Loader/Loader";
 
 export function CartCard(props) {
-  const theme = useTheme()
-  let [count, setCount] = useState(0)
-  const matchDownMD = useMediaQuery(theme.breakpoints.down("md"))
-  const handleLocalCart = () => {
-    setCount((count -= 1))
-    localStorage.setItem(`${props.title}`, count)
-  }
-  const handleLocalCartCircle = () => {
+  const theme = useTheme();
+  const dispatch = useDispatch();
+  const { id, title, text } = props;
+  const local = JSON.parse(localStorage.getItem(`${id}`));
+  let [count, setCount] = React.useState(local !== null ? local : 0);
+  const matchDownMD = useMediaQuery(theme.breakpoints.down("md"));
+  let { loading } = useSelector((state) => state.cartReducer);
+
+  const handleRemove = () => {
+    if(count > 0) {
+      setCount((count -= 1))
+      localStorage.setItem(`${id}`, count)
+    }
+  };
+  const handleAdd = () => {
     setCount((count += 1))
-    localStorage.setItem(`${props.title}`, count)
-  }
-
-  const countPilus = localStorage.getItem(`${props.title}`, count)
-
+    localStorage.setItem(`${id}`, JSON.stringify(count))
+  };
+  const handleDelete = () => {
+    dispatch({ type: "CART_START" });
+    localStorage.removeItem(`${id}`)
+    dispatch({ type: "CART_DELETE", id: id })
+  };
+  React.useEffect(() => {
+    if(local === 0) {
+      dispatch({ type: "CART_START" });
+      localStorage.removeItem(`${id}`)
+      dispatch({ type: "CART_DELETE", id: id })
+    }
+  }, [local])
+  React.useEffect(() => {
+    if(loading) {
+      console.log("loading")
+      return <Loader />
+    };
+  }, [loading])
   return (
     <>
       <CartCardWrapperInner>
         <CartCardWrapperInnerImg src={HomeCardImg} />
         <BoxData>
           <CartCardDescriptionBox>
-            <CartCardDescriptionBoxTitle>
-              {props.title}
-            </CartCardDescriptionBoxTitle>
-            <CartCardDescriptionBoxText>
-              {props.body}
-            </CartCardDescriptionBoxText>
+            <CartCardDescriptionBoxTitle>{title}</CartCardDescriptionBoxTitle>
+            <CartCardDescriptionBoxText>{text}</CartCardDescriptionBoxText>
           </CartCardDescriptionBox>
           <CartButtonsBox>
             <CartCardValueBox>
@@ -55,15 +75,17 @@ export function CartCard(props) {
                 width={!matchDownMD ? 30 : 22}
                 height={!matchDownMD ? 30 : 22}
                 size={!matchDownMD ? 20 : 18}
-                onClick={handleLocalCart}
+                onClick={handleRemove}
               />
-              <CartCardValue>{countPilus}</CartCardValue>
+              <CartCardValue>
+                {local ? local : 0}
+              </CartCardValue>
               <Icons
                 Icon={AddIcon}
                 width={!matchDownMD ? 30 : 22}
                 height={!matchDownMD ? 30 : 22}
                 size={!matchDownMD ? 20 : 18}
-                onClick={handleLocalCartCircle}
+                onClick={handleAdd}
               />
             </CartCardValueBox>
             <CartCarCostBox>
@@ -73,6 +95,7 @@ export function CartCard(props) {
                 width={!matchDownMD ? 30 : 22}
                 height={!matchDownMD ? 30 : 22}
                 size={!matchDownMD ? 20 : 16}
+                onClick={handleDelete}
               />
             </CartCarCostBox>
           </CartButtonsBox>
@@ -81,4 +104,4 @@ export function CartCard(props) {
       <GradientLine />
     </>
   )
-}
+};

@@ -23,7 +23,7 @@ const rows = [
 
 export default function BasicTable() {
   return (
-    <TableContainer component={Paper}>
+    // <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -37,7 +37,7 @@ export default function BasicTable() {
           {rows.map((row) => (
             <TableRow
               key={row.id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
                 {row.id}
@@ -49,6 +49,6 @@ export default function BasicTable() {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    // </TableContainer>
   );
 }

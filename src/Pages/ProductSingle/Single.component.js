@@ -152,6 +152,7 @@ export const SingleProductInnerNamesBox = styled.div`
     }
     @media (max-width: ${matchSM}px) {
         justify-content: center;
+        text-align: start;
     }
 `
 export const SingleProductContentNames = styled.p`
@@ -169,7 +170,7 @@ export const SingleProductInnerLine = styled.hr`
     left: 0;
     bottom: 39px;
     @media (max-width: ${matchMD}px) {
-        bottom: 34px;
+        bottom: 41px;
     }
     @media (max-width: ${matchSM}px) {
         bottom: 39px;

@@ -38,7 +38,7 @@ export default function AdminLayout() {
                     <Outlet />
                 </Main>
             </Box>
-            <Footer private />
+            <Footer admin />
         </Box>
     );
-}
+};

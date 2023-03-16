@@ -8,6 +8,8 @@ import {
   LoginButton,
   HeaderMiddle,
   ContactTitle,
+  BadgeContent,
+  LoginButtonHr,
   ContactNumber,
   HeaderBtnLine,
   HeaderBtnCount,
@@ -18,38 +20,38 @@ import {
   LoginButtonIcon,
   LoginButtonText,
   HeaderIconButton,
-  LoginButtonHr,
-} from "./Header.component";
-import React from "react";
-import { Link } from "react-router-dom";
-import { Burger } from "../Styles";
-import { IconButton } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { LogoSvgImage } from "../../../Assets/Svg/SvgImages";
-import { Menu } from "../Menu/Menu";
-import { CartData } from "../../../Api/Data";
-import { CartModal } from "../../../Components/CartModal/CartModal";
+  LocalButton,
+} from "./Header.component"
+import React from "react"
+import { Burger } from "../Styles"
+import { Menu } from "../Menu/Menu"
+import { Link } from "react-router-dom"
+import { IconButton } from "@mui/material"
+import { useDispatch, useSelector } from "react-redux"
+import { LogoSvgImage } from "../../../Assets/Svg/SvgImages"
+import { CartModal } from "../../../Components/CartModal/CartModal"
+// import GoogleMaps from "../../../Components/SearchFilterInput/SearchInput";
 
 export function Header() {
-  const dispatch = useDispatch();
-  const [open, setOpen] = React.useState(false);
+  const dispatch = useDispatch()
+  const [open, setOpen] = React.useState(false)
   const [colors, setColor] = React.useState(false)
-  const [cart, setCart] = React.useState(true)
-  let search = useSelector((state) => state.searchReducer.search);
+  const [cartOpen, setCartOpen] = React.useState(false)
+  let search = useSelector((state) => state.searchReducer.search)
   const [searchOpen, setSearchOpen] = React.useState(search)
-  const CartLength = localStorage.getItem("CartLength")
+  let currentCart = useSelector((state) => state.cartReducer?.currentCart)
   const handleColorToggle = () => {
     setColor(!colors)
   }
   const handleSearchToggle = () => {
     setSearchOpen(!searchOpen)
-    dispatch({ type: "SEARCH_SUCCESS", search: !searchOpen });
-  };
+    dispatch({ type: "SEARCH_SUCCESS", search: !searchOpen })
+  }
   const handleDrawerToggle = () => {
-    setOpen(!open);
+    setOpen(!open)
   }
   const handleCart = () => {
-    CartData?.length > 0 ? setCart(true) : setCart(false)
+    currentCart?.length ? setCartOpen(false) : setCartOpen(true)
   }
   return (
     <>
@@ -58,17 +60,15 @@ export function Header() {
           <Burger open={open} toggle={handleDrawerToggle} />
         </IconButton>
         <Menu toggle={handleDrawerToggle} open={open} />
-        <Link style={{marginRight: 'auto'}} to="/" className="link">
+        <Link style={{ marginRight: "auto" }} to="/" className="link">
           <LogoSvgImage width="60" height="45" />
         </Link>
         <HeaderMiddle searchopen={searchOpen}>
+          {/* <GoogleMaps /> */}
           <AddresInputBox searchopen={searchOpen}>
-            <IconButton
-              onClick={handleColorToggle}
-              aria-label="location"
-            >
-              <LocalIcon colors={colors} searchopen={searchOpen} />
-            </IconButton>
+            <LocalButton onClick={handleColorToggle} colors={colors} aria-label="location">
+              <LocalIcon searchopen={searchOpen} />
+            </LocalButton>
             <AddresInput
               className="input"
               placeholder="Введите адрес доставки"
@@ -88,19 +88,28 @@ export function Header() {
           <LoginButton none component={Link} to="/login">
             <LoginButtonHr none />
             <LoginButtonIcon />
-            <LoginButtonText>
-              Login
-            </LoginButtonText>
+            <LoginButtonText>Login</LoginButtonText>
           </LoginButton>
         </HeaderMiddle>
-        <HeaderBtn onClick={handleCart} endIcon={<HeaderCartIcon />} component={Link} to={`/${CartData?.length > 0 ? 'MainCart' : ''}`}>
+        <HeaderBtn
+          onClick={handleCart}
+          endIcon={
+            <BadgeContent
+              badgeContent={currentCart ? currentCart?.length : 0}
+            >
+              <HeaderCartIcon />
+            </BadgeContent>
+          }
+          component={Link}
+          to={`/${currentCart?.length ? "MainCart" : "/"}`}
+        >
           Корзина
           <HeaderBtnLine />
-          <HeaderBtnCount>{CartLength}</HeaderBtnCount>
+          <HeaderBtnCount>
+            {currentCart ? currentCart?.length : 0}
+          </HeaderBtnCount>
         </HeaderBtn>
-        {
-          !cart && <CartModal />
-        }
+        <CartModal open={cartOpen} setOpen={setCartOpen} />
       </HeaderContainer>
     </>
   )

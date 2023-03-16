@@ -4,14 +4,17 @@ import {
 } from "../../../Themes/Breakpoints";
 import styled from "styled-components";
 import {
+    Badge,
     Box,
     Button, IconButton
 } from "@mui/material";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import {
+    FiSearch,
+    FiUser,
+  } from 'react-icons/fi';
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 export const HeaderContainer = styled.div `
     width: 100%;
@@ -145,6 +148,7 @@ export const HeaderBtnCount = styled.span `
     font-size: 14px;
     line-height: 17px;
     background: #FFFFFF;
+    color: #68956F;
     @media (max-width: ${matchSM}px) {
         display: none !important;
     }
@@ -170,23 +174,26 @@ export const HeaderIconButton = styled(IconButton)`
     margin-left: auto;
     color: inherit;
 `
-export const SearchIcon = styled(SearchOutlinedIcon) `
+export const SearchIcon = styled(FiSearch) `
     width: 22px;
     height: 22px;
     cursor: pointer;
     color: #CFCFCF;
     @media (max-width: ${matchSM}px) {
-        width: ${props => props.searchopen ? "22px" : "28px"};
-        height: ${props => props.searchopen ? "22px" : "28px"};
+        width: ${props => props.searchopen ? "22px" : "26px"};
+        height: ${props => props.searchopen ? "22px" : "26px"};
         color: ${props => props.searchopen ? "inherit" : "#CFCFCF"};
     }
+`
+export const LocalButton = styled(IconButton) `
+    color: ${props => props.colors ? "#68956F" : "#CFCFCF"};
 `
 export const LocalIcon = styled(FmdGoodOutlinedIcon) `
     width: 22px;
     height: 22px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    color: ${props => props.colors ? "#68956F" : "#CFCFCF"};
+    color: inherit;
     @media (max-width: ${matchSM}px) {
         display: ${props => props.searchopen ? "block" : "none"};
     }
@@ -228,7 +235,7 @@ export const LoginButtonHr = styled.hr`
     height: ${props => props.none ? "50px" : "25px"};
     border: 0;
 `
-export const LoginButtonIcon = styled(PersonOutlineIcon)`
+export const LoginButtonIcon = styled(FiUser)`
     width: 24px;
     height: 24px;
     color: #ffffff;
@@ -239,4 +246,14 @@ export const LoginButtonText = styled.p`
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+`
+export const BadgeContent = styled(Badge)`
+    & .MuiBadge-badge {
+        background-color: #ffffff;
+        color: #68956F;
+    }
+    display: none;
+    @media (max-width: ${matchSM}px) {
+        display: flex;
+    }
 `

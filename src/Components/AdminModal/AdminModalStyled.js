@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { LoadingButton } from "@mui/lab";
-import { IconButton } from "@mui/material";
 import { matchSM } from "../../Themes/Breakpoints";
 
 export const AddButton = styled(LoadingButton)`
@@ -20,16 +19,10 @@ export const AddButton = styled(LoadingButton)`
     }
     &:hover {
         background-color: #403C3B;
-        background-color: #9CAE9F;
     }
     @media (max-width: ${matchSM}px) {
         padding: 15px 0;
     }
-`
-export const CloseButton = styled(IconButton)`
-    position: absolute;
-    top: 5px;
-    right: 15px;
 `
 export const ModalTitle = styled.h3`
     font-family: 'Gilroy-Bold';

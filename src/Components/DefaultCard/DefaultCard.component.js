@@ -1,5 +1,7 @@
+import { Button } from "@mui/material";
 import styled from "styled-components";
 import { matchMD, matchSM } from "../../Themes/Breakpoints";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 export const HomeCardCount = styled.span `
     width: 50px;
@@ -31,21 +33,20 @@ export const HomeCardCost = styled.p `
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
-    margin-right: auto;
-    transition: all 0.3s ease-in-out;
 `
-export const HomeCardCart = styled.p `
+export const HomeCardCart = styled(Button) `
     padding: 14px 16px 14px 19px;
     font-family: 'Gilroy';
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    margin-left: auto;
     border-radius: 10px;
-    display: flex;
     align-items: center;
-    transition: all .3s;
+    transition: all 2s;
+    display: ${props => props.counted ? "none" : "flex"};
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     :active {
         background: linear-gradient(114.93deg,#7ad788 5.11%,#8ed498 94%);
         box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
@@ -55,63 +56,56 @@ export const HomeInnerCard = styled.div `
     padding: 14px 16px 18px 16px;
     border-radius: 10px;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 `
 export const HomeInnerBtn = styled.div `
     width: 60px;
     height: 40px;
-    display: flex;
-    bottom: 5%;
-    position: absolute;
-    align-items: center;
-    border-radius: 10px;
     color: #ffffff;
-    display: none;
+    border-radius: 10px;
+    align-items: center;
     justify-content: center;
-    display: ${props => props.toggle ? "flex" : "none"};
+    transition: all .2s;
+    display: ${props => props.counted ? "flex" : "none"};
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
     :active {
         background: linear-gradient(114.93deg,#7ad788 5.11%,#8ed498 94%);
         box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
     }
 `
-
+export const HomeInnerBtnBox = styled.div `
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    justify-content: space-between;
+`
 export const HomeCard = styled.div `
     width: 325px;
     height: 400px;
-    border-radius: 10px;
     cursor: pointer;
     user-select: none;
-    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
-    transition: all .2s;
     position: relative;
+    border-radius: 10px;
+    transition: all .2s;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     :hover {
-        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
         box-shadow: 0px 30px 45px rgba(43, 40, 40, 0.6);
         ${HomeCardCount} {
             display: flex;
         }
-        // ${HomeInnerCard} {
-        //     justify-content: space-between;
-        // }
-        // ${HomeCardCost} {
-        //     position: absolute;
-        //     bottom: -22%;
-        //     left: 43%;
+        // ${HomeCardCart} {
+        //     display: ${props => props.counted ? "none" : "flex"};
         // }
         // ${HomeInnerBtn} {
-        //     display: flex;
+        //     display: ${props => props.counted ? "flex" : "none"};
         // }
-        // ${HomeCardCart} {
-        //     display: none;
-        // }
-        // transform: scale(1.020, 1.015);
     }
-`
-export const HomeInnerBtnBox = styled.div `
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
 `
 export const HomeCardTitle = styled.h3 `
     font-family: 'Gilroy';
@@ -120,8 +114,6 @@ export const HomeCardTitle = styled.h3 `
     line-height: 27px;
     color: #FFFFFF;
     display: inline-block;
-    margin-right: 52%;
-    margin-bottom: 5px;
     @media (max-width: ${matchMD}px) {
         font-size: 21px;
         line-height: 26px;
@@ -148,4 +140,9 @@ export const HomeCardWeight = styled.span `
     font-size: 12px;
     line-height: 14px;
     color: #FFFFFF;
+`
+export const ShoppingIcon = styled(AddShoppingCartIcon)`
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
 `

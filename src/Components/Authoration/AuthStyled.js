@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { matchSM } from "../../Themes/Breakpoints";
 import PersonIcon from "@mui/icons-material/Person";
@@ -123,4 +123,8 @@ export const Phone = styled(PhoneIcon)`
 export const AuthFormInput = styled(OutlinedInput)`
     background-color: #ffffff;
     border-radius: 10px;
+    :focus {
+        border: none;
+        outline: 10px solid red !important;
+    }
 `

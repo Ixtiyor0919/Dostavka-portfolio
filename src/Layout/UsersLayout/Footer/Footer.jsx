@@ -9,13 +9,13 @@ import {
 import { Link } from "react-router-dom";
 import { LogoSvgImage } from "../../../Assets/Svg/SvgImages";
 
-export const Footer = (props) => {
+export const Footer = ({admin}) => {
   return (
-    <FooterContainer private={props.private}>
+    <FooterContainer private={admin}>
       <Link to="/" className="link">
         <LogoSvgImage width="60" height="45" />
       </Link>
-      <FooterDescription>
+      <FooterDescription admin={admin}>
         <FooterText>
           © ООО СК «АПШЕРОН» Все права защищены. 2010-2020
         </FooterText>
@@ -23,7 +23,7 @@ export const Footer = (props) => {
           Пользовательское соглашение Карта сайта Политика конфиденциальности
         </FooterLinks>
       </FooterDescription>
-      <PagesBox>
+      <PagesBox admin={admin}>
         <Page component={Link} to="/">
           О ресторане
         </Page>

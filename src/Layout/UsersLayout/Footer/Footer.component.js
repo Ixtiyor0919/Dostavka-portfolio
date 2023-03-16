@@ -21,13 +21,13 @@ export const FooterContainer = styled.div `
     }
 `
 export const FooterDescription = styled.div `
-    width: 20%;
     margin: 0 4%;
+    width: ${props => props.admin ? "100%" : "20%"};
     @media (max-width: ${matchMD}px) {
         margin: 0 2%;
     }
     @media (max-width: ${matchSM}px) {
-        width: unset;
+        width: ${props => props.admin ? "100%" : "unset"};
         margin-left: 20px;
     }
 `
@@ -63,6 +63,7 @@ export const PagesBox = styled.div `
     gap: 30px;
     display: flex;
     align-items: center;
+    display: ${props => props.admin ? "none" : "flex"};
     @media (max-width: ${matchMD}px) {
         gap: 20px;
     }

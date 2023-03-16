@@ -4,31 +4,22 @@ import {
   HomeCardsInnerTop,
   HomeCardsInnerTopTitle,
   HomeCardsWrapper,
-  HomeLine,
 } from "./HomeCards.component";
+import React from "react";
 import "swiper/css";
 import "./Slider.css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { useDispatch } from "react-redux";
-import { FreeMode, Pagination } from "swiper";
-import { HomeCardData } from "../../Api/Data";
+// import { FreeMode, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HomeDefaultCard } from "../DefaultCard/DefaultCard";
-export function HomeCards(props) {
-  const dispatch = useDispatch();
-
-  const handleCard = (item) => {
-    dispatch({type: 'SINGLE_SUCCESS', currentSingle: item})
-    console.log("Clicked", item)
-  }
+export function HomeCards({title, data, id}) {
   return (
     <>
-      {/* <HomeLine /> */}
       <GradientLine />
-      <HomeCardsWrapper>
+      <HomeCardsWrapper id={id}>
         <HomeCardsInnerTop>
-          <HomeCardsInnerTopTitle>{props.data}</HomeCardsInnerTopTitle>
+          <HomeCardsInnerTopTitle>{title}</HomeCardsInnerTopTitle>
         </HomeCardsInnerTop>
         <HomeCardsInnerSlider>
           <Swiper
@@ -38,41 +29,50 @@ export function HomeCards(props) {
             className="mySwiper"
             // modules={[FreeMode, Pagination]}
             breakpoints={{
-              400: {
+              // 400: {
+              //   slidesPerView: 1,
+              //   spaceBetween: 15,
+              // },
+              // 768: {
+              //   slidesPerView: 2,
+              //   spaceBetween: 25,
+              // },
+              // 1024: {
+              //   slidesPerView: 3,
+              //   spaceBetween: 30,
+              // },
+              // 1440: {
+              //   slidesPerView: 4,
+              //   spaceBetween: 30,
+              // },
+              640: {
                 slidesPerView: 1,
-                spaceBetween: 15,
+                spaceBetween: 10,
               },
               768: {
-                slidesPerView: 2,
-                spaceBetween: 25,
+                slidesPerView: 4,
+                spaceBetween: 40,
               },
               1024: {
                 slidesPerView: 3,
                 spaceBetween: 30,
               },
               1440: {
-                slidesPerView: 4,
-                spaceBetween: 30,
+                slidesPerView: 4.5,
+                spaceBetween: 15,
               },
             }}
           >
-            {HomeCardData?.map((item) => (
-              <SwiperSlide key={item.id}>
+            {data?.map((item, index) => (
+              <SwiperSlide key={index}>
                 <HomeDefaultCard
-                  id={item.id}
-                  key={item.id}
-                  body={item.text}
-                  cost={item.cost}
-                  title={item.title}
-                  wieght={item.weight}
-                  click={() => handleCard(item)}
+                item={item}
                 />
               </SwiperSlide>
             ))}
           </Swiper>
         </HomeCardsInnerSlider>
       </HomeCardsWrapper>
-      {/* <HomeLine></HomeLine> */}
     </>
   )
 }

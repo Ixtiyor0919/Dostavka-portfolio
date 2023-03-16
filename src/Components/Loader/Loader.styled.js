@@ -14,7 +14,7 @@ export const LoaderWrapper = styled.div`
 export const LoaderContent = styled(CircularProgress)`
     width: 50px !important;
     height: 50px !important;
-    margin: 250px auto 0 auto;
+    margin: 280px auto 0 auto;
     display: block;
     color: #72A479;
 `

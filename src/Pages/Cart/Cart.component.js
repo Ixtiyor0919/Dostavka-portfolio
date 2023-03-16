@@ -6,7 +6,7 @@ export const MainCartContainer = styled.div`
     padding: 35px 200px 90px 200px;
     margin: 0 auto;
     @media (max-width: ${matchMD}px) {
-        padding: 30px 50px 50px 50px;
+        padding: 30px 100px 50px 100px;
     }
     @media (max-width: ${matchSM}px) {
         padding: 25px 20px 50px 20px;
@@ -66,10 +66,10 @@ export const CartAddWrapperTitle = styled.h2`
     color: #FFFFFF;
 `
 export const CartAddWrapperInnerLine = styled.hr`
-    height: 265px;
+    // height: 265px;
     padding: 1.5px;
     border: 0;
-    background-image: linear-gradient(180deg,rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100.87%);
+    // background-image: linear-gradient(180deg,rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100.87%);
     @media (max-width: ${matchSM}px) {
         width: 100%;
         height: 2px;

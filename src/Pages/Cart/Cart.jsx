@@ -1,7 +1,7 @@
 import {
   CartAddWrapper,
-  CartCardWrapper,
   MainCartBottom,
+  CartCardWrapper,
   MainCartContainer,
   MainCartBottomBtn,
   MainCartBottomLeft,
@@ -13,36 +13,39 @@ import {
   MainCartBottomLeftInnerValue,
   MainCartBottomLeftInnerTotalText,
   MainCartBottomLeftInnerTotalValue,
-} from "./MainCart.component";
-import { Link } from "react-router-dom";
-import { Subtitle } from "../../Components/PublicSubtitle/Subtitle";
+} from "./Cart.component";
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import NavLinkList from "../../Components/Navbar/NavLinkList";
 import { CartCard } from "../../Components/CartCards/CartCard";
-// import CartStockImg from "../../Assets/Images/CartStockImg.png";
+import { Subtitle } from "../../Components/PublicSubtitle/Subtitle";
 import { CartAdd } from "../../Components/CartAddComponent/CartAdd";
 import { BackComponent } from "../../Components/BackButton/BackButton";
-import { CartData } from "../../Api/Data";
 
 export function MainCart() {
-
-  localStorage.setItem("CartLength", CartData.length)
-
+  const navigate = useNavigate();
+  let currentCart = useSelector((state) => state.cartReducer?.currentCart)
+  React.useEffect(() => {
+    if(currentCart?.length <= 0) {
+      return navigate("/", { replace: true })
+    }
+  }, [currentCart])
   return (
     <>
       <NavLinkList />
       <MainCartContainer>
         <MainCartContainerTop>
           <BackComponent text="к выбору блюда" />
-          <Subtitle title="КОРЗИНА" pL="0" textLength={`в корзине ${CartData.length} товара`} />
+          <Subtitle title="КОРЗИНА" pL="0" textLength={`в корзине ${currentCart?.length} товара`} />
         </MainCartContainerTop>
         <CartCardWrapper>
-          {CartData?.map((item) => (
+          {currentCart?.length > 0 && currentCart.map((item, index) => (
             <CartCard
-              key={item.id}
+              key={index}
               id={item.id}
+              text={item.text}
               title={item.title}
-              body={item.body}
-              CartData={CartData}
             />
           ))}
         </CartCardWrapper>
@@ -92,4 +95,4 @@ export function MainCart() {
       </MainCartContainer>
     </>
   )
-}
+};

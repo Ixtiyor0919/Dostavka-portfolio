@@ -6,12 +6,14 @@ import { Route, Routes } from "react-router-dom";
 import { Branchs } from "../Pages/Branchs/Branchs";
 import { Profile } from "../Pages/Profile/Profile";
 import { Register } from "../Pages/Register/Register";
+import { Error404 } from "../Pages/Error404/Error404";
+import { Error500 } from "../Pages/Error500/Error500";
 import AdminLayout from "../Layout/AdminLayout/AdminLayout";
 
 const PrivateRoutes = () => {
   return (
     <>
-      <Routes>
+      <Routes>   
         <Route element={<AdminLayout />}>
           <Route index element={<Branchs />} />
           <Route path="/foods" element={<Foods />} />
@@ -21,8 +23,8 @@ const PrivateRoutes = () => {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="*" element={<Error404 />} />
-        <Route path="server-error" element={<Error500 />} /> */}
+        <Route path="*" element={<Error404 />} />
+        <Route path="server-error" element={<Error500 />} />
       </Routes>
     </>
   )

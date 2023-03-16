@@ -1,7 +1,7 @@
 import {
   ListItem,
   useTheme,
-  ListItemIcon,
+  // ListItemIcon,
   ListItemText,
   useMediaQuery,
 } from "@mui/material";
@@ -29,4 +29,4 @@ export const DrawerComponent = ({ data, toggle }) => {
       ))}
     </ListComponent>
   )
-}
+};

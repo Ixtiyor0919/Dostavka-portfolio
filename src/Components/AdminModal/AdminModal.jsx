@@ -1,38 +1,39 @@
 import React from "react";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import { AddButton, CloseButton, ModalTitle } from "./AdminModalStyled";
+import { CloseButton } from "../CloseButton/CloseButton";
+import { AddButton, ModalTitle } from "./AdminModalStyled";
 import { Fade, Grid, Modal, TextField, Backdrop, Box } from "@mui/material";
-// import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 // import { LocalizationProvider } from '@mui/x-date-pickers';
 // import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 // import { MultiInputTimeRangeField } from '@mui/x-date-pickers-pro/MultiInputTimeRangeField';
-// import { SingleInputTimeRangeField } from '@mui/x-date-pickers-pro/SingleInputTimeRangeField';
 
 export const AdminModal = ({ open, setOpen, branch, food }) => {
   const handleClose = () => setOpen(false)
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(false)
   const style = {
     top: "50%",
     left: "50%",
     maxWidth: "40%",
     minWidth: "380px",
-    gap: "40px",
-    padding: "45px 30px 30px 30px",
     position: "relative",
     borderRadius: "10px",
+    padding: "45px 30px 30px 30px",
     transform: "translate(-50%, -50%)",
     background: "linear-gradient(90deg, #494544 0%, #504b4a 100%)",
     // boxShadow: 24,
     boxShadow:
       "0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)",
   }
+  const styleModal = {
+    backdropFilter: 'brightness(0.5)',
+    background: 'rgb(83 83 83 / 80%)'
+  }
   function handleClick() {
-    setLoading(true);
+    setLoading(true)
   }
   const handleSubmit = () => {
     handleClose()
-    handleClick()
-  }
+  };
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -44,15 +45,11 @@ export const AdminModal = ({ open, setOpen, branch, food }) => {
       BackdropProps={{
         timeout: 500,
       }}
+      sx={styleModal}
     >
       <Fade in={open}>
         <Box component="form" sx={style}>
-          <CloseButton aria-label="cancel">
-            <CloseOutlinedIcon
-              onClick={handleClose}
-              sx={{ borderRadius: "50%", cursor: "pointer" }}
-            />
-          </CloseButton>
+          <CloseButton toggle={handleClose} cartModal />
           {branch ? (
             <ModalTitle>Add a new Branch</ModalTitle>
           ) : (
@@ -61,17 +58,17 @@ export const AdminModal = ({ open, setOpen, branch, food }) => {
           <Grid
             container
             sapcing={2}
-            justifyContent="space-around"
             rowSpacing={4}
+            justifyContent="space-around"
           >
             <Grid item xs={12}>
               <TextField
+                required
+                fullWidth
                 id="Address"
+                type="text"
                 name="Address"
                 label="Branch address"
-                type="text"
-                fullWidth
-                required
               />
             </Grid>
             <Grid item xs={12}>
@@ -98,8 +95,13 @@ export const AdminModal = ({ open, setOpen, branch, food }) => {
                 textAlign: "center",
               }}
             >
-              <AddButton loading={loading}
-          loadingPosition="end" food={food} variant="contained" onClick={handleSubmit}>
+              <AddButton
+                loading={loading}
+                loadingPosition="end"
+                food={food}
+                variant="contained"
+                onClick={handleSubmit}
+              >
                 {branch ? "Add restaurant" : "Add food"}
               </AddButton>
             </Grid>

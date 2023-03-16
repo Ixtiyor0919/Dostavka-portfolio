@@ -8,23 +8,18 @@ import ScrollTop from "../../Components/Scrolls/KeyboardScroll";
 import { AppToolbar, KeyboardFab, KeyboardIcon, Main } from "./Styles";
 
 export default function UsersLayout(props) {
-  let search = useSelector((state) => state.searchReducer.search);
+  let search = useSelector((state) => state.searchReducer.search)
 
   return (
     <Box>
       <CssBaseline />
-      <AppToolbar
-        id="back-to-top-anchor"
-      >
+      <AppToolbar id="back-to-top-anchor">
         <Header />
       </AppToolbar>
       <Main searchOpen={search}>
-      <CssBaseline />
+        <CssBaseline />
         <ScrollTop {...props}>
-          <KeyboardFab
-            size="small"
-            aria-label="scroll back to top"
-          >
+          <KeyboardFab size="small" aria-label="scroll back to top">
             <KeyboardIcon />
           </KeyboardFab>
         </ScrollTop>
