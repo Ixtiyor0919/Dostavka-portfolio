@@ -3,7 +3,7 @@ import { matchMD, matchSM } from "../../Themes/Breakpoints";
 
 export const HomeCardsWrapper = styled.div`
     width: 100%;
-    padding: 50px 0 0 0;
+    padding: 50px 0 0 0;}
 `
 export const HomeCardsInnerTop = styled.div`
     margin-left: 8%;
@@ -11,14 +11,9 @@ export const HomeCardsInnerTop = styled.div`
     align-items: center;
 `
 export const GradientLine = styled.hr`
-    height: 2px;
+    height: 1.5px;
     border: 0;
-    // background-image: linear-gradient(90deg,rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100.87%);
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100.87%);
-    &:first-child {
-        height: 0;
-        display: none;
-    }
+    background: linear-gradient(90deg,rgb(255 255 255 / 20%) 0%,rgb(255 255 255 / 0%) 100.87%);
 `
 export const HomeCardsInnerTopTitle = styled.h2`
     font-family: 'Gilroy';

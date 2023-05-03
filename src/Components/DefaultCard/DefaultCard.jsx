@@ -14,11 +14,11 @@ import {
   HomeCardDescription,
 } from "./DefaultCard.component";
 import { Link } from "react-router-dom";
-import { Loader } from "../Loader/Loader";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useDispatch, useSelector } from "react-redux";
 import HomeCardImg from "../../Assets/Images/HomeCardImg.png";
+import Loader from "../Loader";
 
 export function HomeDefaultCard({ item }) {
   const dispatch = useDispatch();
@@ -70,7 +70,7 @@ export function HomeDefaultCard({ item }) {
   }, [count])
   return (
     <HomeCard onClick={handleCard} id={id}>
-      <Link to="/Single" className="link" style={{ display: "block" }}>
+      <Link to="/single-product" className="link" style={{ display: "block" }}>
         <CardImg src={HomeCardImg} alt="HomeCardImage" />
         <HomeCardCount>{local ? local : 0}</HomeCardCount>
         <HomeInnerCard>

@@ -1,9 +1,9 @@
 import {
   GradientLine,
-  HomeCardsInnerSlider,
-  HomeCardsInnerTop,
-  HomeCardsInnerTopTitle,
   HomeCardsWrapper,
+  HomeCardsInnerTop,
+  HomeCardsInnerSlider,
+  HomeCardsInnerTopTitle,
 } from "./HomeCards.component";
 import React from "react";
 import "swiper/css";

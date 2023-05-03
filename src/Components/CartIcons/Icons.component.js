@@ -19,6 +19,9 @@ export const CartIcon = styled.span`
 `
 export const Button = styled(IconButton)`
     padding: 6px;
+    &.MuiIconButton-sizeMedium {
+        color: #FFFFFF;
+    } 
     @media (max-width: ${matchSM}px) {
         padding: 4px;
     }

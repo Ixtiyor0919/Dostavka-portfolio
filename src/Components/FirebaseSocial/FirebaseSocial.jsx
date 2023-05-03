@@ -4,25 +4,56 @@ import { useMediaQuery, Button, Stack } from '@mui/material';
 
 // assets
 import Google from '../../Assets/Icons/google.svg';
-import Twitter from '../../Assets/Icons/twitter.svg';
+import Github from '../../Assets/Icons/Github.svg';
 import Facebook from '../../Assets/Icons/facebook.svg';
+import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth, facebookAuthProvider, googleAuthProvider, githubAuthProvider } from '../../Api/Services/Firebase';
 
 // ==============================|| FIREBASE - SOCIAL BUTTON ||============================== //
 
 const FirebaseSocial = () => {
     const theme = useTheme();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
-
     const googleHandler = async () => {
         // login || singup
+        signInWithPopup(auth, googleAuthProvider)
+        .then((result) => {
+            const credential = GithubAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // setToken(token)
+            const response = {
+                name: result.user.displayName,
+                email: result.user.email,
+                phoneNumber: result.user.phoneNumber,
+                photoURL: result.user.photoURL
+            }
+          console.log(token)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
 
-    const twitterHandler = async () => {
+    const githubHandler = async () => {
         // login || singup
+        signInWithPopup(auth, githubAuthProvider)
+        .then((result) => {
+          console.log(result.user)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
 
     const facebookHandler = async () => {
         // login || singup
+        signInWithPopup(auth, facebookAuthProvider)
+        .then((result) => {
+          console.log(result.user)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
     const style = {
         backgroundColor: '#ffffff',
@@ -49,11 +80,11 @@ const FirebaseSocial = () => {
             <Button
                 variant="outlined"
                 fullWidth={!matchDownSM}
-                startIcon={<img src={Twitter} alt="Twitter" />}
-                onClick={twitterHandler}
+                startIcon={<img src={Github} alt="Github" width="20" height="20" />}
+                onClick={githubHandler}
                 sx={style}
             >
-                {!matchDownSM && 'Twitter'}
+                {!matchDownSM && 'GitHub'}
             </Button>
             <Button
                 variant="outlined"

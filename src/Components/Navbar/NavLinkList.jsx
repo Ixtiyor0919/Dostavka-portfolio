@@ -3,21 +3,22 @@ import {
   TabsItem,
   TabsList,
   NavbarContainer,
+  StyledLink,
+  NavWrapper,
+  NavItem,
 } from "./NavLink.component";
+import { useSelector } from "react-redux";
 import { categoryData } from "../../Api/Data";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 function NavLinkList() {
-  const dispatch = useDispatch();
   // let { category } = useSelector((state) => state.categoryReducer);
-  const [ value, setValue ] = React.useState("All");
+  const [value, setValue] = React.useState("Cold-snacks")
+
   const handleChange = (e, newValue) => {
-    dispatch({ type: "CATEGORY_START" });
     setValue(newValue)
-    dispatch({ type: "CATEGORY_SUCCESS", category: newValue })
-  };
-  let search = useSelector((state) => state.searchReducer.search);
+  }
+
+  let search = useSelector((state) => state.searchReducer.search)
   return (
     <>
       <NavbarContainer searchOpen={search}>
@@ -28,19 +29,27 @@ function NavLinkList() {
           onChange={handleChange}
           aria-label="scrollable auto tabs example"
         >
-          {categoryData?.map((item, index) => (
-              <TabsItem 
-                smooth
-                component={Link}
-                value={item.value}
-                label={item.label}
-                key={index} to={`#${item.value}`}
-              />
+          {categoryData?.map(({value}, index) => (
+            <TabsItem key={index} value={value} label={value} />
           ))}
         </TabsList>
+        {/* <NavWrapper>
+          {categoryData?.map(({value}, index) => (
+            <StyledLink
+              to={`${value}`}
+              key={index}
+              spy={true}
+              offset={-70}
+              smooth={true}
+              duration={1000}
+            >
+              <NavItem>{value}</NavItem>
+            </StyledLink>
+          ))}
+        </NavWrapper> */}
       </NavbarContainer>
     </>
   )
 }
 
-export default NavLinkList;
+export default NavLinkList

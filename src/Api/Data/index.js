@@ -20,13 +20,13 @@ export const PublicDrawerData = [{
   {
     id: 3,
     text: "DeliveryConditions",
-    pathname: "/DeliveryConditions",
+    pathname: "/conditions",
     icon: < ShoppingCartOutlinedIcon / >
   },
   {
     id: 4,
     text: "Action",
-    pathname: "/Action",
+    pathname: "/action",
     icon: < ShoppingCartOutlinedIcon / >
   }
 ]
@@ -135,7 +135,7 @@ export const HomeCardData = [{
     weight: "225 г",
     text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
     cost: "450 ₽",
-    category: "Cold-snacks"
+    category: "Cold-snacks",
   },
   {
     id: "2",
@@ -768,3 +768,102 @@ export const categoryData = [
     value: "Beverages"
   },
 ];
+export const CartAddData = [
+  {
+    id: "1",
+    title: "КВАС АНАНАСОВЫЙ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Cold-snacks"
+  },
+  {
+    id: "2",
+    title: "ГРИСССИНИ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Hot-appetizers"
+  },
+  {
+    id: "3",
+    title: "ПИЦЦА ПЕППЕРОНИ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Meat-dishes"
+  },
+  {
+    id: "4",
+    title: "КВАС АНАНАСОВЫЙ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Soups"
+  },
+  {
+    id: "5",
+    title: "КВАС АНАНАСОВЫЙ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Fish-dishes"
+  },
+  {
+    id: "6",
+    title: "ГРИСССИНИ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Beverages"
+  },
+  {
+    id: "7",
+    title: "ПИЦЦА ПЕППЕРОНИ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Specialties"
+  },
+  {
+    id: "8",
+    title: "КВАС АНАНАСОВЫЙ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Grill-menu"
+  },
+  {
+    id: "9",
+    title: "ПИЦЦА ПЕППЕРОНИ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Grill-menu"
+  },
+  {
+    id: "10",
+    title: "КВАС АНАНАСОВЫЙ",
+    weight: "225 г",
+    text: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+    cost: "620 ₽",
+    category: "Grill-menu"
+  },
+]
+
+export const language = [
+  {
+    code: 'uz',
+    name: `O'zbek`,
+    country_code: 'uz'
+  },
+  {
+    code: 'en',
+    name: 'English',
+    country_code: 'gb'
+  },
+  {
+    code: 'ru',
+    name: 'Русский',
+    country_code: 'ru'  }
+]

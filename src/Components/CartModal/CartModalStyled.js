@@ -4,7 +4,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Box, Button, Dialog, DialogActions, DialogContentText } from "@mui/material";
 
 export const style = styled.div`
-background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
+    background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
 `
 export const ModalIsEmpty = styled(Box)`
     width: 30%;
@@ -69,8 +69,9 @@ export const StockModalBtn = styled(Button)`
 export const CartDialog = styled(Dialog)`
     & .MuiPaper-rounded {
         padding: 20px;
-        border-radius: 15px;
         color: #ffffff;
+        text-align: center;
+        border-radius: 15px;
         background: linear-gradient(180deg, #494544 0%, #504B4A 100%);
     }
 `

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Box, Fade } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
-const ScrollTop = (props) => {
+const KeyboardScroll = (props) => {
     const { children, window } = props;
     const trigger = useScrollTrigger({
         target: window ? window() : undefined,
@@ -36,9 +36,9 @@ const ScrollTop = (props) => {
     );
 }
 
-export default ScrollTop;
+export default KeyboardScroll;
 
-ScrollTop.propTypes = {
+KeyboardScroll.propTypes = {
     children: PropTypes.element.isRequired,
     window: PropTypes.func,
 };

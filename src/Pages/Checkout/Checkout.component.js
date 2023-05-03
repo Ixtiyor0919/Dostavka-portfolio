@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
-    FormControlLabel
+    FormControl,
+    FormControlLabel, FormLabel, Radio
 } from "@mui/material";
 import {
     matchMD,
@@ -316,4 +317,17 @@ export const CheckoutBottomLink = styled.p `
     color: #72A479;
     display: inline;
     text-decoration: underline;
+`
+export const FormLabelStyled = styled(FormLabel)`
+    font-family: 'Gilroy';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF !important;
+`
+export const RadioControl = styled(Radio)`
+    color: #72A479 !important;
+`
+export const FormStyled = styled(FormControl)`
+    user-select: none;
 `
