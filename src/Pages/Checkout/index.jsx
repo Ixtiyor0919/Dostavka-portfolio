@@ -10,7 +10,7 @@ import {
   CheckoutWrapperItemForm,
   CheckoutWrapperItemInner,
   CheckoutWrapperItemInput,
-  CheckoutWrapperItemTitle,
+  CheckoutWrapperItemTitle, 
   CheckoutWrapperItemBottom,
   CheckoutWrapperItemTopInner,
   CheckoutWrapperItemInnerTitle,

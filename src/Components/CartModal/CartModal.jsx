@@ -41,7 +41,7 @@ const CartModal = ({ open, setOpen }) => {
           },
         }}
         BackdropProps={{ style: { backgroundColor: "transparent" } }}
-        sx={style}
+        // sx={style}
       >
         <Fade in={open}>
           <ModalIsEmpty component="form">

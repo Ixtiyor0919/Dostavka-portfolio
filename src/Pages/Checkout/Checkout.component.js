@@ -65,7 +65,7 @@ export const CheckoutWrapperItemInner = styled.div `
     gap: 15px;
 `
 export const CheckoutWrapperItemInput = styled.input `
-padding: 20px 0 20px 20px;
+    padding: 20px 0 20px 20px;
     border-radius: 10px;
     font-family: 'Gilroy';
     font-weight: 400;
@@ -75,7 +75,6 @@ padding: 20px 0 20px 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: transparent;
     color: #FFFFFF;
-    // appearance: none;
     ::placeholder {
         color: #FFFFFF;
     }
@@ -83,7 +82,7 @@ padding: 20px 0 20px 20px;
         width: 100% !important;
     }
 `
-export const CheckoutWrapperItemArea= styled.textarea `
+export const CheckoutWrapperItemArea = styled.textarea `
     width: 80%;
     height: 100px;
     padding: 20px 0 20px 20px;
